@@ -24,6 +24,7 @@ module RailsDb
       if valid?
         load_data
         load_explain
+        History.add(query)
       end
       self
     end

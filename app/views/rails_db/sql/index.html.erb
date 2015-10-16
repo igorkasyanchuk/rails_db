@@ -23,7 +23,14 @@
         <p><span class="radius secondary label">* be careful with your SQL. You may corrupt your DB. Make sure you have DB backup.</span></p>
         <%= submit_tag 'Execute', class: 'button small' %>
         &nbsp;
+        &mdash;
+        &nbsp;
         <%= link_to 'Reset', :sql, data: {confirm: "Are you sure?"}, confirm: "Are you sure?" %>
+        &nbsp;
+        &mdash;
+        &nbsp;
+        <a href="#" data-reveal-id="history_modal" id='history_modal_link'>History</a></span>
+        <%= render 'history' %>
       </div>
     </div>
   </div>
