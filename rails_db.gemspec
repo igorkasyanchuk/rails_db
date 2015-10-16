@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Igor Kasyanchuk"]
   s.email       = ["igorkasyanchuk@gmail.com"]
   s.homepage    = "https://github.com/igorkasyanchuk/rails_db"
-  s.summary     = "Inspect your DB"
-  s.description = "Inspect your DB"
+  s.summary     = "Inspect your Rails DB (table content viewer, execute sql queries, export & import data"
+  s.description = "Quick way to inspect your Rails database, see content of tables, export them to CSV, EXPLAIN SQL and run SQL queries."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]

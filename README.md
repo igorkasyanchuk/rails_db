@@ -1,6 +1,6 @@
 # Rails DB
 
-[<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/account_table.png"
+[<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/account_table.png?token=AAArXeu9-vtuW8nIvc9RE0nOIhGbwxkbks5WKlTLwA%3D%3D"
 />](https://rails-db.herokuapp.com/rails/db/)
 
 Quick way to inspect your Rails database, see content of tables, export them to CSV, EXPLAIN SQL and run SQL queries.
@@ -34,6 +34,17 @@ Run `bundle install`
 
 Visit `http://localhost:3000/rails/db` and you will see your database tables and SQL editors.
 
+## Samples
+
+### Schema
+
+[<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/accounts_schema.png?token=AAArXU_ChN3xNN2MajLy2Tv98ij6XK4Pks5WKlT3wA%3D%3D"
+/>]/>](https://rails-db.herokuapp.com/rails/db/)
+
+### SQL Editor
+
+[<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/execute_sql.png?token=AAArXf26vwsPwvV2MhgxWUepGb0tT6g4ks5WKlUJwA%3D%3D"
+/>]/>](https://rails-db.herokuapp.com/rails/db/)
 
 ## Contributing
 
