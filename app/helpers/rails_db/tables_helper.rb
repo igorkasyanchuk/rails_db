@@ -19,14 +19,11 @@ module RailsDb
       title = titleize_column(column, title)
       css_class  = (column == params[:sort_column]) ? "current #{params[:sort_order]}" : nil
       sort_order = (column == params[:sort_column] && params[:sort_order] == "asc") ? "desc" : "asc"
-      link_to title, {:sort_column => column, :sort_order => sort_order}, { :class => css_class }
+      link_to title, params.merge({:sort_column => column, :sort_order => sort_order}), { :class => css_class }
     end
 
     def titleize_column(column, title = nil)
-      title ||= column
-      title = "#{title[0].upcase}#{title[1..-1]}"
-      title = 'ID' if title == 'Id'
-      title
+      column
     end
 
     def select_top_from_table(table)

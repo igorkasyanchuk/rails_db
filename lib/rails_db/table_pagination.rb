@@ -11,7 +11,7 @@ module RailsDb
       self.offset       = current_page * per_page - per_page
       self.sort_column  = options[:sort_column]
       self.sort_order   = options[:sort_order]
-      self
+      table
     end
 
     def previous_page

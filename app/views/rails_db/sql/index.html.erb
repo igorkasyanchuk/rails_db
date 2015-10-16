@@ -1,14 +1,15 @@
 <%= form_tag :sql_execute do %>
-
   <h3>Execute SQL</h3>
 
   <div class='row'>
-    <% if @query && @query.is_error? %>
-      <div class="large-11">
-        <div class='alert-box alert'>
-          <%= @query.error.message %>
+    <% if @sql_query.valid? %>
+      <% if @sql_query.data.is_error? %>
+        <div class="large-11">
+          <div class='alert-box alert'>
+            <%= @sql_query.data.error.message %>
+          </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
 
     <div class="large-11">
@@ -18,7 +19,8 @@
 
   <div class="row">
     <div class="large-11">
-      <div class='panel'>
+      <div class='panel execute_panel'>
+        <p><span class="radius secondary label">* be careful with your SQL. You may corrupt your DB. Make sure you have DB backup.</span></p>
         <%= submit_tag 'Execute', class: 'button small' %>
         &nbsp;
         <%= link_to 'Reset', :sql, data: {confirm: "Are you sure?"}, confirm: "Are you sure?" %>
@@ -28,50 +30,9 @@
 
 <% end %>
 
-<% if @query && @query.count %>
-  <div class='row'>
-    <div class="large-11">
-      <h4>Results</h4>
-      <p><span class="radius success label">Total: <%= pluralize @query.count, 'record' %></span></p>
-      <hr>
-      <pre>
-        <% @query.explain.rows.each do |row| %>
-          <%= row.join(' ') %>
-        <% end %>
-      </pre>
-      <div class='scrollable'>
-        <table>
-          <thead>
-            <tr>
-              <% @query.columns.each do |column| %>
-                <th><%= titleize_column(column) %></th>
-              <% end %>
-            </tr>
-          </thead>
-          <tbody>
-            <% @query.rows.each do |row| %>
-              <tr>
-                <% row.each do |item| %>
-                  <td class='query_result'><%= item %></td>
-                <% end %>
-              </tr>
-            <% end %>
-          </tbody>
-          <% if @query.count > 10 %>
-            <tfoot>
-              <tr>
-                <% @query.columns.each do |column| %>
-                  <th><%= column.name %></th>
-                <% end %>
-              </tr>
-            </tfoot>
-          <% end %>
-        </table>
-      </div>
-    </div>
-  </div>
+<% if @sql_query.valid? %>
+  <%= render 'results', sql_query: @sql_query, sql: @sql %>
 <% end %>
-
 
 <script type="text/javascript">
   var editor = CodeMirror.fromTextArea($('#sql').get(0), {
@@ -86,5 +47,6 @@
         }
       }
     });
-  editor.setSize('100%', '400');
+  editor.setSize('100%', '300');
+  editor.focus();
 </script>

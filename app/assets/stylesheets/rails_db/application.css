@@ -5,6 +5,7 @@
  *= require codemirror/themes/pastel-on-dark.css
  *= require rails_db/app
  *= require rails_db/sidebar
+ *= require rails_db/pagination
  *= require font-awesome
  */
 
