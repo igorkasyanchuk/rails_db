@@ -31,3 +31,15 @@ end
 
 gem 'populator'
 gem 'faker'
+
+group :test do
+  gem "rspec"
+  gem "sqlite3"
+  gem "jquery-rails"
+  gem "quiet_assets"
+  if RUBY_VERSION >= '2.0'
+    gem "pry"
+    gem "pry-rails"
+    gem "pry-byebug"
+  end
+end

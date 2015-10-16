@@ -19,7 +19,7 @@ For now was tested only with Ruby 2.2 and Rails 4.2. But expected to work with o
 
 Add this to the development group in your Gemfile
 
-For all environments:
+For all environments (be careful with production env):
 
         gem 'rails_db'
 
