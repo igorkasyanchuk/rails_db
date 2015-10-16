@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= [yield(:title), 'Rails DB'].compact.join(' - ') %></title>
+  <title><%= [yield(:title), 'Rails DB'].reject(&:blank?).join(' - ') %></title>
   <%= stylesheet_link_tag    "rails_db/application", media: "all" %>
   <%= javascript_include_tag "rails_db/application" %>
   <%= javascript_include_tag "vendor/modernizr" %>
