@@ -3,7 +3,7 @@
 [<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/account_table.png?token=AAArXeu9-vtuW8nIvc9RE0nOIhGbwxkbks5WKlTLwA%3D%3D"
 />](https://rails-db.herokuapp.com/rails/db/)
 
-Quick way to inspect your Rails database **`http://localhost:3000/rails/db`**, see content of tables, export them to CSV, EXPLAIN SQL and run SQL queries.
+Quick way to inspect your Rails database **http://localhost:3000/rails/db**, see content of tables, export them to CSV, EXPLAIN SQL and run SQL queries.
 
 Demo available on: https://rails-db.herokuapp.com/rails/db/
 
