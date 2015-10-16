@@ -1,0 +1,28 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id         :integer          not null, primary key
+#  name       :string
+#  age        :integer
+#  salary     :decimal(, )
+#  bio        :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  account_id :integer
+#  dob        :date
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  age: 1
+  salary: 9.99
+  bio: MyText
+
+two:
+  name: MyString
+  age: 1
+  salary: 9.99
+  bio: MyText

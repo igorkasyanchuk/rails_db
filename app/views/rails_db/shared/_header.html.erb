@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="large-3 columns">
+    <h1><%= link_to image_tag('rails_db/logo_mini.png'), rails_db.root_path %></h1>
+  </div>
+  <div class="large-9 columns">
+    <ul class="inline-list left main_nav">
+      <li>
+        <%= link_to rails_db.root_path do %>
+          <%= fa_icon 'list-ul' %>
+          Dashboard
+        <% end %>
+      </li>
+      <li>|</li>
+      <li>
+        <%= link_to rails_db.sql_path do %>
+          <%= fa_icon 'database' %>
+          SQL Editor
+        <% end %>
+      </li>
+    </ul>
+    <ul class="inline-list right main_nav">
+      <li>
+        <%= link_to '/' do %>
+          <%= fa_icon 'home' %>
+          Home
+        <% end %>
+      </li>
+    </ul>
+    <div class='clear'></div>
+  </div>
+</div>
+

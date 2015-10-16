@@ -1,0 +1,51 @@
+<h2>Table: <%= @table.name %></h2>
+
+<div class='clear'></div>
+
+<hr/>
+
+<dl class="sub-nav">
+  <dd class="active"><%= link_to 'Records', table_data_path(@table) %></dd>
+  <dd><%= link_to 'Schema', table_path(@table) %></dd>
+  <dd><%= select_top_from_table(@table.name) %></dd>
+</dl>
+
+<div class='scrollable'>
+  <table>
+    <thead>
+      <tr>
+        <% @table.columns.each do |column| %>
+          <th><%= sortable column.name %></th>
+        <% end %>
+      </tr>
+    </thead>
+    <% n = 0 %>
+    <tbody>
+      <% @entries.each do |record| %>
+        <tr>
+          <% @table.columns.each do |column| %>
+            <% name = column.name %>
+            <td class="<%= name %> <%= column.type %>"><%= format_value(column, record[name]) %></td>
+          <% end %>
+        </tr>
+      <% end %>
+      <% n += 1 %>
+    </tbody>
+    <% if n > 10 %>
+      <tfoot>
+        <tr>
+          <% @table.columns.each do |column| %>
+            <th><%= sortable column.name %></th>
+          <% end %>
+        </tr>
+      </tfoot>
+    <% end %>
+  </table>
+</div>
+
+<p><span class="radius success label">Total: <%= pluralize @entries.total_entries, 'record' %></span></p>
+
+<%= paginate_table_entries @entries %>
+
+
+

@@ -1,0 +1,30 @@
+<div class="large-12 columns">
+  <hr/>
+  <div class="row">
+    <div class="large-6 columns">
+      <p>© Rails DB  <%= fa_icon 'heart' %>  <%= link_to 'https://github.com/igorkasyanchuk/rails_db', 'https://github.com/igorkasyanchuk/rails_db', target: '_blank' %></p>
+    </div>
+    <div class="large-6 columns">
+      <ul class="inline-list right">
+        <li>
+        <%= link_to '/' do %>
+          <%= fa_icon 'home' %>
+          Home
+        <% end %>
+        </li>
+        <li>
+        <%= link_to rails_db.root_path do %>
+          <%= fa_icon 'list-ul' %>
+          Dashboard
+        <% end %>
+        </li>
+        <li>
+        <%= link_to rails_db.sql_path do %>
+          <%= fa_icon 'database' %>
+          SQL Editor
+        <% end %>
+      </li>
+      </ul>
+    </div>
+  </div>
+</div>

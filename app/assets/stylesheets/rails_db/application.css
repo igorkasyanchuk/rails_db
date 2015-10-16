@@ -1,0 +1,11 @@
+/*
+ *= require_self
+ *= require rails_db/foundation_and_overrides
+ *= require codemirror
+ *= require codemirror/themes/pastel-on-dark.css
+ *= require rails_db/app
+ *= require rails_db/sidebar
+ *= require font-awesome
+ */
+
+

@@ -1,0 +1,11 @@
+<h3>Tables</h3>
+<ul class="side-nav tables">
+  <% rails_db_tables.each do |table| %>
+    <li>
+      <%= link_to table_data_path(table) do %>
+        <%= fa_icon 'table'%>
+        <%= table %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

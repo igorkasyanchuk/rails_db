@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rails DB</title>
+  <%= stylesheet_link_tag    "rails_db/application", media: "all" %>
+  <%= javascript_include_tag "rails_db/application" %>
+  <%= javascript_include_tag "vendor/modernizr" %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <%= render 'rails_db/shared/header' %>
+  <div class="row">
+    <div class="large-9 push-3 columns">
+      <%= yield %>
+    </div>
+    <div id='sidebar' class="large-3 pull-9 columns">
+      <%= render 'rails_db/shared/sidebar' %>
+    </div>
+  </div>
+  <footer class="row">
+    <%= render 'rails_db/shared/footer' %>
+  </footer>
+</body>
