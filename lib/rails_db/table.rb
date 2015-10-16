@@ -1,3 +1,5 @@
+require 'csv'
+
 module RailsDb
 
   class Table
@@ -25,6 +27,19 @@ module RailsDb
       name
     end
 
-  end
+    def column_names
+      columns.collect(&:name)
+    end
+
+    def to_csv
+      CSV.generate do |csv|
+        csv << column_names
+        data.data.rows.each do |row|
+          csv << row
+        end
+      end
+    end
+
+  end # module
 
 end

@@ -4,11 +4,15 @@ module RailsDb
     class << self
 
       def instance
-        @@history ||= []
+        $history ||= []
       end
 
       def add(sql)
-        instance.push(sql)
+        instance.push(sql) unless last == sql
+      end
+
+      def last
+        history[0]
       end
 
       def remove(sql)

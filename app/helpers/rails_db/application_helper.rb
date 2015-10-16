@@ -6,6 +6,12 @@ module RailsDb
       ActiveRecord::Base.connection.tables.sort - ['schema_migrations']
     end
 
+    def title(str)
+      content_for :title do
+        raw("#{str}"[0].upcase + "#{str}"[1..-1])
+      end
+    end
+
     def paginate_table_entries(entries)
       return if entries.total_pages == 1
       prev_page_text = "#{fa_icon('arrow-left')} Previous".html_safe

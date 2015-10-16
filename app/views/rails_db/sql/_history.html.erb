@@ -1,8 +1,16 @@
 <div id="history_modal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-  <h2 id="modalTitle">History:</h2>
+  <h2 id="modalTitle">History</h2>
   <div class='scrollable sql_history_items'>
     <% RailsDb::History.history.each do |sql| %>
-      <p><%= link_to sql, sql_execute_path(sql: sql), method: :post %></p>
+      <p>
+        <%= link_to sql_execute_path(sql: sql), method: :post do %>
+          <%= fa_icon 'bars' %>
+          <%= sql %>
+        <% end %>
+      </p>
+    <% end %>
+    <% if RailsDb::History.history.empty? %>
+      Nothing yet.
     <% end %>
   </div>
   <a class="close-reveal-modal" aria-label="Close">&#215;</a>

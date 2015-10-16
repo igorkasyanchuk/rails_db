@@ -1,3 +1,5 @@
+<% title "'#{@table.name}'"%>
+
 <h2>Table: <%= @table.name %></h2>
 
 <div class='clear'></div>
@@ -5,9 +7,10 @@
 <hr/>
 
 <dl class="sub-nav">
-  <dd class="active"><%= link_to 'Records', table_data_path(@table) %></dd>
-  <dd><%= link_to 'Schema', table_path(@table) %></dd>
+  <dd class="active"><%= link_to raw("#{fa_icon('table')} Records"), table_data_path(@table) %></dd>
+  <dd><%= link_to raw("#{fa_icon('tasks')} Schema"), table_path(@table) %></dd>
   <dd><%= select_top_from_table(@table.name) %></dd>
+  <dd><%= link_to raw("#{fa_icon('file-excel-o')} Export"), table_csv_path(@table) %></dd>
 </dl>
 
 <div class='scrollable'>

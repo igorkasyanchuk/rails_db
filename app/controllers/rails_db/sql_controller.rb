@@ -12,5 +12,11 @@ module RailsDb
       render :index
     end
 
+    def csv
+      @sql = "#{params[:sql]}".strip
+      @sql_query = RailsDb::SqlQuery.new(@sql).execute
+      send_data(@sql_query.to_csv, :type => 'text/csv; charset=utf-8; header=present', :filename => "results.csv")
+    end
+
   end
 end

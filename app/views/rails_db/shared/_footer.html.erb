@@ -2,7 +2,7 @@
   <hr/>
   <div class="row">
     <div class="large-6 columns">
-      <p>© Rails DB  <%= fa_icon 'heart' %>  <%= link_to 'https://github.com/igorkasyanchuk/rails_db', 'https://github.com/igorkasyanchuk/rails_db', target: '_blank' %></p>
+      <p>© Rails DB  <span class='red'><%= fa_icon 'heart' %></span>  <%= link_to 'https://github.com/igorkasyanchuk/rails_db', 'https://github.com/igorkasyanchuk/rails_db', target: '_blank' %></p>
     </div>
     <div class="large-6 columns">
       <ul class="inline-list right">
@@ -12,12 +12,14 @@
           Home
         <% end %>
         </li>
+        <li>|</li>
         <li>
         <%= link_to rails_db.root_path do %>
           <%= fa_icon 'list-ul' %>
           Dashboard
         <% end %>
         </li>
+        <li>|</li>
         <li>
         <%= link_to rails_db.sql_path do %>
           <%= fa_icon 'database' %>

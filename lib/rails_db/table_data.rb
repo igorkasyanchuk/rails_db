@@ -19,7 +19,9 @@ module RailsDb
         if sort_column
           commands.push("ORDER BY #{sort_column} #{sort_order}")
         end
-        commands.push("LIMIT #{per_page} OFFSET #{offset}")
+        if per_page && offset
+          commands.push("LIMIT #{per_page} OFFSET #{offset}")
+        end
         executor = SqlExecutor.new(commands.join(' '))
         results, @time = executor.execute
         results

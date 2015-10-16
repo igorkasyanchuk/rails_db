@@ -29,5 +29,14 @@ module RailsDb
       self
     end
 
+    def to_csv
+      CSV.generate do |csv|
+        csv << data.columns
+        data.rows.each do |row|
+          csv << row
+        end
+      end
+    end
+
   end
 end

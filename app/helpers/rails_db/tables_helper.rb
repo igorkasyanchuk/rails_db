@@ -27,7 +27,7 @@ module RailsDb
     end
 
     def select_top_from_table(table)
-      link_to 'SQL Query', rails_db.sql_path(sql: "select * from #{table} limit 10")
+      link_to raw("#{fa_icon('database')} SQL Query"), rails_db.sql_path(sql: "select * from #{table} limit 10")
     end
 
   end

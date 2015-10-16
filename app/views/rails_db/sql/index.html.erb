@@ -1,3 +1,5 @@
+<% title "SQL Editor" %>
+
 <%= form_tag :sql_execute do %>
   <h3>Execute SQL</h3>
 
@@ -20,16 +22,16 @@
   <div class="row">
     <div class="large-11">
       <div class='panel execute_panel'>
-        <p><span class="radius secondary label">* be careful with your SQL. You may corrupt your DB. Make sure you have DB backup.</span></p>
-        <%= submit_tag 'Execute', class: 'button small' %>
+        <p><span class="radius secondary label">* be careful with your SQL. You may corrupt your DB. Make sure you have DB backup if doing modifications.</span></p>
+        <%= submit_tag raw("&rarr; Execute"), class: 'button small' %>
         &nbsp;
         &mdash;
         &nbsp;
-        <%= link_to 'Reset', :sql, data: {confirm: "Are you sure?"}, confirm: "Are you sure?" %>
+        <%= link_to raw("#{fa_icon('undo')} Reset"), :sql, data: {confirm: "Are you sure?"}, confirm: "Are you sure?" %>
         &nbsp;
         &mdash;
         &nbsp;
-        <a href="#" data-reveal-id="history_modal" id='history_modal_link'>History</a></span>
+        <a href="#" data-reveal-id="history_modal" id='history_modal_link'><%= fa_icon('bars') %> History</a></span>
         <%= render 'history' %>
       </div>
     </div>
