@@ -17,12 +17,13 @@ For now was tested only with Ruby 2.2 and Rails 4.2. But expected to work with o
 
 ## Install
 
-Add this to the development group in your Gemfile
+Add this to the development group in your `Gemfile`
 
-For all environments (be careful with production env):
+For all environments (be careful with production environment):
 
-        gem 'rails_db'
-
+```ruby
+  gem 'rails_db'
+```
 
 Or only for development:
 
