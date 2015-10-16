@@ -39,12 +39,12 @@ Visit `http://localhost:3000/rails/db` and you will see your database tables and
 ### Schema
 
 [<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/accounts_schema.png?token=AAArXU_ChN3xNN2MajLy2Tv98ij6XK4Pks5WKlT3wA%3D%3D"
-/>]/>](https://rails-db.herokuapp.com/rails/db/)
+/>](https://rails-db.herokuapp.com/rails/db/)
 
 ### SQL Editor
 
 [<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/execute_sql.png?token=AAArXf26vwsPwvV2MhgxWUepGb0tT6g4ks5WKlUJwA%3D%3D"
-/>]/>](https://rails-db.herokuapp.com/rails/db/)
+/>](https://rails-db.herokuapp.com/rails/db/)
 
 ## Contributing
 
