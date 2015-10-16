@@ -1,7 +1,7 @@
 # Rails DB
 
-[<img src="https://i.ytimg.com/vi/978DlHvufSY/hqdefault.jpg"
-/>](https://youtu.be/978DlHvufSY)
+[<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/account_table.png"
+/>](https://rails-db.herokuapp.com/rails/db/)
 
 Quick way to inspect your Rails database, see content of tables, export them to CSV, EXPLAIN SQL and run SQL queries.
 
@@ -9,4 +9,47 @@ Demo available on: https://rails-db.herokuapp.com/rails/db/
 
 Video Demo: https://www.youtube.com/watch?v=ZBY9YPQdbx8
 
-## Instalation
+## Requirements
+
+For now was tested only with Ruby 2.2 and Rails 4.2. But expected to work with older versions too.
+
+## Install
+
+Add this to the development group in your Gemfile
+
+For all environments:
+
+        gem 'rails_db'
+
+
+Or only for development:
+
+```ruby
+  group :development do
+    gem 'rails_db'
+  end
+```
+
+Run `bundle install`
+
+Visit `http://localhost:3000/rails/db` and you will see your database tables and SQL editors.
+
+
+## Contributing
+
+- Fork it
+- Create your feature branch (git checkout -b my-new-feature)
+- Commit your changes (git commit -am 'Added some feature')
+- Push to the branch (git push origin my-new-feature)
+- Create new Pull Request
+
+## Plans
+
+* add specs
+* verify all environments
+* add DB schema visualization
+* add import
+
+## License
+
+This project uses MIT-LICENSE.
