@@ -28,7 +28,8 @@ group :assets do
   gem 'uglifier'
 end
 
-
+gem 'pg'
+gem 'mysql2'
 gem 'populator'
 gem 'faker'
 

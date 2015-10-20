@@ -3,7 +3,7 @@ module RailsDb
     include ::FontAwesome::Rails::IconHelper
 
     def rails_db_tables
-      ActiveRecord::Base.connection.tables.sort - ['schema_migrations']
+      Database.tables
     end
 
     def title(str)

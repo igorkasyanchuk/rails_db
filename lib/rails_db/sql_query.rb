@@ -17,7 +17,7 @@ module RailsDb
     end
 
     def load_data
-      @data ||= SqlQueryData.new(self).load_data
+      @data    ||= SqlQueryData.new(self).load_data
     end
 
     def execute
