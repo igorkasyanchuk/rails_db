@@ -2,20 +2,39 @@ module RailsDb
   class SqlController < RailsDb::ApplicationController
 
     def index
-      @sql = "#{params[:sql]}".strip
-      @sql_query = RailsDb::SqlQuery.new(@sql).execute
+      load_query
     end
 
     def execute
-      @sql = "#{params[:sql]}".strip
-      @sql_query = RailsDb::SqlQuery.new(@sql).execute
+      load_query
       render :index
     end
 
     def csv
+      load_query
+      send_data(@sql_query.to_csv, :type => 'text/csv; charset=utf-8; header=present', :filename => "results.csv")
+    end
+
+    def import
+    end
+
+    def import_start
+      @importer = SqlImport.new(params[:file])
+      result    = @importer.import
+      if result.ok?
+        flash[:notice] = 'File was successfully imported'
+      else
+        flash[:alert] = "Error occured during import: #{result.error.message}"
+      end
+      render :import
+    end
+
+
+    private
+
+    def load_query
       @sql = "#{params[:sql]}".strip
       @sql_query = RailsDb::SqlQuery.new(@sql).execute
-      send_data(@sql_query.to_csv, :type => 'text/csv; charset=utf-8; header=present', :filename => "results.csv")
     end
 
   end

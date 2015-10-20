@@ -22,14 +22,13 @@ module RailsDb
         if per_page && offset
           commands.push("LIMIT #{per_page} OFFSET #{offset}")
         end
-        executor = SqlExecutor.new(commands.join(' '))
-        results, @time = executor.execute
+        results, @time = Database.adapter.exec_query(commands.join(' '))
         results
       end
     end
 
     def count
-      connection.exec_query("SELECT COUNT(*) FROM #{table.name}").rows.flatten.last.to_i
+      Database.adapter.exec_query("SELECT COUNT(*) FROM #{table.name}")[0].rows.flatten.last.to_i
     end
 
   end

@@ -10,7 +10,7 @@ module RailsDb
     end
 
     def load_data
-      result, @time = SqlExecutor.new(sql).execute
+      result, @time = Database.adapter.exec_query(sql)
       @columns      = result.columns
       @rows         = result.rows
       self

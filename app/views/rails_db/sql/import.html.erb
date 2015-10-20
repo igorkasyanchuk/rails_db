@@ -1,0 +1,22 @@
+<% title "SQL Editor" %>
+
+<%= form_tag :sql_start_import, multipart: true do %>
+  <h3>Import SQL File</h3>
+
+  <div class='row'>
+    <div class="large-11">
+      <label>
+        File
+        <%= file_field_tag :file %>
+      </label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-11">
+      <p><span class="radius secondary label">* <%= RailsDb::Adapters::BaseAdapter::MULTI_STATEMENT_HELP_TEXT %></span></p>
+      <%= submit_tag raw("&rarr; Import"), class: 'button small' %>
+    </div>
+  </div>
+
+<% end %>
