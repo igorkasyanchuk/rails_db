@@ -16,7 +16,22 @@
     <div class="large-11">
       <p><span class="radius secondary label">* <%= RailsDb::Adapters::BaseAdapter::MULTI_STATEMENT_HELP_TEXT %></span></p>
       <%= submit_tag raw("&rarr; Import"), class: 'button small' %>
+      &nbsp;
+      &mdash;
+      &nbsp;
+      <a href="#" data-reveal-id="sample_modal" id='sample_modal_link'><%= fa_icon('bars') %> Sample</a></span>
+      <%= render 'import_sample' %>
     </div>
   </div>
+
+  <% if @importer && @importer.result.ok? %>
+    <div class='row'>
+      <div class="large-11">
+        <h4>Results</h4>
+        <p>
+          <span class="radius success label">File was successfully imported</span>
+          <span class="radius info label">Time: <%= @importer.time %> seconds</span>
+        </p>
+  <% end %>
 
 <% end %>

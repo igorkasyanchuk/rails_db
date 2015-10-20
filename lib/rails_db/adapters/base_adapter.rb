@@ -4,10 +4,12 @@ module RailsDb
     class BaseAdapter
       extend ::RailsDb::Connection
 
-      MULTI_STATEMENT_HELP_TEXT = "You can import only file with SQL statements separated by ';'. Each new statement must start from new line."
+      MULTI_STATEMENT_HELP_TEXT = "EXPERIMENTAL: You can import only file with SQL statements separated by ';'. Each new statement must start from new line."
 
       def self.execute(sql)
+        t0 = Time.now
         connection.execute(sql)
+        Time.now - t0
       end
 
       def self.exec_query(sql, log = true)

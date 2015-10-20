@@ -1,0 +1,19 @@
+<div id="sample_modal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <h2 id="modalTitle">Sample</h2>
+  <div class='scrollable sql_history_items'>
+    <pre>
+      update users set email = 'e1@e.com' where id = 5;
+      update users set email = 'e2@e.com' where id = 6;
+      update users set email = 'e3@e.com' where id = 7;
+
+      CREATE TABLE MyGuests (
+        id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        firstname VARCHAR(30) NOT NULL,
+        lastname VARCHAR(30) NOT NULL,
+        email VARCHAR(50),
+        reg_date TIMESTAMP
+      );
+    </pre>
+  </div>
+  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>

@@ -2,7 +2,7 @@ module RailsDb
   class SqlImport
     include Connection
 
-    attr_reader :time
+    attr_reader :time, :result
 
     def initialize(file)
       @file = file
@@ -16,10 +16,10 @@ module RailsDb
 
     def import
       valid?
-      result, @time = Database.adapter.execute(@file.read)
-      Result.ok
+      @time = Database.adapter.execute(@file.read)
+      @result = Result.ok
     rescue RailsDbError, ActiveRecord::StatementInvalid => e
-      Result.new(e)
+      @result = Result.new(e)
     end
 
   end
