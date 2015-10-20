@@ -15,6 +15,21 @@ Video Demo: https://www.youtube.com/watch?v=ZBY9YPQdbx8
 
 For now was tested only with Ruby 2.2 and Rails 4.2. But expected to work with older versions too.
 
+## Main Features
+
+* view content of DB tables
+* sort content of DB tables
+* execute SQL queries
+* filter tables for easier navigation
+* use history of you SQL queries
+* see EXPLAIN results for your queries
+* export data to CSV
+* import SQL files
+* visualize SQL schema (future)
+* data-tables inside your app (future)
+* ajax-ify Rails DB (future)
+* CRUD for table records (future)
+
 ## Install
 
 Add this to the development group in your `Gemfile`
