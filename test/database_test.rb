@@ -5,6 +5,10 @@ class DatabaseTest < ActiveSupport::TestCase
     assert_equal RailsDb::Database.tables, ["accounts", "comments", "contacts", "projects", "users"]
   end
 
+  test "accessible tables" do
+    assert_equal RailsDb::Database.accessible_tables, ["accounts", "comments", "contacts", "projects", "users"]
+  end
+
   test 'adapter' do
     assert_equal RailsDb::Database.adapter.to_s, "RailsDb::Adapters::Sqlite"
   end

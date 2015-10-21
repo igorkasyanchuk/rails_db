@@ -25,10 +25,14 @@ For now was tested only with Ruby 2.2 and Rails 4.2. But expected to work with o
 * see EXPLAIN results for your queries
 * export data to CSV
 * import SQL files
+* expand/collapse sidebar
+* added HTTP_BASIC auth for Rails DB
+* ability to turn on/off using initializer
 * visualize SQL schema (future)
 * data-tables inside your app (future)
 * ajax-ify Rails DB (future)
 * CRUD for table records (future)
+* white/black list of tables (future)
 
 ## Install
 

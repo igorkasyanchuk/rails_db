@@ -1,0 +1,8 @@
+Description:
+    Generate configuration file.
+
+Example:
+    rails generate rails_db initializer
+
+    This will create:
+        config/rails_db.rb
