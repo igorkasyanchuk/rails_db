@@ -2,7 +2,7 @@ module RailsDb
   class TablesController < RailsDb::ApplicationController
 
     def index
-      @tables = ActiveRecord::Base.connection.tables.sort
+      @tables = RailsDb::Database.accessible_tables
     end
 
     def show

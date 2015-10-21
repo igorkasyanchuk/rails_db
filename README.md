@@ -56,6 +56,21 @@ Run `bundle install`
 
 Visit **`http://localhost:3000/rails/db`** and you will see your database tables and SQL editors.
 
+## Customization
+If you want to customize gem run in console:
+
+    rails g rails_db initializer
+
+If will create file config/initializers/rails_db.rb.
+
+### Options
+*   **enabled** - enable of disable gem (by default this gem is enabled only in development mode).
+*   **http_basic_authentication_enabled** - Enable HTTP_BASIC authentication.
+*   **http_basic_authentication_user_name** - HTTP_BASIC authentication user name.
+*   **http_basic_authentication_password** - HTTP_BASIC authentication password.
+*   **black_list_tables** - black list for tables (hide tables from sidebar).
+*   **white_list_tables** - black list for tables (show only these tables in sidebar).
+
 ## Samples
 
 ### Schema

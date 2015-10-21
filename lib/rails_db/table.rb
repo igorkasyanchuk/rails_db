@@ -11,6 +11,7 @@ module RailsDb
     delegate :paginate, :to => :data
 
     def initialize(table_name)
+      throw 'Access Denied' unless RailsDb::Database.accessible_tables.include?(table_name)
       @name = table_name
       @data = RailsDb::TableData.new(self)
     end
