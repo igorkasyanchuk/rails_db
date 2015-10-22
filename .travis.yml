@@ -35,8 +35,8 @@ script:
   - RAILS_ENV=test bundle exec rake db:migrate --trace
   - bundle exec rake test
 
-matrix:
-  fast_finish: true
+# matrix:
+#   fast_finish: true
 
 notifications:
   email: false
