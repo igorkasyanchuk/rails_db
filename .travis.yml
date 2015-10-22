@@ -2,18 +2,23 @@ language: ruby
 
 rvm:
   - "1.9.3"
-  - "2.0"
-  - "2.1"
+#  - "2.0"
+#  - "2.1"
   - "2.2"
-  - ruby-head
+#  - ruby-head
 
 gemfile:
   - gemfiles/rails_4_2.gemfile
-  - gemfiles/rails_4_1.gemfile
-  - gemfiles/rails_4_0.gemfile
-  - gemfiles/rails_3_2.gemfile
+  # - gemfiles/rails_4_1.gemfile
+  # - gemfiles/rails_4_0.gemfile
+  # - gemfiles/rails_3_2.gemfile
 
 before_install: gem install bundler
+
+before_script:
+  - cp config/database.travis.yml config/database.yml
+  - mysql -e 'create database rails_db;'
+  - psql -c 'create database rails_db;' -U postgres
 
 cache: bundler
 
@@ -34,3 +39,6 @@ matrix:
   #   - rvm: 1.9.3
   #     gemfile: gemfiles/active_record_edge.gemfile
   fast_finish: true
+
+notifications:
+  email: false

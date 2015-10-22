@@ -16,3 +16,19 @@ test:
 production:
   <<: *default
   database: db/production.sqlite3
+
+sqlite:
+  adapter: sqlite3
+  database: ":memory:"
+  timeout: 500
+mysql:
+
+  adapter: mysql2
+  database: rails_db
+  username:
+  encoding: utf8
+
+postgres:
+  adapter: postgresql
+  database: rails_db
+  username: postgres
