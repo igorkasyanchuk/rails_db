@@ -1,5 +1,7 @@
 # Rails DB
 
+Please share this gem with your friends to get more feedback. If you have ideas - please create an issue.
+
 [![Build Status](https://travis-ci.org/igorkasyanchuk/rails_db.svg)](https://travis-ci.org/igorkasyanchuk/rails_db)
 [![Gem Version](https://badge.fury.io/rb/rails_db.svg)](https://badge.fury.io/rb/rails_db)
 
