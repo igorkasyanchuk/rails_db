@@ -40,6 +40,8 @@ matrix:
       gemfile: gemfiles/rails_3_2.gemfile
     - rvm: 1.9.3
       gemfile: gemfiles/rails_3_2.gemfile
+    - rvm: "2.2"
+      gemfile: gemfiles/rails_3_2.gemfile
 
 notifications:
   email: false

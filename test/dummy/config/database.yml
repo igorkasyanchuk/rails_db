@@ -23,9 +23,11 @@ defaults: &defaults
 
 development:
   <<: *defaults
+  database: db/rails_db_dev.sqlite3
 
 test:
   <<: *defaults
 
 production:
   <<: *defaults
+  database: db/rails_db_dev.sqlite3
