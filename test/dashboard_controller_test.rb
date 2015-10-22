@@ -13,7 +13,7 @@ class DashboardControllerTest < ActionDispatch::IntegrationTest
 
     get '/rails/db/tables/users'
     assert_equal 200, status
-    assert_match('varchar', response.body)
+    assert_match('age', response.body)
 
     get '/rails/db/tables/users/data'
     assert_equal 200, status
