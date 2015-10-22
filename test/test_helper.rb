@@ -19,3 +19,7 @@ if ActiveSupport::TestCase.respond_to?(:fixture_path=)
   ActionDispatch::IntegrationTest.fixture_path = ActiveSupport::TestCase.fixture_path
   ActiveSupport::TestCase.fixtures :all
 end
+
+def clean_db
+  ActiveRecord::Base.connection.tables.map(&:classify).map{|name| name.constantize if Object.const_defined?(name)}.compact.each(&:delete_all)
+end

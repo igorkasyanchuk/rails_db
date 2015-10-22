@@ -11,6 +11,10 @@ module RailsDb
         Time.now - t0
       end
 
+      def self.adapter_name
+        'sqlite'
+      end
+
     end
 
   end

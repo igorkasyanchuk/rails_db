@@ -3,6 +3,7 @@ require_relative 'test_helper'
 class TableTest < ActiveSupport::TestCase
 
   def setup
+    clean_db
     @users_table = RailsDb::Table.new('users')
   end
 

@@ -2,7 +2,7 @@ update users set email = 'e1@e.com' where id = 1;
 update users set email = 'e2@e.com' where id = 2;
 update users set email = 'e3@e.com' where id = 3;
 
-CREATE TABLE films1 (
+CREATE TABLE t (
     code        char(5) PRIMARY KEY,
     title       varchar(40) NOT NULL,
     did         integer NOT NULL,

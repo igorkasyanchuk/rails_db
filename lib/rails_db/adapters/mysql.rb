@@ -9,6 +9,10 @@ module RailsDb
         end
       end
 
+      def self.adapter_name
+        'mysql'
+      end
+
     end
 
   end
