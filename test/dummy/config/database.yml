@@ -1,34 +1,31 @@
-default: &default
+sqlite: &sqlite
   adapter: sqlite3
+  database: db/rails_db.sqlite3
+
+mysql: &mysql
+  adapter: mysql2
+  username: root
+  password:
+  database: rails_db
+
+postgresql: &postgresql
+  adapter: postgresql
+  username: postgres
+  password:
+  database: rails_db
+  min_messages: ERROR
+
+defaults: &defaults
   pool: 5
   timeout: 5000
-  database: db/development.sqlite3
+  host: localhost
+  <<: *<%= ENV['DB'] || "sqlite" %>
 
 development:
-  <<: *default
+  <<: *defaults
 
 test:
-  adapter: sqlite3
-  pool: 5
-  timeout: 5000
-  database: db/test.sqlite3
+  <<: *defaults
 
 production:
-  <<: *default
-  database: db/production.sqlite3
-
-sqlite:
-  adapter: sqlite3
-  database: ":memory:"
-  timeout: 500
-
-mysql:
-  adapter: mysql2
-  database: rails_db
-  username:
-  encoding: utf8
-
-postgres:
-  adapter: postgresql
-  database: rails_db
-  username: postgres
+  <<: *defaults
