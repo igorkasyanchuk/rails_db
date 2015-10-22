@@ -8,6 +8,8 @@ ActiveRecord::Migrator.migrations_paths = [File.expand_path("../../test/dummy/db
 ActiveRecord::Migrator.migrations_paths << File.expand_path('../../db/migrate', __FILE__)
 require "rails/test_help"
 
+ActiveSupport::TestCase.use_transactional_fixtures = false
+
 puts "USING DB: #{RailsDb::Database.adapter.adapter_name}"
 
 # Filter out Minitest backtrace while allowing backtrace from other libraries
