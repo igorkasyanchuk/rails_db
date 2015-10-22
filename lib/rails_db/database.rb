@@ -18,7 +18,6 @@ module RailsDb
     end
 
     def self.adapter
-      puts connection.class.to_s
       case connection.class.to_s
       when /Mysql/
         RailsDb::Adapters::Mysql

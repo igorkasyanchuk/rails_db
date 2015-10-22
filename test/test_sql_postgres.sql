@@ -1,6 +1,6 @@
-update users set email = 'e1@e.com' where id = 1;
-update users set email = 'e2@e.com' where id = 2;
-update users set email = 'e3@e.com' where id = 3;
+update users set age = 1 where id = 5;
+update users set age = 2 where id = 6;
+update users set age = 3 where id = 7;
 
 CREATE TABLE t (
     code        char(5) PRIMARY KEY,
