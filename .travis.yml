@@ -18,10 +18,12 @@ before_install: gem install bundler
 before_script:
   - cp config/database.travis.yml config/database.yml
   - cp config/database.travis.yml test/dummy/config/database.yml
-  - mysql -e 'drop database if exists rails_db;'
-  - psql -c 'drop database if exists rails_db;' -u postgres
-  - mysql -e 'create database rails_db;'
+
+  - psql -c 'DROP DATABASE IF EXISTS rails_db;' -u postgres
   - psql -c 'create database rails_db;' -U postgres
+
+  - mysql -e 'drop database if exists rails_db;'
+  - mysql -e 'create database rails_db;'
 
 cache: bundler
 
