@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 4.2.0'
+gem 'rails', '~> 4.0.0'
 
 # Declare your gem's dependencies in rails_db.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
@@ -40,6 +40,8 @@ if RUBY_VERSION > "2.1.0"
 else
   gem 'sqlite3', '1.3.8'
 end
+
+gem 'i18n'
 
 group :test do
   gem "rspec"
