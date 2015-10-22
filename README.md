@@ -67,6 +67,22 @@ Visit **`http://localhost:3000/rails/db`** and you will see your database tables
 
 Install & visit **`http://localhost:3000/rails/db`** to see it in action.
 
+## Requiring authorization
+
+You can add custom authorization code to check if the user can access Rails DB. To do that, create a ruby file in `config/initializers` that adds the authorization check by passing a block to `RailsDb.require_authorization`. The block code will be executed with `RailsDb::ApplicationController` context.
+
+
+You should return a falsy value or render something if the user is not authorized to use Rails DB. Check the following example:
+
+**config/initializers/rails_db_require_authorization.rb**
+```ruby
+RailsDb.require_authorization do
+  authenticate_or_request_with_http_basic 'Rails DB authentication' do |name, password|
+    name == 'username' && password == 'secret'
+  end
+end
+```
+
 ## Contributing
 
 - Fork it
