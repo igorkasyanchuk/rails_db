@@ -19,6 +19,16 @@ cache: bundler
 
 bundler_args: --without development --jobs=3 --retry=3 --path=../vendor/bundle
 
+env:
+  - DB=sqlite
+  - DB=mysql
+  - DB=postgresql
+
+script:
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare
+  - bundle exec rake test
+
 matrix:
   # exclude:
   #   - rvm: 1.9.3
