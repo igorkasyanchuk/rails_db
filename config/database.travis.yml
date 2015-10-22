@@ -1,7 +1,6 @@
 sqlite: &sqlite
   adapter: sqlite3
-  database: ":memory:"
-  timeout: 500
+  database: db/rails_db.sqlite3
 
 mysql: &mysql
   adapter: mysql2

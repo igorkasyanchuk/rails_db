@@ -1,7 +1,7 @@
 language: ruby
 
 rvm:
-  - "1.9.3"
+#- "1.9.3"
 #  - "2.0"
 #  - "2.1"
   - "2.2"
@@ -20,7 +20,8 @@ before_script:
   - cp config/database.travis.yml test/dummy/config/database.yml
   - sh -c "if [ '$DB' = 'pgsql' ]; then psql -c 'DROP DATABASE IF EXISTS rails_db;' -U postgres; fi"
   - sh -c "if [ '$DB' = 'pgsql' ]; then psql -c 'create database rails_db;' -U postgres; fi"
-  - mysql -e "drop database if exists rails_db; create database IF NOT EXISTS rails_db;" -uroot
+  - mysql -e "drop database if exists rails_db;" -uroot
+  - mysql -e "create database IF NOT EXISTS rails_db;" -uroot
 
 cache: bundler
 
