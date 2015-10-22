@@ -26,6 +26,10 @@ For now was tested only with Ruby 2.2 and Rails 4.2. But expected to work with o
 * see EXPLAIN results for your queries
 * export data to CSV
 * import SQL files
+* expand/collapse sidebar
+* added HTTP_BASIC auth for Rails DB
+* ability to turn on/off using initializer
+* white/black list of tables
 * visualize SQL schema (future)
 * data-tables inside your app (future)
 * ajax-ify Rails DB (future)
@@ -52,6 +56,21 @@ Or only for development:
 Run `bundle install`
 
 Visit **`http://localhost:3000/rails/db`** and you will see your database tables and SQL editors.
+
+## Customization
+If you want to customize gem run in console:
+
+    rails g rails_db initializer
+
+If will create file config/initializers/rails_db.rb.
+
+### Options
+*   **enabled** - enable of disable gem (by default this gem is enabled only in development mode).
+*   **http_basic_authentication_enabled** - Enable HTTP_BASIC authentication.
+*   **http_basic_authentication_user_name** - HTTP_BASIC authentication user name.
+*   **http_basic_authentication_password** - HTTP_BASIC authentication password.
+*   **black_list_tables** - black list for tables (hide tables from sidebar).
+*   **white_list_tables** - black list for tables (show only these tables in sidebar).
 
 ## Samples
 

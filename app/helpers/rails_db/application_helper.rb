@@ -3,7 +3,28 @@ module RailsDb
     include ::FontAwesome::Rails::IconHelper
 
     def rails_db_tables
-      Database.tables
+      RailsDb::Database.accessible_tables
+    end
+
+    def sidebar_classes
+      if show_sidebar?
+        'large-3 pull-9 columns'
+      else
+        'large-3 pull-9 columns hide'
+      end
+    end
+
+    def main_content_classes
+      if show_sidebar?
+        'large-9 push-3 columns collapsed'
+      else
+        'large-12 push-0 columns expanded'
+      end
+    end
+
+    def show_sidebar?
+      return true if controller_name == 'dashboard' && action_name == 'index'
+      cookies['sidebar_visible'] == 'true'
     end
 
     def title(str)

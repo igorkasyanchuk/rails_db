@@ -11,16 +11,20 @@
 
 <body>
   <%= display_flash_messages %>
-  <%= render 'rails_db/shared/header' %>
-  <div class="row">
-    <div class="large-9 push-3 columns">
-      <%= yield %>
+  <% if RailsDb.enabled %>
+    <%= render 'rails_db/shared/header' %>
+    <div class="row">
+      <div id='main_content' class="<%= main_content_classes %>">
+        <%= yield %>
+      </div>
+      <div id='sidebar' class="<%= sidebar_classes %>">
+        <%= render 'rails_db/shared/sidebar' %>
+      </div>
     </div>
-    <div id='sidebar' class="large-3 pull-9 columns">
-      <%= render 'rails_db/shared/sidebar' %>
-    </div>
-  </div>
-  <footer class="row">
-    <%= render 'rails_db/shared/footer' %>
-  </footer>
+    <footer class="row">
+      <%= render 'rails_db/shared/footer' %>
+    </footer>
+  <% else %>
+    <p>RailsDB is disabled. Please enable it in config/initializers/rails_db.rb</p>
+  <% end %>
 </body>

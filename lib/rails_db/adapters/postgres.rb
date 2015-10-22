@@ -3,6 +3,10 @@ module RailsDb
 
     class Postgres < BaseAdapter
 
+      def self.adapter_name
+        'postgres'
+      end
+
     end
 
   end

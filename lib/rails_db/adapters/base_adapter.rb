@@ -20,6 +20,10 @@ module RailsDb
         [results, execution_time]
       end
 
+      def self.adapter_name
+        'base'
+      end
+
     end
 
   end

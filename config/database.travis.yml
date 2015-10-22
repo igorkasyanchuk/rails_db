@@ -19,15 +19,13 @@ defaults: &defaults
   pool: 5
   timeout: 5000
   host: localhost
-  <<: *<%= ENV['DB'] || "sqlite" %>
+  <<: *<%= ENV['DB'] || "postgresql" %>
 
 development:
   <<: *defaults
-  database: db/rails_db_dev.sqlite3
 
 test:
   <<: *defaults
 
 production:
   <<: *defaults
-  database: db/rails_db_dev.sqlite3

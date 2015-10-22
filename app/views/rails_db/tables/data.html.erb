@@ -7,6 +7,7 @@
 <hr/>
 
 <dl class="sub-nav">
+  <dd><%= render '/rails_db/shared/exp_col' %></dd>
   <dd class="active"><%= link_to raw("#{fa_icon('table')} Records"), table_data_path(@table) %></dd>
   <dd><%= link_to raw("#{fa_icon('tasks')} Schema"), table_path(@table) %></dd>
   <dd><%= select_top_from_table(@table.name) %></dd>

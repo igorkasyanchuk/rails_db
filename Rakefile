@@ -21,7 +21,6 @@ load 'rails/tasks/engine.rake'
 load 'rails/tasks/statistics.rake'
 
 
-
 Bundler::GemHelper.install_tasks
 
 require 'rake/testtask'
@@ -29,7 +28,7 @@ require 'rake/testtask'
 Rake::TestTask.new(:test) do |t|
   t.libs << 'lib'
   t.libs << 'test'
-  t.pattern = '**/*_test.rb'
+  t.pattern = '*/*_test.rb'
   t.verbose = false
 end
 

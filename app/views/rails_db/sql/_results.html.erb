@@ -1,47 +1,44 @@
 <% if sql_query.data.count > 0 %>
-  <div class='row'>
-    <div class="large-11">
-      <h4>Results</h4>
-      <p>
-        <span class="radius success label">Total: <%= pluralize sql_query.data.count, 'record' %></span>
-        <span class="radius info label">Time: <%= sql_query.data.time %> seconds</span>
-        <span class="radius secondary label"><a href="#" data-reveal-id="explain_modal" id='explain_modal_link'>Explain</a></span>
-        <span class="radius warning label"><%= link_to raw("#{fa_icon('file-excel-o')} Export"), sql_csv_path(sql: sql), method: :post %></span>
-      </p>
-      <hr>
-      <%= render 'explain', sql_query: sql_query, sql: sql %>
-      <div class='scrollable'>
-        <table>
-          <thead>
+  <div class="large-11">
+    <h4>Results</h4>
+    <p>
+      <span class="radius success label">Total: <%= pluralize sql_query.data.count, 'record' %></span>
+      <span class="radius info label">Time: <%= sql_query.data.time %> seconds</span>
+      <span class="radius secondary label"><a href="#" data-reveal-id="explain_modal" id='explain_modal_link'>Explain</a></span>
+      <span class="radius warning label"><%= link_to raw("#{fa_icon('file-excel-o')} Export"), sql_csv_path(sql: sql), method: :post %></span>
+    </p>
+    <hr>
+    <%= render 'explain', sql_query: sql_query, sql: sql %>
+    <div class='scrollable'>
+      <table>
+        <thead>
+          <tr>
+            <% sql_query.data.columns.each do |column| %>
+              <th><%= titleize_column(column) %></th>
+            <% end %>
+          </tr>
+        </thead>
+        <tbody>
+          <% sql_query.data.rows.each do |row| %>
+            <tr>
+              <% row.each do |item| %>
+                <td class='query_result'><%= item %></td>
+              <% end %>
+            </tr>
+          <% end %>
+        </tbody>
+        <% if sql_query.data.count > 10 %>
+          <tfoot>
             <tr>
               <% sql_query.data.columns.each do |column| %>
                 <th><%= titleize_column(column) %></th>
               <% end %>
             </tr>
-          </thead>
-          <tbody>
-            <% sql_query.data.rows.each do |row| %>
-              <tr>
-                <% row.each do |item| %>
-                  <td class='query_result'><%= item %></td>
-                <% end %>
-              </tr>
-            <% end %>
-          </tbody>
-          <% if sql_query.data.count > 10 %>
-            <tfoot>
-              <tr>
-                <% sql_query.data.columns.each do |column| %>
-                  <th><%= titleize_column(column) %></th>
-                <% end %>
-              </tr>
-            </tfoot>
-          <% end %>
-        </table>
-      </div>
+          </tfoot>
+        <% end %>
+      </table>
     </div>
   </div>
-
 <% else %>
   <p>
     <span class="radius success label">SQL command successfully executed</span>

@@ -65,3 +65,26 @@ table {
 .warning.label a {
   color: white;
 }
+
+.expanded {
+  .collapse {
+    display: inline;
+  }
+  .expand {
+    display: none;
+  }
+}
+
+.collapsed {
+  .collapse {
+    display: none;
+  }
+  .expand {
+    display: inline;
+  }
+}
+
+.sql_exp_col {
+  padding-top: 8px;
+  padding-left: 26px;
+}
