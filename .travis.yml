@@ -20,7 +20,7 @@ before_script:
   - cp config/database.travis.yml test/dummy/config/database.yml
   - sh -c "if [ '$DB' = 'pgsql' ]; then psql -c 'DROP DATABASE IF EXISTS rails_db;' -U postgres; fi"
   - sh -c "if [ '$DB' = 'pgsql' ]; then psql -c 'create database rails_db;' -U postgres; fi"
-  - sh -c "if [ '$DB' = 'mysql' ]; then mysql -e 'create database IF NOT EXISTS rails_db; fi"
+  - mysql -e "drop database if exists rails_db; create database IF NOT EXISTS rails_db;" -uroot
 
 cache: bundler
 
