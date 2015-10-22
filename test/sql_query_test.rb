@@ -7,6 +7,7 @@ class DatabaseTest < ActiveSupport::TestCase
   end
 
   test "query" do
+    User.delete_all
     User.create(name: 'Igor')
     query = RailsDb::SqlQuery.new('select count(*) as users_count from users')
     query.execute
