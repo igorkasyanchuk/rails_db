@@ -12,7 +12,7 @@ module RailsDb
 
     def csv
       load_query
-      send_data(@sql_query.to_csv, :type => 'text/csv; charset=utf-8; header=present', :filename => "results.csv")
+      send_data(@sql_query.to_csv, type: 'text/csv; charset=utf-8; header=present', filename: 'results.csv')
     end
 
     def import
@@ -24,7 +24,7 @@ module RailsDb
       if result.ok?
         flash[:notice] = 'File was successfully imported'
       else
-        flash[:alert] = "Error occured during import: #{result.error.message}"
+        flash[:alert] = "Error occurred during import: #{result.error.message}"
       end
       render :import
     end
