@@ -40,11 +40,11 @@ module RailsDb
 
       html = '<div class="pagination">'
       if entries.previous_page
-        html << link_to(prev_page_text, params.merge({:page => entries.previous_page}), {class: 'page'})
+        html << link_to(prev_page_text, params.merge({ page: entries.previous_page }), { class: 'page' })
       end
       html << "#{page_links_for_pagination(entries)}"
       if entries.next_page
-        html << link_to(next_page_text, params.merge({:page => entries.next_page}), {class: 'page'})
+        html << link_to(next_page_text, params.merge({ page: entries.next_page }), { class: 'page' })
       end
       html << '</div>'
 
@@ -59,11 +59,11 @@ module RailsDb
 
       pages.each_with_index do |page,index|
         if page == entries.current_page
-          links << content_tag(:b, page, {class: 'page current'})
+          links << content_tag(:b, page, { class: 'page current' })
         else
-          links << link_to(page, params.merge({:page => page}), {class: 'page'})
+          links << link_to(page, params.merge({ page: page}), { class: 'page' })
         end
-        links << " ... " if page != pages.last && (page + 1) != pages[index+1]
+        links << ' ... ' if page != pages.last && (page + 1) != pages[index+1]
       end
 
       links.join(' ')
