@@ -1,0 +1,68 @@
+<% title "'#{@table.name}'"%>
+
+<h2>Table: <%= @table.name %></h2>
+
+<div class='clear'></div>
+
+<hr/>
+
+<dl class="sub-nav">
+  <dd><%= render '/rails_db/shared/exp_col' %></dd>
+  <dd class="active"><%= link_to raw("#{fa_icon('table')} Records"), table_data_path(@table), remote: true %></dd>
+  <dd><%= link_to raw("#{fa_icon('tasks')} Schema"), table_path(@table), remote: true %></dd>
+  <dd><%= select_top_from_table(@table.name) %></dd>
+  <dd><%= link_to raw("#{fa_icon('file-excel-o')} Export"), table_csv_path(@table) %></dd>
+</dl>
+
+<div class='scrollable'>
+  <table>
+    <thead>
+      <tr>
+        <% @table.columns.each do |column| %>
+          <th><%= sortable column.name %></th>
+        <% end %>
+      </tr>
+    </thead>
+    <% n = 0 %>
+    <tbody>
+      <% @table.data.each do |record| %>
+        <tr>
+          <% @table.columns.each do |column| %>
+            <% name = column.name %>
+            <td class="<%= name %> <%= column.type %>"><%= format_value(column, record[name]) %></td>
+          <% end %>
+        </tr>
+      <% end %>
+      <% n += 1 %>
+    </tbody>
+    <% if n > 10 %>
+      <tfoot>
+        <tr>
+          <% @table.columns.each do |column| %>
+            <th><%= sortable column.name %></th>
+          <% end %>
+        </tr>
+      </tfoot>
+    <% end %>
+  </table>
+</div>
+
+<p>
+  <span class="radius success label">Total: <%= pluralize @table.data.total_entries, 'record' %></span>
+  <span class="radius info label">Time: <%= @table.data.time %> seconds</span>
+</p>
+
+<div class='left'>
+  <%= form_tag nil, method: :get, remote: true do %>
+    <%= select_tag :per_page, options_for_select([10, 15, 20, 50, 100, 200, 500], @table.data.per_page), class: 'per_page_pagination_select' %>
+  <% end %>
+</div>
+
+<div class='left per_page_pagination'>
+  <%= paginate_table_entries @table.data %>
+</div>
+
+<div class='clear'></div>
+
+
+

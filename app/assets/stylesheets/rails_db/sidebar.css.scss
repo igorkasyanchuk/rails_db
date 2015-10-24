@@ -5,6 +5,11 @@
     margin-left: 3px;
     a {
       padding: 2px 4px;
+      &.selected {
+        i {
+          color: red;
+        }
+      }
     }
   }
 }

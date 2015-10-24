@@ -51,18 +51,5 @@
 <% end %>
 
 <script type="text/javascript">
-  var editor = CodeMirror.fromTextArea($('#sql').get(0), {
-      "theme": 'pastel-on-dark',
-      "lineNumbers": true,
-      "mode": "text/x-sql",
-      "tabSize": 4,
-      height: 'auto',
-      extraKeys: {
-        'Ctrl-Enter': function() {
-          $(editor.getInputField()).parents('form').submit();
-        }
-      }
-    });
-  editor.setSize('100%', '300');
-  editor.focus();
+  init_sql_editor();
 </script>

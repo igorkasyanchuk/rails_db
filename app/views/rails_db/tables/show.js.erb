@@ -1,0 +1,6 @@
+$('#main_content').html("<%= j(render 'show') %>");
+
+$('title').text("`<%= @table.name %>` Schema - Rails DB");
+
+$('.sidebar_table').removeClass('selected');
+$('.sidebar_table_<%= @table.name %>').addClass('selected');

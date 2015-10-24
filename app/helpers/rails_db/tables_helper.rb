@@ -19,7 +19,7 @@ module RailsDb
       title = titleize_column(column, title)
       css_class  = (column == params[:sort_column]) ? "current #{params[:sort_order]}" : nil
       sort_order = (column == params[:sort_column] && params[:sort_order] == 'asc') ? 'desc' : 'asc'
-      link_to title, params.merge({ sort_column: column, sort_order: sort_order }), { class: css_class }
+      link_to title, params.merge({ sort_column: column, sort_order: sort_order }), {remote: true, class: css_class }
     end
 
     def titleize_column(column, title = nil)
