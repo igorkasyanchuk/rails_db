@@ -26,7 +26,7 @@ class DashboardControllerTest < ActionDispatch::IntegrationTest
     get '/rails/db/import'
     assert_equal 200, status
 
-    get '//rails/db/data-table'
+    get '/rails/db/data-table'
     assert_equal 200, status
   end
 
