@@ -24,6 +24,18 @@ module RailsDb
         'base'
       end
 
+      def self.mime
+        'text/x-sql'
+      end
+
+      private
+
+      def self.multiple_execute(sql, divider = ";\n")
+        sql.split(divider).each do |statement|
+          connection.execute(statement)
+        end
+      end
+
     end
 
   end

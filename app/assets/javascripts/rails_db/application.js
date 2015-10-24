@@ -5,6 +5,8 @@
 //= require rails_db/jquery.cookie
 //= require codemirror
 //= require codemirror/modes/sql
+//= require codemirror/addons/hint/show-hint.js
+//= require codemirror/addons/hint/sql-hint.js
 
 $(function(){
   $(document).foundation();
@@ -30,10 +32,6 @@ $(function(){
     save_expand_collapse();
     return false;
   });
-
-
-
-  console.log('Sidebar: ' + $.cookie('sidebar_visible'));
 });
 
 function expand_collapse() {
@@ -50,19 +48,31 @@ function save_expand_collapse() {
   $.cookie('sidebar_visible', $('.expand').is(':visible'), { expires: 30, path: '/' });
 };
 
-function init_sql_editor() {
+// https://github.com/codemirror/CodeMirror/blob/master/mode/sql/index.html
+function init_sql_editor(mime, tables) {
   var editor = CodeMirror.fromTextArea($('#sql').get(0), {
+      mime: mime,
+      hint: CodeMirror.hint.sql,
+      matchBrackets: true,
+      smartIndent: true,
+      autofocus: true,
       "theme": 'pastel-on-dark',
       "lineNumbers": true,
       "mode": "text/x-sql",
       "tabSize": 4,
       height: 'auto',
       extraKeys: {
-        'Ctrl-Enter': function() {
+        "Esc": 'autocomplete',
+        "Ctrl": 'autocomplete',
+        "Ctrl-Space": 'autocomplete',
+        "Ctrl-Enter": function() {
           $(editor.getInputField()).parents('form').submit();
         }
+      },
+      hintOptions: {
+        tables: tables
       }
     });
   editor.setSize('100%', '300');
   editor.focus();
-}
+};

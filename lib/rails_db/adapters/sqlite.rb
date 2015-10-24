@@ -5,9 +5,7 @@ module RailsDb
 
       def self.execute(sql)
         t0 = Time.now
-        sql.split(";\n").each do |statement|
-          connection.execute(statement)
-        end
+        multiple_execute(sql)
         Time.now - t0
       end
 

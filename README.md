@@ -23,6 +23,7 @@ For now was tested only with Ruby 2.2 and Rails 4.2. But expected to work with o
 * view content of DB tables
 * sort content of DB tables
 * execute SQL queries
+* autocomplete for SQL queries
 * filter tables for easier navigation
 * use history of you SQL queries
 * see EXPLAIN results for your queries
@@ -32,9 +33,9 @@ For now was tested only with Ruby 2.2 and Rails 4.2. But expected to work with o
 * added HTTP_BASIC auth for Rails DB
 * ability to turn on/off using initializer
 * white/black list of tables
+* data-tables inside your app
+* ajax-ify Rails DB
 * visualize SQL schema (future)
-* data-tables inside your app (future)
-* ajax-ify Rails DB (future)
 * CRUD for table records (future)
 
 ## Install

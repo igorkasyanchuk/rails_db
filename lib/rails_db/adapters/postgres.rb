@@ -7,6 +7,10 @@ module RailsDb
         'postgres'
       end
 
+      def self.mime
+        'text/x-plsql'
+      end
+
     end
 
   end

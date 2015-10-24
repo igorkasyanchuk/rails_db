@@ -30,7 +30,11 @@
 
   <div class="large-11">
     <div class='panel execute_panel'>
-      <p><span class="radius secondary label">* be careful with your SQL. You may corrupt your DB. Make sure you have DB backup if doing modifications.</span></p>
+      <p>
+        <span class="radius secondary label">* be careful with your SQL. You may corrupt your DB. Make sure you have DB backup if doing modifications.</span>
+        <br/>
+        <span class="radius secondary label">** you can autocomplete your SQL (Esc, Ctrl-Space or Ctrl)</span>
+      </p>
       <%= submit_tag raw("&rarr; Execute"), class: 'button small' %>
       &nbsp;
       &mdash;
@@ -51,5 +55,7 @@
 <% end %>
 
 <script type="text/javascript">
-  init_sql_editor();
+  window.onload = function() {
+    init_sql_editor("<%= RailsDb::Database.adapter.mime %>", <%= raw db_hint_options.to_json %>);
+  };
 </script>

@@ -4,13 +4,17 @@ module RailsDb
     class Mysql < BaseAdapter
 
       def self.execute(sql)
-        sql.split(";\n").each do |statement|
-          connection.execute(statement)
-        end
+        t0 = Time.now
+        multiple_execute(sql)
+        Time.now - t0
       end
 
       def self.adapter_name
         'mysql'
+      end
+
+      def self.mime
+        'text/x-mysql'
       end
 
     end

@@ -2,10 +2,11 @@ module RailsDb
   class SqlQuery
     include Connection
 
-    attr_reader :query, :data, :explain
+    attr_reader :query, :data, :explain, :sql_explain
 
-    def initialize(query)
-      @query = query
+    def initialize(query, sql_explain = true)
+      @query       = query
+      @sql_explain = sql_explain
     end
 
     def valid?
@@ -23,7 +24,7 @@ module RailsDb
     def execute
       if valid?
         load_data
-        load_explain
+        load_explain if sql_explain
         History.add(query)
       end
       self

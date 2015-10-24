@@ -6,9 +6,7 @@
     a {
       padding: 2px 4px;
       &.selected {
-        i {
-          color: red;
-        }
+        font-weight: bold;
       }
     }
   }

@@ -4,7 +4,7 @@ module RailsDb
     include TablePagination
 
     attr_reader :table, :time
-    attr_accessor :current_page, :offset, :per_page, :sort_column, :sort_order
+    attr_accessor :current_page, :offset, :per_page, :sort_column, :sort_order, :select_columns
 
     delegate :each, :to => :data
     delegate :count, :to => :table
@@ -15,15 +15,53 @@ module RailsDb
 
     def data
       @data ||= begin
-        commands = ["SELECT * FROM #{table.name}"]
+        commands = []
+        if select_columns && select_columns.any?
+          commands.push("SELECT #{select_columns.join(', ')} FROM #{table.name}")
+        else
+          commands.push("SELECT * FROM #{table.name}")
+        end
         if sort_column
           commands.push("ORDER BY #{sort_column} #{sort_order}")
         end
-        if per_page && offset
-          commands.push("LIMIT #{per_page} OFFSET #{offset}")
+        if per_page
+          commands.push("LIMIT #{per_page.to_i} OFFSET #{offset.to_i}")
         end
         results, @time = Database.adapter.exec_query(commands.join(' '))
         results
+      end
+    end
+
+    def limit(limit)
+      self.per_page = limit
+      self
+    end
+
+    def desc
+      self.sort_order = 'desc'
+      self
+    end
+
+    def asc
+      self.sort_order = 'asc'
+      self
+    end
+
+    def order_by(column)
+      self.sort_column = column
+      self
+    end
+
+    def select(*select_columns)
+      self.select_columns = Array.wrap(select_columns).flatten
+      self
+    end
+
+    def columns
+      if select_columns && select_columns.any?
+        select_columns
+      else
+        table.column_names
       end
     end
 

@@ -1,27 +1,30 @@
-<table class='rails_db_data_table'>
+<table class="rails_db_data_table <%= rails_db_table_style(:table, style) %>">
+
   <% if header %>
-    <thead>
-      <tr>
-        <% columns.each do |column| %>
-          <th><%= column %></th>
+    <thead class="<%= rails_db_table_style(:thead, style) %>">
+      <tr class="<%= rails_db_table_style(:tr, style) %>">
+        <% table.columns.each do |column| %>
+          <th class="<%= rails_db_table_style(:th, style) %>"><%= column %></th>
         <% end %>
       </tr>
     </thead>
   <% end %>
-  <tbody>
+
+  <tbody class="<%= rails_db_table_style(:tbody, style) %>">
     <% table.data.each do |record| %>
-      <tr>
-        <% columns.each do |column| %>
-          <td><%= record[column] %></td>
+      <tr class="<%= rails_db_table_style(:tr, style)%>">
+        <% table.columns.each do |column| %>
+          <td class="<%= rails_db_table_style(:td, style)%>"><%= record[column] %></td>
         <% end %>
       </tr>
     <% end %>
   </tbody>
+
   <% if footer %>
-    <tfoot>
-      <tr>
-        <% columns.each do |column| %>
-          <th><%= column.name %></th>
+    <tfoot class="<%= rails_db_table_style(:tfoot, style)%>">
+      <tr class="<%= rails_db_table_style(:tr, style)%>">
+        <% table.columns.each do |column| %>
+          <th class="<%= rails_db_table_style(:th, style)%>"><%= column.name %></th>
         <% end %>
       </tr>
     </tfoot>

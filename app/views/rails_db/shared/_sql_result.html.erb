@@ -1,27 +1,31 @@
-<table class='rails_db_data_table'>
-  <thead>
-    <tr>
+<table class="rails_db_data_table <%= rails_db_table_style(:table, style) %>">
+
+  <thead class="<%= rails_db_table_style(:thead, style) %>">
+    <tr class="<%= rails_db_table_style(:tr, style) %>">
       <% sql_query.data.columns.each do |column| %>
-        <th><%= column %></th>
+        <th class="<%= rails_db_table_style(:th, style) %>"><%= column %></th>
       <% end %>
     </tr>
   </thead>
-  <tbody>
+
+  <tbody class="<%= rails_db_table_style(:tbody, style) %>">
     <% sql_query.data.rows.each do |row| %>
-      <tr>
+      <tr class="<%= rails_db_table_style(:tr, style) %>">
         <% row.each do |item| %>
-          <td><%= item %></td>
+          <td class="<%= rails_db_table_style(:td, style) %>"><%= item %></td>
         <% end %>
       </tr>
     <% end %>
   </tbody>
+
   <% if footer %>
-    <tfoot>
-      <tr>
+    <tfoot class="<%= rails_db_table_style(:tfoot, style) %>">
+      <tr class="<%= rails_db_table_style(:tr, style) %>">
         <% sql_query.data.columns.each do |column| %>
-          <th><%= column %></th>
+          <th class="<%= rails_db_table_style(:th, style) %>"><%= column %></th>
         <% end %>
       </tr>
     </tfoot>
   <% end %>
+
 </table>

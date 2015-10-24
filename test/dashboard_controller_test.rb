@@ -4,6 +4,7 @@ class DashboardControllerTest < ActionDispatch::IntegrationTest
 
   test "should get index" do
     User.create(name: 'Igor')
+    Account.create(name: 'Igor')
 
     get '/rails/db'
     assert_equal 200, status
@@ -23,6 +24,9 @@ class DashboardControllerTest < ActionDispatch::IntegrationTest
     assert_equal 200, status
 
     get '/rails/db/import'
+    assert_equal 200, status
+
+    get '//rails/db/data-table'
     assert_equal 200, status
   end
 

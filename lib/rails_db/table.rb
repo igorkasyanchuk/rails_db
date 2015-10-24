@@ -9,27 +9,15 @@ module RailsDb
 
     delegate :count, :to => :data
     delegate :paginate, :to => :data
+    delegate :limit, :to => :data
+    delegate :order, :to => :data
+    delegate :asc, :to => :data
+    delegate :desc, :to => :data
 
     def initialize(table_name)
       throw 'Access Denied' unless RailsDb::Database.accessible_tables.include?(table_name)
       @name = table_name
       @data = RailsDb::TableData.new(self)
-    end
-
-    def columns
-      connection.columns(name)
-    end
-
-    def column_properties
-      %w(name sql_type null limit precision scale type default)
-    end
-
-    def to_param
-      name
-    end
-
-    def column_names
-      columns.collect(&:name)
     end
 
     def to_csv

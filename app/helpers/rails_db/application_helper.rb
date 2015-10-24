@@ -84,5 +84,13 @@ module RailsDb
       pages.uniq.select { |p| p > 0 && p <= last_page }
     end
 
+    def db_hint_options
+      result = {}
+      RailsDb::Database.accessible_tables.each do |table_name|
+        result[table_name] = RailsDb::Table.new(table_name).columns.inject({}) {|res, e| res[e.name] = nil; res }
+      end
+      result
+    end
+
   end
 end

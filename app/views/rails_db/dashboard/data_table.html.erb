@@ -1,9 +1,13 @@
 <h1>Data Table</h1>
 
-<h2>Table</h2>
+<h3>Table With Custom Columns</h3>
 
-<%= rails_db_data_table table: 'accounts', footer: false, columns: ['id', 'name', 'users_count'], header: true %>
+<%= rails_db_data_table table: 'accounts', footer: false, columns: ['id', 'name', 'users_count'], header: true, limit: 5 %>
 
-<h2>SQL</h2>
+<h3>Table (ALL)</h3>
 
-<%= rails_db_data_sql sql: 'select id, name, age from users order by age desc limit 10', footer: false, header: true %>
+<%= rails_db_data_table table: 'users', limit: 5 %>
+
+<h3>SQL</h3>
+
+<%= rails_db_data_sql sql: 'select name, age from users order by age desc limit 5', footer: false, header: true %>
