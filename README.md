@@ -68,8 +68,9 @@ If you want to customize gem run in console:
 If will create file config/initializers/rails_db.rb.
 
 ### Options
-*   **enabled** - enable of disable gem (by default this gem is enabled only in development mode).
-*   **http_basic_authentication_enabled** - Enable HTTP_BASIC authentication.
+*   **enabled** - enable of disable gem (default: true).
+*   **automatic_routes_mount** - automatically mount engine routes in your app (default: true).
+*   **http_basic_authentication_enabled** - Enable HTTP_BASIC authentication (default: false).
 *   **http_basic_authentication_user_name** - HTTP_BASIC authentication user name.
 *   **http_basic_authentication_password** - HTTP_BASIC authentication password.
 *   **black_list_tables** - black list for tables (hide tables from sidebar).
