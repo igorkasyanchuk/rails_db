@@ -1,0 +1,29 @@
+<table class='rails_db_data_table'>
+  <% if header %>
+    <thead>
+      <tr>
+        <% columns.each do |column| %>
+          <th><%= column %></th>
+        <% end %>
+      </tr>
+    </thead>
+  <% end %>
+  <tbody>
+    <% table.data.each do |record| %>
+      <tr>
+        <% columns.each do |column| %>
+          <td><%= record[column] %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+  <% if footer %>
+    <tfoot>
+      <tr>
+        <% columns.each do |column| %>
+          <th><%= column.name %></th>
+        <% end %>
+      </tr>
+    </tfoot>
+  <% end %>
+</table>

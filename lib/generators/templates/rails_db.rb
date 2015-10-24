@@ -2,6 +2,9 @@ RailsDb.setup do |config|
   # # enabled or not
   # config.enabled = Rails.env.to_s == 'development'
 
+  # # automatic engine routes mounting
+  # config.automatic_routes_mount = true
+
   # set tables which you want to hide ONLY
   # config.black_list_tables = ['users', 'accounts']
 

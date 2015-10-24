@@ -1,0 +1,9 @@
+<h1>Data Table</h1>
+
+<h2>Table</h2>
+
+<%= rails_db_data_table table: 'accounts', footer: false, columns: ['id', 'name', 'users_count'], header: true %>
+
+<h2>SQL</h2>
+
+<%= rails_db_data_sql sql: 'select id, name, age from users order by age desc limit 10', footer: false, header: true %>

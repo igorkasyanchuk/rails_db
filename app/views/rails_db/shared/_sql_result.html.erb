@@ -1,0 +1,27 @@
+<table class='rails_db_data_table'>
+  <thead>
+    <tr>
+      <% sql_query.data.columns.each do |column| %>
+        <th><%= column %></th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% sql_query.data.rows.each do |row| %>
+      <tr>
+        <% row.each do |item| %>
+          <td><%= item %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+  <% if footer %>
+    <tfoot>
+      <tr>
+        <% sql_query.data.columns.each do |column| %>
+          <th><%= column %></th>
+        <% end %>
+      </tr>
+    </tfoot>
+  <% end %>
+</table>

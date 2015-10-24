@@ -10,8 +10,12 @@ RailsDb::Engine.routes.draw do
 
   get '/import' => 'sql#import', as: :sql_import
   post '/import-start' => 'sql#import_start', as: :sql_start_import
+
+  get '/data-table' => 'dashboard#data_table', as: :data_table
 end
 
-Rails.application.routes.draw do
-  mount_rails_db_routes
+if RailsDb.automatic_routes_mount
+  Rails.application.routes.draw do
+    mount_rails_db_routes
+  end
 end

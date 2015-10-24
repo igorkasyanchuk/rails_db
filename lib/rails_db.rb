@@ -16,6 +16,10 @@ module RailsDb
   mattr_accessor :enabled
   @@enabled = true
 
+  # automatic engine routes mouting
+  mattr_accessor :automatic_routes_mount
+  @@automatic_routes_mount = true
+
   # set tables which you want to hide ONLY
   mattr_accessor :black_list_tables
   @@black_list_tables = []

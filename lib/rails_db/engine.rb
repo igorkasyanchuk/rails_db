@@ -7,5 +7,11 @@ module RailsDb
       app.config.assets.precompile += ['vendor/modernizr.js', 'rails_db/up_arrow.gif', 'rails_db/down_arrow.gif']
       app.config.assets.precompile += ["codemirror*", "codemirror/**/*"]
     end
+
+    initializer 'rails_db.helpers' do
+      ActiveSupport.on_load :action_view do
+        ActionView::Base.send :include, RailsDb::RailsDbDataTableHelper
+      end
+    end
   end
 end

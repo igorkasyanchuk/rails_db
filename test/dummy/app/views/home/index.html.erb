@@ -1,3 +1,13 @@
 <h1>Welcome to Dummy App</h1>
 
 <%= link_to '-> Rails DB', '/rails/db' %>
+
+<h2>Data Table</h2>
+
+<h3>Table</h3>
+
+<%= rails_db_data_table table: 'accounts', footer: false, columns: ['id', 'name', 'users_count'], header: true %>
+
+<h3>SQL</h3>
+
+<%= rails_db_data_sql sql: 'select id, name, age from users order by age desc limit 10', footer: false, header: true %>
