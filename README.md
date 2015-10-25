@@ -5,7 +5,7 @@ Please share this gem with your friends to get more feedback. If you have ideas 
 [![Build Status](https://travis-ci.org/igorkasyanchuk/rails_db.svg)](https://travis-ci.org/igorkasyanchuk/rails_db)
 [![Gem Version](https://badge.fury.io/rb/rails_db.svg)](https://badge.fury.io/rb/rails_db)
 
-[<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/account_table.png?token=AAArXeu9-vtuW8nIvc9RE0nOIhGbwxkbks5WKlTLwA%3D%3D"
+[<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/home.png?token=AAArXeu9-vtuW8nIvc9RE0nOIhGbwxkbks5WKlTLwA%3D%3D"
 />](https://rails-db.herokuapp.com/rails/db/)
 
 Quick way to inspect your Rails database **http://localhost:3000/rails/db**, see content of tables, export them to CSV, EXPLAIN SQL and run SQL queries.
@@ -106,6 +106,10 @@ Below you can see samples how you can embed data-tables in directly your app.
 ## Samples
 
 ### Schema
+
+[<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/autocomplete.png?token=AAArXU_ChN3xNN2MajLy2Tv98ij6XK4Pks5WKlT3wA%3D%3D"
+/>](https://rails-db.herokuapp.com/rails/db/)
+
 
 [<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/accounts_schema.png?token=AAArXU_ChN3xNN2MajLy2Tv98ij6XK4Pks5WKlT3wA%3D%3D"
 />](https://rails-db.herokuapp.com/rails/db/)
