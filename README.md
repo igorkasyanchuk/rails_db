@@ -78,18 +78,26 @@ If will create file config/initializers/rails_db.rb.
 
 ## Data Tables
 
-You can add easily data-tables into your App with content from DB.
+You can easily embed data-tables into your App with content from DB.
 
 You can build data tables for whole Table, Table with specific columns or based on SQL query.
+
+Below you can see samples how you can embed data-tables in directly your app.
 
 ```erb
 <h3>Table</h3>
 
-<%= rails_db_data_table table: 'accounts', footer: true, columns: ['id', 'name', 'users_count'], header: true, style: :bootstrap %>
+<%= rails_db_data_table table: 'accounts',
+                        footer: true,
+                        columns: ['id', 'name', 'users_count'],
+                        header: true,
+                        style: :bootstrap %>
 
 <h3>SQL</h3>
 
-<%= rails_db_data_table_sql sql: 'select id, name, age from users order by age desc limit 10', footer: false, header: true %>
+<%= rails_db_data_table_sql sql: 'select id, name, age from users order by age desc limit 10',
+                            footer: false,
+                            header: true %>
 ```
 
 [<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/data_table_code.png?token=AAArXU_ChN3xNN2MajLy2Tv98ij6XK4Pks5WKlT3wA%3D%3D"
@@ -122,7 +130,6 @@ Install & visit **`http://localhost:3000/rails/db`** to see it in action.
 * add specs
 * verify all environments
 * add DB schema visualization
-* add import
 
 ## License
 
