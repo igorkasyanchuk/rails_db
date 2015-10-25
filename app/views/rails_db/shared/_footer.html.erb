@@ -33,6 +33,21 @@
           Import
         <% end %>
       </li>
+      <li>|</li>
+      <li>
+        <%= link_to rails_db.data_table_path do %>
+          <%= fa_icon 'table' %>
+          Data Table
+        <% end %>
+      </li>
+      <li>|</li>
+      <li>
+        <a data-reveal-id="more_gems_modal">
+          <%= fa_icon 'heart' %>
+          More Gems
+        </a>
+        <%= render '/rails_db/shared/gems' %>
+      </li>
       </ul>
     </div>
   </div>
