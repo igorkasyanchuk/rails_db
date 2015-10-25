@@ -1,13 +1,15 @@
 <h1>Data Table</h1>
 
-<h3>Table With Custom Columns</h3>
+<p>
+  You can add easily data-tables into your App with content from DB.
+  <br/>
+  You can build data tables for whole Table, Table with specific columns or based on SQL query.
+</p>
 
-<%= rails_db_data_table table: 'accounts', footer: false, columns: ['id', 'name', 'users_count'], header: true, limit: 5 %>
+<h3>With Following Code:</h3>
 
-<h3>Table (ALL)</h3>
+<p><%= image_tag 'rails_db/data_table_code.png' %></p>
 
-<%= rails_db_data_table table: 'users', limit: 5 %>
+<h3>You will get:</h3>
 
-<h3>SQL</h3>
-
-<%= rails_db_data_sql sql: 'select name, age from users order by age desc limit 5', footer: false, header: true %>
+<p><%= image_tag 'rails_db/data_table.png' %></p>

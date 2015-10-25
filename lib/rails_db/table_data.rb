@@ -52,6 +52,11 @@ module RailsDb
       self
     end
 
+    def order(sort_order)
+      self.send(sort_order) if [:asc, :desc].include?(sort_order.to_sym)
+      self
+    end
+
     def select(*select_columns)
       self.select_columns = Array.wrap(select_columns).flatten
       self

@@ -14,7 +14,7 @@
     <% table.data.each do |record| %>
       <tr class="<%= rails_db_table_style(:tr, style)%>">
         <% table.columns.each do |column| %>
-          <td class="<%= rails_db_table_style(:td, style)%>"><%= record[column] %></td>
+          <td class="<%= rails_db_table_style(:td, style)%>"><%= record[column.to_s] %></td>
         <% end %>
       </tr>
     <% end %>
@@ -24,7 +24,7 @@
     <tfoot class="<%= rails_db_table_style(:tfoot, style)%>">
       <tr class="<%= rails_db_table_style(:tr, style)%>">
         <% table.columns.each do |column| %>
-          <th class="<%= rails_db_table_style(:th, style)%>"><%= column.name %></th>
+          <th class="<%= rails_db_table_style(:th, style)%>"><%= column %></th>
         <% end %>
       </tr>
     </tfoot>

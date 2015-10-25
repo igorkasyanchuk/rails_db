@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rails_db (0.3)
+    rails_db (0.4)
       codemirror-rails
       font-awesome-rails
       foundation-rails

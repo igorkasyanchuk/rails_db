@@ -36,13 +36,14 @@ module RailsDb
         footer: false,
         columns: [],
         limit: nil,
-        order: nil
+        order_by: nil,
+        order: :asc
       )
-      table      = RailsDb::Table.new(table_name)
+      table = RailsDb::Table.new(table_name)
         .limit(options[:limit])
-        .order_by(:id)
+        .order_by(options[:order_by])
         .select(options[:columns])
-        .desc
+        .order(options[:order])
 
       render '/rails_db/shared/data_table', table: table,
                                             header: options[:header],
@@ -50,7 +51,12 @@ module RailsDb
                                             style:  options[:style]
     end
 
-    def rails_db_data_sql(options)
+    def rails_db_data_table_sql(options)
+      options.reverse_merge!(
+        style: :default,
+        header: true,
+        footer: false,
+      )
       sql        = "#{options[:sql]}".strip
       sql_query  = RailsDb::SqlQuery.new(sql, false).execute
 

@@ -5,7 +5,7 @@ Please share this gem with your friends to get more feedback. If you have ideas 
 [![Build Status](https://travis-ci.org/igorkasyanchuk/rails_db.svg)](https://travis-ci.org/igorkasyanchuk/rails_db)
 [![Gem Version](https://badge.fury.io/rb/rails_db.svg)](https://badge.fury.io/rb/rails_db)
 
-[<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/account_table.png?token=AAArXeu9-vtuW8nIvc9RE0nOIhGbwxkbks5WKlTLwA%3D%3D"
+[<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/account_table.png?token=AAArXeu9-vtuW8nIvc9RE0nOIhGbwxkbks5WKlTLwA%3D%3D"
 />](https://rails-db.herokuapp.com/rails/db/)
 
 Quick way to inspect your Rails database **http://localhost:3000/rails/db**, see content of tables, export them to CSV, EXPLAIN SQL and run SQL queries.
@@ -76,16 +76,35 @@ If will create file config/initializers/rails_db.rb.
 *   **black_list_tables** - black list for tables (hide tables from sidebar).
 *   **white_list_tables** - black list for tables (show only these tables in sidebar).
 
+## Data Tables
+
+You can add easily data-tables into your App with content from DB.
+
+You can build data tables for whole Table, Table with specific columns or based on SQL query.
+
+```erb
+<h3>Table</h3>
+
+<%= rails_db_data_table table: 'accounts', footer: true, columns: ['id', 'name', 'users_count'], header: true, style: :bootstrap %>
+
+<h3>SQL</h3>
+
+<%= rails_db_data_table_sql sql: 'select id, name, age from users order by age desc limit 10', footer: false, header: true %>
+```
+
+[<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/data_table_code.png?token=AAArXU_ChN3xNN2MajLy2Tv98ij6XK4Pks5WKlT3wA%3D%3D"
+/>](https://rails-db.herokuapp.com/rails/db/)
+
 ## Samples
 
 ### Schema
 
-[<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/accounts_schema.png?token=AAArXU_ChN3xNN2MajLy2Tv98ij6XK4Pks5WKlT3wA%3D%3D"
+[<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/accounts_schema.png?token=AAArXU_ChN3xNN2MajLy2Tv98ij6XK4Pks5WKlT3wA%3D%3D"
 />](https://rails-db.herokuapp.com/rails/db/)
 
 ### SQL Editor
 
-[<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/execute_sql.png?token=AAArXf26vwsPwvV2MhgxWUepGb0tT6g4ks5WKlUJwA%3D%3D"
+[<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/execute_sql.png?token=AAArXf26vwsPwvV2MhgxWUepGb0tT6g4ks5WKlUJwA%3D%3D"
 />](https://rails-db.herokuapp.com/rails/db/)
 
 Install & visit **`http://localhost:3000/rails/db`** to see it in action.
