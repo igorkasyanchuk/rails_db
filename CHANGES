@@ -1,0 +1,10 @@
+0.5.1 - October 27
+  - removed log files and other garbage to reduce size of gem
+
+0.5 - October 26
+  - added config.verify_access_proc to make possible enable access for users (for example current_user.admin?)
+  - small tweaks to rails_db_data_table and rails_db_data_sql
+  - other minor fixes
+  - working on documentation
+
+== Starting publishing Changes ===
