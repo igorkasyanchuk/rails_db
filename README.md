@@ -16,7 +16,7 @@ Video Demo: https://www.youtube.com/watch?v=ZBY9YPQdbx8
 
 ## Requirements
 
-For now was tested only with Ruby 2.2 and Rails 4.2. But expected to work with older versions too.
+For now was tested manually only with Ruby 2.X, and Rails 4.X. But expected to work with older versions too. Also there are automated tests running on Travis CI.
 
 ## Main Features
 
@@ -30,6 +30,7 @@ For now was tested only with Ruby 2.2 and Rails 4.2. But expected to work with o
 * export data to CSV
 * import SQL files
 * expand/collapse sidebar
+* allow access for current user for example with appropriate role
 * added HTTP_BASIC auth for Rails DB
 * ability to turn on/off using initializer
 * white/black list of tables
@@ -61,7 +62,8 @@ Run `bundle install`
 Visit **`http://localhost:3000/rails/db`** and you will see your database tables and SQL editors.
 
 ## Customization
-If you want to customize gem run in console:
+
+If you want to customize gem(create initializer) run in console:
 
     rails g rails_db initializer
 
@@ -75,10 +77,19 @@ If will create file config/initializers/rails_db.rb.
 *   **http_basic_authentication_password** - HTTP_BASIC authentication password.
 *   **black_list_tables** - black list for tables (hide tables from sidebar).
 *   **white_list_tables** - black list for tables (show only these tables in sidebar).
+*   **verify_access_proc** - allow access by specific conditions, for example by role for current_user (default: `proc { true }`)
 
 If you want to add routes manually you can add need to turn off automatic_routes_mount and then add to your `routes.rb`
 
-    mount RailsDb::Engine => '/rails/db', :as => 'rails_db'
+```ruby
+  mount RailsDb::Engine => '/rails/db', :as => 'rails_db'
+```
+
+If you want to allow access to admin panel for admins and you using for example Devise you can do following (in your `config/initializers/rails_db.rb`)
+
+```ruby
+  config.verify_access_proc = proc { current_user.admin? }
+```
 
 ## Data Tables
 
@@ -91,7 +102,7 @@ Below you can see samples how you can embed data-tables in directly your app.
 ```erb
 <h3>Table</h3>
 
-<%= rails_db_data_table table: 'accounts',
+<%= rails_db_data_table 'accounts',
                         footer: true,
                         columns: ['id', 'name', 'users_count'],
                         header: true,
@@ -99,7 +110,7 @@ Below you can see samples how you can embed data-tables in directly your app.
 
 <h3>SQL</h3>
 
-<%= rails_db_data_table_sql sql: 'select id, name, age from users order by age desc limit 10',
+<%= rails_db_data_table_sql 'select id, name, age from users order by age desc limit 10',
                             footer: false,
                             header: true %>
 ```
@@ -133,11 +144,25 @@ Install & visit **`http://localhost:3000/rails/db`** to see it in action.
 - Push to the branch (git push origin my-new-feature)
 - Create new Pull Request
 
+## Local Development
+
+- Checkout it
+- cd test/dummy
+- bundle
+- rake db:migrate
+- rails s
+- open http://locahost:3000/
+
+## Common Issues
+
+- "Invalid css error" - https://github.com/igorkasyanchuk/rails_db/issues/11
+- "Automatic routes mounting" - https://github.com/igorkasyanchuk/rails_db/issues/4
+
 ## Plans
 
-* add specs
-* verify all environments
-* add DB schema visualization
+* Add more tests
+* Verify all environments
+* Add DB schema visualization
 
 ## License
 
