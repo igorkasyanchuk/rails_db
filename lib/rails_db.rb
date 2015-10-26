@@ -40,6 +40,10 @@ module RailsDb
   mattr_accessor :http_basic_authentication_password
   @@http_basic_authentication_password = 'password'
 
+  # If you want to enable access by specific conditions
+  mattr_accessor :verify_access_proc
+  @@verify_access_proc = proc { |controller| true }
+
   def self.setup
     yield(self)
   end

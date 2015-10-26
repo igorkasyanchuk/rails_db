@@ -20,7 +20,7 @@ module RailsDb
 
     def import_start
       @importer = SqlImport.new(params[:file])
-      result   = @importer.import
+      result    = @importer.import
       if result.ok?
         flash[:notice] = 'File was successfully imported'
       else

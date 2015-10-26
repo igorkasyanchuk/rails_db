@@ -16,7 +16,7 @@ Video Demo: https://www.youtube.com/watch?v=ZBY9YPQdbx8
 
 ## Requirements
 
-For now was tested only with Ruby 2.2 and Rails 4.2. But expected to work with older versions too.
+For now was tested manually only with Ruby 2.X, and Rails 4.X. But expected to work with older versions too. Also there are automated tests running on Travis CI.
 
 ## Main Features
 
@@ -61,7 +61,8 @@ Run `bundle install`
 Visit **`http://localhost:3000/rails/db`** and you will see your database tables and SQL editors.
 
 ## Customization
-If you want to customize gem run in console:
+
+If you want to customize gem(create initializer) run in console:
 
     rails g rails_db initializer
 
@@ -75,10 +76,19 @@ If will create file config/initializers/rails_db.rb.
 *   **http_basic_authentication_password** - HTTP_BASIC authentication password.
 *   **black_list_tables** - black list for tables (hide tables from sidebar).
 *   **white_list_tables** - black list for tables (show only these tables in sidebar).
+*   **verify_access_proc** - allow access by specific conditions, for example by role for current_user (default: `proc { true }`)
 
 If you want to add routes manually you can add need to turn off automatic_routes_mount and then add to your `routes.rb`
 
-    mount RailsDb::Engine => '/rails/db', :as => 'rails_db'
+```ruby
+  mount RailsDb::Engine => '/rails/db', :as => 'rails_db'
+```
+
+If you want to allow access to admin panel for admins and you using for example Devise you can do following (in your `config/initializers/rails_db.rb`)
+
+```ruby
+  config.verify_access_proc = proc { current_user.admin? }
+```
 
 ## Data Tables
 
@@ -133,11 +143,25 @@ Install & visit **`http://localhost:3000/rails/db`** to see it in action.
 - Push to the branch (git push origin my-new-feature)
 - Create new Pull Request
 
+## Local Development
+
+- Checkout it
+- cd test/dummy
+- bundle
+- rake db:migrate
+- rails s
+- open http://locahost:3000/
+
+## Common Issues
+
+- "Invalid css error" - https://github.com/igorkasyanchuk/rails_db/issues/11
+- "Automatic routes mounting" - https://github.com/igorkasyanchuk/rails_db/issues/4
+
 ## Plans
 
-* add specs
-* verify all environments
-* add DB schema visualization
+* Add more tests
+* Verify all environments
+* Add DB schema visualization
 
 ## License
 
