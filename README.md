@@ -76,6 +76,10 @@ If will create file config/initializers/rails_db.rb.
 *   **black_list_tables** - black list for tables (hide tables from sidebar).
 *   **white_list_tables** - black list for tables (show only these tables in sidebar).
 
+If you want to add routes manually you can add need to turn off automatic_routes_mount and then add to your `routes.rb`
+
+    mount RailsDb::Engine => '/rails/db', :as => 'rails_db'
+
 ## Data Tables
 
 You can easily embed data-tables into your App with content from DB.
