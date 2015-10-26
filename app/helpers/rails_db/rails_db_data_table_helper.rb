@@ -28,8 +28,7 @@ module RailsDb
       }
     }
 
-    def rails_db_data_table(options)
-      table_name = options[:table]
+    def rails_db_data_table(table_name, options = {})
       options.reverse_merge!(
         style: :default,
         header: true,
@@ -51,13 +50,13 @@ module RailsDb
                                             style:  options[:style]
     end
 
-    def rails_db_data_table_sql(options)
+    def rails_db_data_table_sql(sql, options = {})
       options.reverse_merge!(
         style: :default,
         header: true,
         footer: false,
       )
-      sql        = "#{options[:sql]}".strip
+      sql        = "#{sql}".strip
       sql_query  = RailsDb::SqlQuery.new(sql, false).execute
 
       render '/rails_db/shared/sql_result', sql_query: sql_query,
