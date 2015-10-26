@@ -1,6 +1,8 @@
 # Rails DB
 
-Please **share** this gem with your friends to get more feedback. If you have ideas - please create an issue or contact me by email: `igorkasyanchuk[@]gmail.com`.
+Please **share** this gem with your friends to get more feedback. 
+
+If you have ideas - please create an issue or contact me by email: `igorkasyanchuk[@]gmail.com`.
 
 [![Build Status](https://travis-ci.org/igorkasyanchuk/rails_db.svg)](https://travis-ci.org/igorkasyanchuk/rails_db)
 [![Gem Version](https://badge.fury.io/rb/rails_db.svg)](https://badge.fury.io/rb/rails_db)
@@ -163,6 +165,7 @@ Install & visit **`http://localhost:3000/rails/db`** to see it in action.
 * Add more tests
 * Verify all environments
 * Add DB schema visualization
+* Create WIKI pages, improve documentation
 
 ## License
 
