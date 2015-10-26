@@ -30,6 +30,7 @@ For now was tested manually only with Ruby 2.X, and Rails 4.X. But expected to w
 * export data to CSV
 * import SQL files
 * expand/collapse sidebar
+* allow access for current user for example with appropriate role
 * added HTTP_BASIC auth for Rails DB
 * ability to turn on/off using initializer
 * white/black list of tables
@@ -101,7 +102,7 @@ Below you can see samples how you can embed data-tables in directly your app.
 ```erb
 <h3>Table</h3>
 
-<%= rails_db_data_table table: 'accounts',
+<%= rails_db_data_table 'accounts',
                         footer: true,
                         columns: ['id', 'name', 'users_count'],
                         header: true,
@@ -109,7 +110,7 @@ Below you can see samples how you can embed data-tables in directly your app.
 
 <h3>SQL</h3>
 
-<%= rails_db_data_table_sql sql: 'select id, name, age from users order by age desc limit 10',
+<%= rails_db_data_table_sql 'select id, name, age from users order by age desc limit 10',
                             footer: false,
                             header: true %>
 ```
