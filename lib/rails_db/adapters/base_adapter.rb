@@ -28,6 +28,10 @@ module RailsDb
         'text/x-sql'
       end
 
+      def self.truncate(table_name)
+        execute("TRUNCATE TABLE #{table_name};")
+      end
+
       private
 
       def self.multiple_execute(sql, divider = ";\n")

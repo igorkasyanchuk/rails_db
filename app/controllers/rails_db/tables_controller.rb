@@ -22,5 +22,12 @@ module RailsDb
       @table = RailsDb::Table.new(params[:table_id])
       send_data(@table.to_csv, type: 'text/csv; charset=utf-8; header=present', filename: "#{@table.name}.csv")
     end
+
+    def truncate
+      @table = RailsDb::Table.new(params[:table_id])
+      @table.truncate
+      render :data
+    end
+
   end
 end

@@ -29,6 +29,14 @@ module RailsDb
       end
     end
 
+    def indexes
+      connection.indexes(name)
+    end
+
+    def truncate
+      RailsDb::Database.adapter.truncate(name)
+    end
+
   end # module
 
 end

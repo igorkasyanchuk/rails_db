@@ -10,7 +10,16 @@
   <dd class="active"><%= link_to raw("#{fa_icon('tasks')} Schema"), table_path(@table), remote: true %></dd>
   <dd><%= select_top_from_table(@table.name) %></dd>
   <dd><%= link_to raw("#{fa_icon('file-excel-o')} Export"), table_csv_path(@table) %></dd>
+  <dd>
+    <a href="#" data-options="align: bottom" data-dropdown="drop"><%= fa_icon 'th-large' %> Functions</a>
+  </dd>
 </dl>
+
+<ul id="drop" class="f-dropdown" data-dropdown-content>
+  <li><%= link_to raw("#{fa_icon('trash-o')} Truncate Table"), table_truncate_path(@table), remote: true, confirm: 'Are you sure?', data: {confirm: 'Are you sure?'} %></a></li>
+</ul>
+
+<h3>Schema</h3>
 
 <table>
   <thead>
@@ -27,6 +36,41 @@
           <td class="<%= key %>"><%= col.send(key) %></td>
         <% end %>
       </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<h3>Indexes</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Unique</th>
+      <th>Columns</th>
+      <th>Length</th>
+      <th>Orders</th>
+      <th>Where</th>
+      <th>Type</th>
+      <th>Using</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @table.indexes.each do |index| %>
+     <tr>
+      <td><%= index.name %></td>
+      <td><%= index.unique %></td>
+      <td><%= index.columns %></td>
+      <td><%= index.lengths %></td>
+      <td><%= index.orders %></td>
+      <td><%= index.where %></td>
+      <td><%= index.type %></td>
+      <td><%= index.using %></td>
+     </tr>
+    <% end %>
+    <% if @table.indexes.none? %>
+      <tr><td colspan='7'>No Indexes</td></tr>
     <% end %>
   </tbody>
 </table>

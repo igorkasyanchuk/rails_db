@@ -3,6 +3,7 @@ RailsDb::Engine.routes.draw do
   resources :tables, :only => [:index, :show] do
     get 'data'
     get 'csv'
+    get 'truncate'
   end
   get '/sql' => 'sql#index', as: :sql
   post '/execute' => 'sql#execute', as: :sql_execute
