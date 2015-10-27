@@ -32,6 +32,10 @@ module RailsDb
         execute("TRUNCATE TABLE #{table_name};")
       end
 
+      def self.delete(table_name, pk_name, pk_id)
+        execute("DELETE FROM #{table_name} WHERE #{pk_name} = #{pk_id};")
+      end
+
       private
 
       def self.multiple_execute(sql, divider = ";\n")

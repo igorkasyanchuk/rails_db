@@ -23,30 +23,48 @@
 
 <div class='scrollable'>
   <table>
+
     <thead>
       <tr>
+        <% if @table.primary_key.present? %>
+          <th class='delete_td'></th>
+        <% end %>
         <% @table.columns.each do |column| %>
           <th><%= sortable column.name %></th>
         <% end %>
       </tr>
     </thead>
+
     <% n = 0 %>
+
     <tbody>
       <% @table.data.each do |record| %>
         <tr>
+          <% if @table.primary_key.present? %>
+            <td>
+              <%= link_to fa_icon('minus-circle'), table_destroy_path(@table, id: record[@table.primary_key]), method: :delete, remote: true, confirm: 'Are you sure?', data: {confirm: 'Are you sure?'} %>
+            </td>
+          <% end %>
+
           <% @table.columns.each do |column| %>
-            <% name = column.name %>
-            <td class="<%= name %> <%= column.type %>"><%= format_value(column, record[name]) %></td>
+            <td>
+              <% name = column.name %>
+              <%= format_value(column, record[name]) %>
+            </td>
           <% end %>
         </tr>
       <% end %>
       <% n += 1 %>
       <% if @table.data.total_entries == 0 %>
         <tr>
+          <% if @table.primary_key.present? %>
+            <td></td>
+          <% end %>
           <td>No Records</td>
         </tr>
       <% end %>
     </tbody>
+
     <% if n > 10 %>
       <tfoot>
         <tr>

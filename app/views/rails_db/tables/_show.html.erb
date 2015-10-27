@@ -33,7 +33,13 @@
     <% @table.columns.each do |col| %>
       <tr>
         <% @table.column_properties.each do |key| %>
-          <td class="<%= key %>"><%= col.send(key) %></td>
+          <td class="<%= key %>">
+            <% value = col.send(key) %>
+            <%= value %>
+            <% if key == 'name' && @table.primary_key == value %>
+              <span class='pk'><%= fa_icon 'key' %></span>
+            <% end %>
+          </td>
         <% end %>
       </tr>
     <% end %>

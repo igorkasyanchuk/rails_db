@@ -4,6 +4,7 @@ RailsDb::Engine.routes.draw do
     get 'data'
     get 'csv'
     get 'truncate'
+    delete 'destroy'
   end
   get '/sql' => 'sql#index', as: :sql
   post '/execute' => 'sql#execute', as: :sql_execute

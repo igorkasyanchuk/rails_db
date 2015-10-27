@@ -12,10 +12,10 @@ module RailsDb
     def data
       per_page = params[:per_page] || session[:per_page]
       session[:per_page] = per_page
-      @table   = RailsDb::Table.new(params[:table_id]).paginate :page => params[:page],
-                                                                :sort_column => params[:sort_column],
-                                                                :sort_order => params[:sort_order],
-                                                                :per_page => per_page
+      @table   = RailsDb::Table.new(params[:table_id]).paginate page: params[:page],
+                                                                sort_column: params[:sort_column],
+                                                                sort_order: params[:sort_order],
+                                                                per_page: per_page
     end
 
     def csv
@@ -27,6 +27,12 @@ module RailsDb
       @table = RailsDb::Table.new(params[:table_id])
       @table.truncate
       render :data
+    end
+
+    def destroy
+      @table = RailsDb::Table.new(params[:table_id])
+      @table.delete(params[:id])
+      render js: 'alert("Record was successfully deleted");'
     end
 
   end
