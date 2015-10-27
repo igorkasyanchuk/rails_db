@@ -17,6 +17,7 @@ class TableTest < ActiveSupport::TestCase
   end
 
   test 'truncate' do
+    User.delete_all
     User.create(name: 'igor')
     assert_equal 1, User.count
     @users_table.truncate
