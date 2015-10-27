@@ -159,6 +159,7 @@ Install & visit **`http://localhost:3000/rails/db`** to see it in action.
 
 - "Invalid css error" - https://github.com/igorkasyanchuk/rails_db/issues/11
 - "Automatic routes mounting" - https://github.com/igorkasyanchuk/rails_db/issues/4
+- "uninitialised constant Sass::Script" - https://github.com/igorkasyanchuk/rails_db/issues/13
 
 ## Plans
 
