@@ -155,6 +155,14 @@ Install & visit **`http://localhost:3000/rails/db`** to see it in action.
 - rails s
 - open http://locahost:3000/
 
+## Run Tests
+
+To run tests locally you need to execute `rake test` withing root folder of project.
+
+After your push to git, all tests will be executed on Travis CI environment.
+
+You can also change locally DB to verify gem accross multiple Databases (mysql, postgres, sqlite). For more details see `test/dummy/config/database.yml` (you need to set DB ENV variable).
+
 ## Common Issues and Solutions
 
 - "Invalid css error" - https://github.com/igorkasyanchuk/rails_db/issues/11
