@@ -36,7 +36,6 @@ module RailsDb
                                                               per_page: session[:per_page]
       @table.delete(params[:pk_id])
       respond_to do |page|
-        page.html {}
         page.js {}
       end
     end
