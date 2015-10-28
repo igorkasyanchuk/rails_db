@@ -10,11 +10,23 @@
   <dd class="active"><%= link_to raw("#{fa_icon('tasks')} Schema"), table_path(@table), remote: true %></dd>
   <dd><%= select_top_from_table(@table.name) %></dd>
   <dd><%= link_to raw("#{fa_icon('file-excel-o')} Export"), table_csv_path(@table) %></dd>
+  <dd>
+    <a href="#" data-options="align: bottom" data-dropdown="drop"><%= fa_icon 'th-large' %> Functions</a>
+  </dd>
 </dl>
+
+<ul id="drop" class="f-dropdown" data-dropdown-content>
+  <li><%= link_to raw("#{fa_icon('trash-o')} Truncate Table"), table_truncate_path(@table), remote: true, confirm: 'Are you sure?', data: {confirm: 'Are you sure?'} %></a></li>
+</ul>
+
+<h3>Schema</h3>
 
 <table>
   <thead>
     <tr>
+      <% if @table.primary_key.present? %>
+        <th>PK</th>
+      <% end %>
       <% @table.column_properties.each do |key| %>
         <th><%= key.titleize.upcase %></th>
       <% end %>
@@ -23,10 +35,62 @@
   <tbody>
     <% @table.columns.each do |col| %>
       <tr>
+        <% if @table.primary_key %>
+          <% if @table.primary_key == col.name %>
+            <td>
+              <span class='pk'><%= fa_icon 'key' %></span>
+            </td>
+          <% else %>
+            <td></td>
+          <% end %>
+        <% end %>
+
         <% @table.column_properties.each do |key| %>
-          <td class="<%= key %>"><%= col.send(key) %></td>
+          <td class="<%= key %>">
+            <% value = col.send(key) %>
+            <%= value %>
+          </td>
         <% end %>
       </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<h3>Indexes</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Unique</th>
+      <th>Columns</th>
+      <th>Length</th>
+      <th>Orders</th>
+      <% if Rails::VERSION::MAJOR >= 4 %>
+        <th>Where</th>
+        <th>Type</th>
+        <th>Using</th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% @table.indexes.each do |index| %>
+     <tr>
+      <td><%= index.name %></td>
+      <td><%= index.unique %></td>
+      <td><%= index.columns %></td>
+      <td><%= index.lengths %></td>
+      <td><%= index.orders %></td>
+      <% if Rails::VERSION::MAJOR >= 4 %>
+        <td><%= index.where %></td>
+        <td><%= index.type %></td>
+        <td><%= index.using %></td>
+      <% end %>
+     </tr>
+    <% end %>
+    <% if @table.indexes.none? %>
+      <tr><td colspan='7'>No Indexes</td></tr>
     <% end %>
   </tbody>
 </table>

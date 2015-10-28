@@ -1,3 +1,3 @@
 module RailsDb
-  VERSION = "0.5.1"
+  VERSION = "0.6"
 end

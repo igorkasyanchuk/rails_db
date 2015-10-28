@@ -29,6 +29,22 @@ module RailsDb
       end
     end
 
+    def indexes
+      connection.indexes(name)
+    end
+
+    def truncate
+      RailsDb::Database.adapter.truncate(name)
+    end
+
+    def primary_key
+      connection.primary_key(name)
+    end
+
+    def delete(id)
+      RailsDb::Database.adapter.delete(name, primary_key, id)
+    end
+
   end # module
 
 end

@@ -1,6 +1,6 @@
 # Rails DB
 
-Please **share** this gem with your friends to get more feedback. 
+Please **share** this gem with your friends to get more feedback.
 
 If you have ideas - please create an issue or contact me by email: `igorkasyanchuk[@]gmail.com`.
 
@@ -22,7 +22,7 @@ For now was tested manually only with Ruby 2.X, and Rails 4.X. But expected to w
 
 ## Main Features
 
-* view content of DB tables
+* view content and schema of DB tables (including indexes)
 * sort content of DB tables
 * execute SQL queries
 * autocomplete for SQL queries
@@ -38,6 +38,7 @@ For now was tested manually only with Ruby 2.X, and Rails 4.X. But expected to w
 * white/black list of tables
 * data-tables inside your app
 * ajax-ify Rails DB
+* delete records, truncate tables
 * visualize SQL schema (future)
 * CRUD for table records (future)
 
@@ -120,7 +121,7 @@ Below you can see samples how you can embed data-tables in directly your app.
 [<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/data_table_code.png?token=AAArXU_ChN3xNN2MajLy2Tv98ij6XK4Pks5WKlT3wA%3D%3D"
 />](https://rails-db.herokuapp.com/rails/db/)
 
-## Samples
+## Samples & Screenshots
 
 ### Schema
 
