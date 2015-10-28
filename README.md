@@ -79,7 +79,7 @@ If will create file config/initializers/rails_db.rb.
 *   **http_basic_authentication_password** - HTTP_BASIC authentication password.
 *   **black_list_tables** - black list for tables (hide tables from sidebar).
 *   **white_list_tables** - black list for tables (show only these tables in sidebar).
-*   **verify_access_proc** - allow access by specific conditions, for example by role for current_user (default: `proc { true }`)
+*   **verify_access_proc** - allow access by specific conditions, for example by role for current_user (default: `proc { |controller| true }`)
 
 If you want to add routes manually you can add need to turn off automatic_routes_mount and then add to your `routes.rb`
 
@@ -90,7 +90,7 @@ If you want to add routes manually you can add need to turn off automatic_routes
 If you want to allow access to admin panel for admins and you using for example Devise you can do following (in your `config/initializers/rails_db.rb`)
 
 ```ruby
-  config.verify_access_proc = proc { current_user.admin? }
+  config.verify_access_proc = proc { |controller| controller.current_user.admin? }
 ```
 
 ## Data Tables
