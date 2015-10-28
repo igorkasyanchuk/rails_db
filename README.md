@@ -22,7 +22,7 @@ For now was tested manually only with Ruby 2.X, and Rails 4.X. But expected to w
 
 ## Main Features
 
-* view content of DB tables
+* view content and schema of DB tables (including indexes)
 * sort content of DB tables
 * execute SQL queries
 * autocomplete for SQL queries
@@ -38,6 +38,7 @@ For now was tested manually only with Ruby 2.X, and Rails 4.X. But expected to w
 * white/black list of tables
 * data-tables inside your app
 * ajax-ify Rails DB
+* delete records, truncate tables
 * visualize SQL schema (future)
 * CRUD for table records (future)
 
