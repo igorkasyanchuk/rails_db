@@ -24,6 +24,9 @@
 <table>
   <thead>
     <tr>
+      <% if @table.primary_key.present? %>
+        <th>PK</th>
+      <% end %>
       <% @table.column_properties.each do |key| %>
         <th><%= key.titleize.upcase %></th>
       <% end %>
@@ -32,13 +35,20 @@
   <tbody>
     <% @table.columns.each do |col| %>
       <tr>
+        <% if @table.primary_key %>
+          <% if @table.primary_key == col.name %>
+            <td>
+              <span class='pk'><%= fa_icon 'key' %></span>
+            </td>
+          <% else %>
+            <td></td>
+          <% end %>
+        <% end %>
+
         <% @table.column_properties.each do |key| %>
           <td class="<%= key %>">
             <% value = col.send(key) %>
             <%= value %>
-            <% if key == 'name' && @table.primary_key == value %>
-              <span class='pk'><%= fa_icon 'key' %></span>
-            <% end %>
           </td>
         <% end %>
       </tr>

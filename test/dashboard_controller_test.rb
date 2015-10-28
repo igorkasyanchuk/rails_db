@@ -31,6 +31,9 @@ class DashboardControllerTest < ActionDispatch::IntegrationTest
 
     get '/'
     assert_equal 200, status
+
+    get '/rails/db/tables/users/data?sort_column=id&sort_order=desc'
+    assert_equal 200, status
   end
 
 end

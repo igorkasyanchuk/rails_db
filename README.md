@@ -1,6 +1,6 @@
 # Rails DB
 
-Please **share** this gem with your friends to get more feedback. 
+Please **share** this gem with your friends to get more feedback.
 
 If you have ideas - please create an issue or contact me by email: `igorkasyanchuk[@]gmail.com`.
 
@@ -120,7 +120,7 @@ Below you can see samples how you can embed data-tables in directly your app.
 [<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/data_table_code.png?token=AAArXU_ChN3xNN2MajLy2Tv98ij6XK4Pks5WKlT3wA%3D%3D"
 />](https://rails-db.herokuapp.com/rails/db/)
 
-## Samples
+## Samples & Screenshots
 
 ### Schema
 

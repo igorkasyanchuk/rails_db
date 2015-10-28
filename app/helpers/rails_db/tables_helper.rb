@@ -19,7 +19,7 @@ module RailsDb
       title = titleize_column(column, title)
       css_class  = (column == params[:sort_column]) ? "current #{params[:sort_order]}" : nil
       sort_order = (column == params[:sort_column] && params[:sort_order] == 'asc') ? 'desc' : 'asc'
-      link_to title, params.merge({ sort_column: column, sort_order: sort_order }), {remote: true, class: css_class }
+      link_to title, params.merge({ action: :data, sort_column: column, sort_order: sort_order }), {remote: true, class: css_class }
     end
 
     def titleize_column(column, title = nil)
@@ -28,6 +28,19 @@ module RailsDb
 
     def select_top_from_table(table)
       link_to raw("#{fa_icon('database')} SQL Query"), rails_db.sql_path(sql: "select * from #{table} limit 10")
+    end
+
+    def delete_row_path(table, record)
+      table_destroy_path(table,
+        pk_id: record[table.primary_key],
+        page: params[:page],
+        sort_column: params[:sort_column],
+        sort_order: params[:sort_order])
+    end
+
+    def table_pagination_path
+      params.delete(:pk_id)
+      params.merge({action: :data})
     end
 
   end

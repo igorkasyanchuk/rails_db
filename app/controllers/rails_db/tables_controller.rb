@@ -30,9 +30,15 @@ module RailsDb
     end
 
     def destroy
-      @table = RailsDb::Table.new(params[:table_id])
-      @table.delete(params[:id])
-      render js: 'alert("Record was successfully deleted");'
+      @table = RailsDb::Table.new(params[:table_id]).paginate page: params[:page],
+                                                              sort_column: params[:sort_column],
+                                                              sort_order: params[:sort_order],
+                                                              per_page: session[:per_page]
+      @table.delete(params[:pk_id])
+      respond_to do |page|
+        page.html {}
+        page.js {}
+      end
     end
 
   end

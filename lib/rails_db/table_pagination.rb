@@ -1,12 +1,13 @@
 module RailsDb
   module TablePagination
+    DEFAULT_PAGINATION_PER_PAGE = 10
 
     def next_page
       current_page < total_pages ? (current_page + 1) : nil
     end
 
     def paginate(options = {})
-      self.per_page     = (options[:per_page] || 10).to_i
+      self.per_page     = (options[:per_page] || DEFAULT_PAGINATION_PER_PAGE).to_i
       self.current_page = (options[:page] || 1).to_i
       self.offset       = current_page * per_page - per_page
       self.sort_column  = options[:sort_column]

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151027223149) do
+ActiveRecord::Schema.define(version: 20151028191429) do
 
   create_table "accounts", force: :cascade do |t|
     t.string   "name"
@@ -36,6 +36,10 @@ ActiveRecord::Schema.define(version: 20151027223149) do
   end
 
   add_index "contacts", ["name", "email"], name: "index_contacts_on_name_and_email"
+
+  create_table "legacy_accounts", primary_key: "uuid", force: :cascade do |t|
+    t.string "name"
+  end
 
   create_table "payments", force: :cascade do |t|
     t.decimal  "amount"

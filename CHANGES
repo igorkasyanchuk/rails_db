@@ -1,7 +1,10 @@
-0.6 - October 27, 2015
+0.6 - October 28, 2015
   - better results if no results
   - add truncate table
-  - add indexes information
+  - add information about indexes
+  - fixed issue with helpers (thanks @losadaem)
+  - added delete for records (by PK)
+  - added information about primary key
 
 0.5.1 - October 27, 2015
   - removed log files and other garbage to reduce size of gem

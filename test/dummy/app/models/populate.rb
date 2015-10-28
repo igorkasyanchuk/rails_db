@@ -1,6 +1,6 @@
 class Populate
 
-  def self.populate
+  def Populate.populate
     require 'populator'
     require 'faker'
 
@@ -31,6 +31,11 @@ class Populate
 
     Project.populate 100 do |project|
       project.name = Faker::Company.name
+    end
+
+    LegacyAccount.populate 100 do |account|
+      account.uuid = rand(1_000_000)
+      account.name = Faker::Company.name
     end
   end
 
