@@ -1,6 +1,8 @@
 module RailsDb
   class ApplicationController < ActionController::Base
 
+    helper :all
+
     if Rails::VERSION::MAJOR >= 4
       before_action :verify_access
     else
