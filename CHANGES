@@ -1,7 +1,7 @@
 BACKLOG:
   - create dump
   - visualize schema (ERD?)
-  - show/hide columns on Table Data view (using JS and cookies)
+  - show/hide columns on Table Data view (using JS and cookies) (something like http://griddlegriddle.github.io/Griddle/)
   - scroll page to Table Data if we have many tables and user click in sidebar on it
   - delete record in table without PK
   - add sorting/filters to data-tables
