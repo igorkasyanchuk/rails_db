@@ -66,14 +66,14 @@ Visit **`http://localhost:3000/rails/db`** and you will see your database tables
 
 ## Customization
 
-If you want to customize gem(create initializer) run in console:
+If you want to customize gem (create initializer) run in console:
 
     rails g rails_db initializer
 
 If will create file config/initializers/rails_db.rb.
 
 ### Options
-*   **enabled** - enable of disable gem (default: true).
+*   **enabled** - enable or disable gem (default: true).
 *   **automatic_routes_mount** - automatically mount engine routes in your app (default: true).
 *   **http_basic_authentication_enabled** - Enable HTTP_BASIC authentication (default: false).
 *   **http_basic_authentication_user_name** - HTTP_BASIC authentication user name.
@@ -82,13 +82,13 @@ If will create file config/initializers/rails_db.rb.
 *   **white_list_tables** - black list for tables (show only these tables in sidebar).
 *   **verify_access_proc** - allow access by specific conditions, for example by role for current_user (default: `proc { |controller| true }`)
 
-If you want to add routes manually you can add need to turn off automatic_routes_mount and then add to your `routes.rb`
+If you want to add routes manually (or customize the mounted location) you need to first turn off automatic_routes_mount and then add to your `routes.rb`
 
 ```ruby
   mount RailsDb::Engine => '/rails/db', :as => 'rails_db'
 ```
 
-If you want to allow access to admin panel for admins and you using for example Devise you can do following (in your `config/initializers/rails_db.rb`)
+If you wanted to only allow access to admins and, for example, you are using Devise you could do following (in `config/initializers/rails_db.rb`)
 
 ```ruby
   config.verify_access_proc = proc { |controller| controller.current_user.admin? }
@@ -98,9 +98,9 @@ If you want to allow access to admin panel for admins and you using for example 
 
 You can easily embed data-tables into your App with content from DB.
 
-You can build data tables for whole Table, Table with specific columns or based on SQL query.
+You can build data tables for the whole Table, Table with specific columns or based on SQL query.
 
-Below you can see samples how you can embed data-tables in directly your app.
+Below you can see samples on how you can embed data-tables directly in your app.
 
 ```erb
 <h3>Table</h3>
