@@ -1,5 +1,30 @@
 # Rails DB
 
+## PROJECT NEEDS HELP
+
+If you want to help Rails_DB please help me to verify this branch https://github.com/igorkasyanchuk/rails_db/tree/standalone. You need to checkout it, run locally `gem build rails_db.gemspec`, then `gem install rails_db-0.7.gem` and then on any of your project inside root path run:
+
+```ruby
+prompt>runsql 'select 1 as count'
+
+# and after
+
+prompt>rails_db
+```
+
+First command will execute SQL in scope of your project.
+
+Second will start RailsDB standalone server on port `http://0.0.0.0:12345/rails/db`.
+
+Please help me to verify this new cool feature. If you will find something - just add a comment to PR.
+
+PS: You also can help by adding other new features. Increase your carma :)
+
+Thanks, Igor
+
+_______________
+
+
 Please **share** this gem with your friends to get more feedback.
 
 If you have ideas - please create an issue or contact me by email: `igorkasyanchuk[@]gmail.com`.
