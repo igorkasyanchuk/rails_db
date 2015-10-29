@@ -8,6 +8,7 @@ BACKLOG:
   - add quick aggregation functions for columns
   - add ability to change width of columns (and remember selection in cookies) (something like http://www.bacubacu.com/colresizable/)
   - edit table row in form
+  - disable logs for standalone apps
 
 
 0.6 - October 28, 2015

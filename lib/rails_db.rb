@@ -5,13 +5,14 @@ require "sass"
 require "sass-rails"
 require "jquery-rails"
 require 'codemirror-rails'
+require 'terminal-table'
 
 module RailsDb
   # Custom require relative that work with older rubies also
-  def self.require_relative(path)
-    full_path = File.expand_path(path, File.dirname(__FILE__))
-    Kernel.require(full_path)
-  end
+  # def self.require_relative(path)
+  #   full_path = File.expand_path(path, File.dirname(__FILE__))
+  #   Kernel.require(full_path)
+  # end
 
   # gem in enabled
   mattr_accessor :enabled
@@ -50,15 +51,14 @@ module RailsDb
   end
 
   def self.use_default_configuration!
-    enabled = true
-    automatic_routes_mount = true
-    black_list_tables = white_list_tables = []
-    http_basic_authentication_enabled = false
-    verify_access_proc = proc { |controller| true }
+    self.enabled                            = true
+    self.automatic_routes_mount             = true
+    self.black_list_tables                  = white_list_tables = []
+    self.http_basic_authentication_enabled  = false
+    self.verify_access_proc                 = proc { |controller| true }
   end
 
 end
 
-require "rails_db/engine"
-
-RailsDb.require_relative("rails/routes")
+require_relative "rails_db/engine"
+require_relative "rails/routes"

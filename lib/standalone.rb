@@ -2,19 +2,20 @@ require 'rubygems'
 require 'active_record'
 require 'rack'
 require 'rack/server'
+require 'erb'
 
 HOST = '0.0.0.0'
 PORT = 12345
 
-file_path = ::File.expand_path(File.join('.', 'config', 'database.yml'))
-app_path  = ::File.expand_path(File.join('.'))
+database_yml = ::File.expand_path(File.join('.', 'config', 'database.yml'))
+app_path     = ::File.expand_path(File.join('.'))
 
-ENV['DATABASE_YML_PATH'] = file_path
+ENV['DATABASE_YML_PATH'] = database_yml
 
 require ::File.expand_path('../../test/standalone/config/environment', __FILE__)
 
-puts      "Using database.yml from: #{file_path}"
-db_conf   = YAML::load(File.open(file_path))
+puts      "Using database.yml from: #{database_yml}"
+db_conf   = YAML.load(ERB.new(File.open(database_yml).read).result) || {}
 env       = ENV['RAILS_ENV'] || ENV['ENV'] || 'development'
 db_env    = db_conf[env]
 

@@ -9,6 +9,7 @@ gem 'codemirror-rails'
 gem 'pg'
 gem 'mysql2'
 gem 'sqlite3'
+gem 'terminal-table'
 
 group :assets do
   gem 'sass-rails'

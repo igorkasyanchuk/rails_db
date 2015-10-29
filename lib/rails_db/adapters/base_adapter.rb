@@ -12,12 +12,19 @@ module RailsDb
         Time.now - t0
       end
 
-      def self.exec_query(sql, log = true)
+      def self.exec_query(sql)
         t0 = Time.now
-        Rails.logger.debug "--> Executing: #{sql}" if log
         results = connection.exec_query(sql)
         execution_time = Time.now - t0
         [results, execution_time]
+      end
+
+      def self.select(sql)
+        BaseAdapter.exec_query(sql)
+      end
+
+      def self.explain(sql)
+        BaseAdapter.exec_query(sql)
       end
 
       def self.adapter_name
@@ -34,6 +41,18 @@ module RailsDb
 
       def self.delete(table_name, pk_name, pk_id)
         execute("DELETE FROM #{table_name} WHERE #{pk_name} = #{pk_id};")
+      end
+
+      def self.count(table_name)
+        select("SELECT COUNT(*) FROM #{table_name}")[0].rows.flatten.last.to_i
+      end
+
+      def self.primary_key(table_name)
+        connection.primary_key(table_name)
+      end
+
+      def self.indexes(table_name)
+        connection.indexes(table_name)
       end
 
       private

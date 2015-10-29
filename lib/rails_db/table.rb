@@ -7,12 +7,12 @@ module RailsDb
 
     attr_reader :name, :data
 
-    delegate :count, :to => :data
-    delegate :paginate, :to => :data
-    delegate :limit, :to => :data
-    delegate :order, :to => :data
-    delegate :asc, :to => :data
-    delegate :desc, :to => :data
+    delegate :count,     to: :data
+    delegate :paginate,  to: :data
+    delegate :limit,     to: :data
+    delegate :order,     to: :data
+    delegate :asc,       to: :data
+    delegate :desc,      to: :data
 
     def initialize(table_name)
       throw 'Access Denied' unless RailsDb::Database.accessible_tables.include?(table_name)
@@ -30,19 +30,19 @@ module RailsDb
     end
 
     def indexes
-      connection.indexes(name)
+      RailsDb::Database.indexes(name)
     end
 
     def truncate
-      RailsDb::Database.adapter.truncate(name)
+      RailsDb::Database.truncate(name)
     end
 
     def primary_key
-      connection.primary_key(name)
+      RailsDb::Database.primary_key(name)
     end
 
     def delete(id)
-      RailsDb::Database.adapter.delete(name, primary_key, id)
+      RailsDb::Database.delete(name, primary_key, id)
     end
 
   end # module

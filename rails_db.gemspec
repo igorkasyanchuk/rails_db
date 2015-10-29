@@ -1,9 +1,7 @@
 $:.push File.expand_path("../lib", __FILE__)
 
-# Maintain your gem's version:
 require "rails_db/version"
 
-# Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = "rails_db"
   s.version     = RailsDb::VERSION
@@ -14,10 +12,10 @@ Gem::Specification.new do |s|
   s.description = "Quick way to inspect your Rails database, see content of tables, export them to CSV, EXPLAIN SQL and run SQL queries."
   s.license     = "MIT"
 
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc", "bin/rails_db", "bin/railsdb"]
+  s.files = Dir["{app,config,lib}/**/*", "rails_db.gemspec", "Gemfile_mini", "Gemfile", "Gemfile.lock", "MIT-LICENSE", "Rakefile", "README.rdoc", "bin/rails_db", "bin/railsdb", "bin/runsql"]
   s.test_files = Dir["test/**/*"]
 
-  s.executables   = ["railsdb", "rails_db"]
+  s.executables   = ["railsdb", "rails_db", 'runsql']
 
   s.add_dependency "rails", ">= 3.1.0"
   s.add_dependency "font-awesome-rails"
@@ -30,8 +28,5 @@ Gem::Specification.new do |s|
   s.add_dependency "sqlite3"
   s.add_dependency "mysql2", '<= 0.3.20'
   s.add_dependency "pg"
-  s.add_dependency "pry"
-
-  s.add_development_dependency 'populator'
-  s.add_development_dependency 'faker'
+  s.add_dependency 'terminal-table'
 end

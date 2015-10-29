@@ -6,8 +6,8 @@ module RailsDb
     attr_reader :table, :time
     attr_accessor :current_page, :offset, :per_page, :sort_column, :sort_order, :select_columns
 
-    delegate :each, :to => :data
-    delegate :count, :to => :table
+    delegate :each,  to: :data
+    delegate :count, to: :table
 
     def initialize(table)
       @table = table
@@ -27,7 +27,7 @@ module RailsDb
         if per_page
           commands.push("LIMIT #{per_page.to_i} OFFSET #{offset.to_i}")
         end
-        results, @time = Database.adapter.exec_query(commands.join(' '))
+        results, @time = Database.select(commands.join(' '))
         results
       end
     end
@@ -71,7 +71,7 @@ module RailsDb
     end
 
     def count
-      Database.adapter.exec_query("SELECT COUNT(*) FROM #{table.name}")[0].rows.flatten.last.to_i
+      Database.count(table.name)
     end
 
   end
