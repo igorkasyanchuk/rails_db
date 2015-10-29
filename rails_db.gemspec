@@ -14,8 +14,10 @@ Gem::Specification.new do |s|
   s.description = "Quick way to inspect your Rails database, see content of tables, export them to CSV, EXPLAIN SQL and run SQL queries."
   s.license     = "MIT"
 
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc", "bin/rails_db", "bin/railsdb"]
   s.test_files = Dir["test/**/*"]
+
+  s.executables   = ["railsdb", "rails_db"]
 
   s.add_dependency "rails", ">= 3.1.0"
   s.add_dependency "font-awesome-rails"
@@ -24,12 +26,12 @@ Gem::Specification.new do |s|
   s.add_dependency "sass-rails"
   s.add_dependency "jquery-rails"
   s.add_dependency 'codemirror-rails'
+  s.add_dependency 'launchy'
+  s.add_dependency "sqlite3"
+  s.add_dependency "mysql2", '<= 0.3.20'
+  s.add_dependency "pg"
+  s.add_dependency "pry"
 
   s.add_development_dependency 'populator'
   s.add_development_dependency 'faker'
-
-  s.add_development_dependency "sqlite3"
-  s.add_development_dependency "mysql2", '<= 0.3.20'
-  s.add_development_dependency "pg"
-  s.add_development_dependency "pry"
 end

@@ -12,14 +12,20 @@ gemspec
 
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
+gem 'rails'
 gem 'foundation-rails'
 gem 'sass'
 gem 'jquery-rails'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 gem 'codemirror-rails'
+gem 'pg', require: false
+gem 'mysql2', require: false
+gem 'sqlite3', require: false
 
 group :development do
   gem 'quiet_assets'
+  gem 'populator'
+  gem 'faker'
 end
 
 group :assets do
@@ -27,11 +33,6 @@ group :assets do
   gem 'therubyracer', platforms: :ruby
   gem 'uglifier'
 end
-
-gem 'pg'
-gem 'mysql2'
-gem 'populator'
-gem 'faker'
 
 group :test do
   gem "rspec"

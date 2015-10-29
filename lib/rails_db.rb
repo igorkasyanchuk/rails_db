@@ -1,3 +1,4 @@
+require "rails"
 require "font-awesome-rails"
 require "foundation-rails"
 require "sass"
@@ -46,6 +47,14 @@ module RailsDb
 
   def self.setup
     yield(self)
+  end
+
+  def self.use_default_configuration!
+    enabled = true
+    automatic_routes_mount = true
+    black_list_tables = white_list_tables = []
+    http_basic_authentication_enabled = false
+    verify_access_proc = proc { |controller| true }
   end
 
 end
