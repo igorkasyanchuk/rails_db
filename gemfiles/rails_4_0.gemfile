@@ -14,7 +14,6 @@ gemspec :path => '../'
 
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
-gem 'foundation-rails'
 gem 'sass'
 gem 'jquery-rails'
 gem "font-awesome-rails"

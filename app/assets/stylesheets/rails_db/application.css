@@ -1,5 +1,6 @@
 /*
  *= require_self
+ *= require rails_db/foundation.min
  *= require rails_db/foundation_and_overrides
  *= require codemirror
  *= require codemirror/themes/pastel-on-dark.css

@@ -1,6 +1,7 @@
 //= require jquery
 //= require jquery_ujs
-//= require foundation
+//= require rails_db/foundation.min
+//= require_tree ../rails_db/foundation/
 //= require rails_db/sticky
 //= require rails_db/jquery.cookie
 //= require codemirror

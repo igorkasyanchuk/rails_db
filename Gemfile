@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'rails'
-gem 'foundation-rails'
 gem 'sass'
 gem 'jquery-rails'
 gem 'font-awesome-rails'
@@ -15,7 +14,7 @@ gem 'terminal-table'
 
 group :assets do
   gem 'sass-rails'
-  gem 'therubyracer', platforms: :ruby
+  gem 'therubyracer'
   gem 'uglifier'
 end
 

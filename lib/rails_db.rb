@@ -1,6 +1,5 @@
 require "rails"
 require "font-awesome-rails"
-require "foundation-rails"
 require "sass"
 require "sass-rails"
 require "jquery-rails"

@@ -1,5 +1,8 @@
-$row-width: 100%;
+.row {
+  width: 100%;
+  max-width: 100%;
+}
 
-$body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-
-@import "foundation";
+body {
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+}

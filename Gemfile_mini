@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails'
-gem 'foundation-rails'
 gem 'sass'
 gem 'jquery-rails'
 gem 'font-awesome-rails'
