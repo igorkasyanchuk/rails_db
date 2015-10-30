@@ -2,6 +2,18 @@ module RailsDb
   class Database
     extend Connection
 
+    class << self
+      delegate :count,       to: :adapter
+      delegate :truncate,    to: :adapter
+      delegate :delete,      to: :adapter
+      delegate :execute,     to: :adapter
+      delegate :select,      to: :adapter
+      delegate :explain,     to: :adapter
+      delegate :exec_query,  to: :adapter
+      delegate :primary_key, to: :adapter
+      delegate :indexes,     to: :adapter
+    end
+
     def self.tables
       connection.tables.sort - ['schema_migrations']
     end

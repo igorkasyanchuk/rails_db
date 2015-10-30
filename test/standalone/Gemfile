@@ -1,0 +1,18 @@
+source 'https://rubygems.org'
+
+gem 'rails'
+gem 'foundation-rails'
+gem 'sass'
+gem 'jquery-rails'
+gem 'font-awesome-rails'
+gem 'codemirror-rails'
+gem 'pg'
+gem 'mysql2'
+gem 'sqlite3'
+gem 'terminal-table'
+
+group :assets do
+  gem 'sass-rails'
+  gem 'therubyracer', platforms: :ruby
+  gem 'uglifier'
+end
