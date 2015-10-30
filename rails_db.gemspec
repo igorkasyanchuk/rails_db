@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.description = "Quick way to inspect your Rails database, see content of tables, export them to CSV, EXPLAIN SQL and run SQL queries."
   s.license     = "MIT"
 
-  s.files = Dir["{app,config,lib}/**/*", "rails_db.gemspec", "Gemfile_mini", "Gemfile", "Gemfile.lock", "MIT-LICENSE", "Rakefile", "README.rdoc", "bin/rails_db", "bin/railsdb", "bin/runsql"]
+  s.files = Dir["{app,config,lib}/**/*", "rails_db.gemspec", "Gemfile", "Gemfile.lock", "MIT-LICENSE", "Rakefile", "README.rdoc", "bin/rails_db", "bin/railsdb", "bin/runsql"]
   s.test_files = Dir["test/**/*"]
 
   s.executables   = ["railsdb", "rails_db", 'runsql']

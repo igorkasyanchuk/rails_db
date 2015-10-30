@@ -1,9 +1,5 @@
 #!/usr/bin/env ruby
 
-require 'bundler'
-ENV['BUNDLE_GEMFILE'] = File.expand_path('../../Gemfile_mini', __FILE__)
-Bundler.setup
-
 require 'active_record'
 require 'erb'
 require 'yaml'
