@@ -2,6 +2,8 @@
 
 ## PROJECT NEEDS HELP
 
+**Problem is here: http://stackoverflow.com/questions/33435734/gem-development-not-load-other-gemfile**
+
 If you want to help Rails_DB please help me to verify this branch https://github.com/igorkasyanchuk/rails_db/tree/standalone. You need to checkout it, run locally `gem build rails_db.gemspec`, then `gem install rails_db-0.7.gem` and then on any of your project inside root path run:
 
 ```ruby
