@@ -19,7 +19,6 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", ">= 3.1.0"
   s.add_dependency "font-awesome-rails"
-  s.add_dependency "foundation-rails"
   s.add_dependency "sass"
   s.add_dependency "sass-rails"
   s.add_dependency "jquery-rails"
@@ -29,4 +28,5 @@ Gem::Specification.new do |s|
   s.add_dependency "mysql2", '<= 0.3.20'
   s.add_dependency "pg"
   s.add_dependency 'terminal-table'
+  s.add_dependency 'therubyracer'
 end
