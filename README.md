@@ -1,6 +1,6 @@
 # Rails DB
 
-Please **share** this gem with your friends to get more feedback.
+Please **share** this gem with your friends to get more feedback. I would really appreciate for the gem review if you have a  blog.
 
 If you have ideas - please create an issue or contact me by email: `igorkasyanchuk[@]gmail.com`.
 
