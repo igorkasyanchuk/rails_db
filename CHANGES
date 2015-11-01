@@ -2,14 +2,17 @@ BACKLOG:
   - create dump
   - visualize schema (ERD?)
   - show/hide columns on Table Data view (using JS and cookies) (something like http://griddlegriddle.github.io/Griddle/)
-  - scroll page to Table Data if we have many tables and user click in sidebar on it
   - delete record in table without PK
   - add sorting/filters to data-tables
   - add quick aggregation functions for columns
   - add ability to change width of columns (and remember selection in cookies) (something like http://www.bacubacu.com/colresizable/)
   - edit table row in form
-  - disable logs for standalone apps
 
+0.7 - November 1, 2015
+  - added standalone app 'railsdb'
+  - added util app 'runsql'
+  - scroll page to Table Data if we have many tables and user click in sidebar on it
+  - disable logs for standalone apps
 
 0.6 - October 28, 2015
   - better results if no results
