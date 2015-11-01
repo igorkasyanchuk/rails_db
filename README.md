@@ -140,6 +140,8 @@ Below you can see samples on how you can embed data-tables directly in your app.
 
 ### SQL Editor
 
+Rails App SQL editor with syntax highlight and code complete.
+
 [<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/execute_sql.png?token=AAArXf26vwsPwvV2MhgxWUepGb0tT6g4ks5WKlUJwA%3D%3D"
 />](https://rails-db.herokuapp.com/rails/db/)
 
