@@ -45,6 +45,9 @@ class DashboardControllerTest < ActionDispatch::IntegrationTest
 
     get '/rails/db/tables/accounts/csv'
     assert_equal 200, status
+
+    get '/rails/db/standalone'
+    assert_equal 200, status
   end
 
 end

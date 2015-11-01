@@ -15,6 +15,7 @@ RailsDb::Engine.routes.draw do
   post '/import-start' => 'sql#import_start', as: :sql_start_import
 
   get '/data-table' => 'dashboard#data_table', as: :data_table
+  get '/standalone' => 'dashboard#standalone', as: :standalone
 end
 
 if RailsDb.automatic_routes_mount

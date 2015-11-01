@@ -1,0 +1,15 @@
+<h1>Rails DB - Command Line</h1>
+
+<p>
+  After installing Rails DB gem you can execute locally in any application folder following commands <code>railsdb</code> and <code>runsql</code>.
+</p>
+
+<h3>railsdb</h3>
+
+<p><code>>railsdb</code> to start railsdb standalone application automatically connected to local <code>config/database.yml</code> file.</p>
+
+<h3>runsql</h3>
+
+<p><code>>runsql 'select count(*) from users'</code> to run sql within your database (configured in <code>config/database.yml</code> file).</p>
+
+<p>You can connect to production DB by using environment variable <code>RAILS_ENV=production</code>.</p>

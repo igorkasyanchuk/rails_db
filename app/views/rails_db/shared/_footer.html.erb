@@ -7,48 +7,49 @@
     <div class="large-6 columns">
       <ul class="inline-list right">
         <li>
-        <%= link_to '/' do %>
-          <%= fa_icon 'home' %>
-          Home
-        <% end %>
+          <%= link_to '/' do %>
+            <%= fa_icon 'home' %>
+            Home
+          <% end %>
         </li>
         <li>|</li>
         <li>
-        <%= link_to rails_db.root_path do %>
-          <%= fa_icon 'list-ul' %>
-          Dashboard
-        <% end %>
+          <%= link_to rails_db.root_path do %>
+            <%= fa_icon 'list-ul' %>
+            Dashboard
+          <% end %>
         </li>
         <li>|</li>
         <li>
-        <%= link_to rails_db.sql_path do %>
-          <%= fa_icon 'database' %>
-          SQL Editor
-        <% end %>
-      </li>
-      <li>|</li>
-      <li>
-        <%= link_to rails_db.sql_import_path do %>
-          <%= fa_icon 'download' %>
-          Import
-        <% end %>
-      </li>
-      <li>|</li>
-      <li>
-        <%= link_to rails_db.data_table_path do %>
-          <%= fa_icon 'table' %>
-          Data Table
-        <% end %>
-      </li>
-      <li>|</li>
-      <li>
-        <a data-reveal-id="more_gems_modal">
-          <%= fa_icon 'heart' %>
-          More Gems
-        </a>
-        <%= render '/rails_db/shared/gems' %>
-      </li>
+          <%= link_to rails_db.sql_path do %>
+            <%= fa_icon 'database' %>
+            SQL Editor
+          <% end %>
+        </li>
+        <li>|</li>
+        <li>
+          <%= link_to rails_db.sql_import_path do %>
+            <%= fa_icon 'download' %>
+            Import
+          <% end %>
+        </li>
+        <li>|</li>
+        <li>
+          <%= link_to rails_db.data_table_path do %>
+            <%= fa_icon 'table' %>
+            Data Table
+          <% end %>
+        </li>
+        <li>|</li>
+        <li>
+          <a data-reveal-id="more_gems_modal">
+            <%= fa_icon 'heart' %>
+            More Gems
+          </a>
+        </li>
       </ul>
+      <div class='clear'></div>
     </div>
   </div>
+  <%= render '/rails_db/shared/gems' %>
 </div>
