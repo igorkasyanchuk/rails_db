@@ -149,7 +149,9 @@ Install & visit **`http://localhost:3000/rails/db`** to see it in action.
 
 ### RailsDB Standalone
 
-Run RailsDB Standalone commands locally withing configuration of your `config/database.yml`
+Run RailsDB Standalone commands locally withing configuration of your `config/database.yml`.
+
+RailsDB Standalone and runsql doesn't require to be added to Gemfile or you application.
 
 [<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/railsdb.png?token=AAArXf26vwsPwvV2MhgxWUepGb0tT6g4ks5WKlUJwA%3D%3D"
 />](https://rails-db.herokuapp.com/rails/db/)
