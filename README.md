@@ -178,6 +178,14 @@ Run SQL commands locally withing configuration of your `config/database.yml`
 - rails s
 - open http://locahost:3000/
 
+## Local Build
+
+- in gem root folder run `gem build rails_db.gemspec`
+- then try to install local version of the gem `gem install rails_db-0.X.X.gem`
+- now you can use this gem locally
+- don't forget to uninstall it
+
+
 ## Run Tests
 
 To run tests locally you need to execute `rake test` withing root folder of project.
