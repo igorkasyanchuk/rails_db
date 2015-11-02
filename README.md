@@ -13,7 +13,7 @@ Please **share** this gem with your friends to get more feedback. I would really
 />](https://rails-db.herokuapp.com/rails/db/)
 
 
-Quick way to inspect your Rails database **http://localhost:3000/rails/db**, see content of tables, export them to CSV, EXPLAIN SQL and run SQL queries.
+Quick way to inspect your Rails database **http://localhost:12345/rails/db**, see content of tables, export them to CSV, EXPLAIN SQL and run SQL queries.
 
 Demo available on: https://rails-db.herokuapp.com/rails/db/
 
@@ -64,9 +64,11 @@ Or only for development:
   end
 ```
 
-Run `bundle install`
+Run `bundle install`<sup>++</sup>
 
 Visit **`http://localhost:3000/rails/db`** and you will see your database tables and SQL editors.
+
+> Use port 12345 if running in 'standalone' mode
 
 ## Customization
 
@@ -161,6 +163,9 @@ Run SQL commands locally withing configuration of your `config/database.yml`
 [<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/runsql.png?token=AAArXf26vwsPwvV2MhgxWUepGb0tT6g4ks5WKlUJwA%3D%3D"
 />](https://rails-db.herokuapp.com/rails/db/)
 
+===
+
+<sup>++</sup>There is a dependency on MySQL.  You may need to `gem install mysql2 -v '0.3.20'`
 ## Contributing
 
 - Fork it
