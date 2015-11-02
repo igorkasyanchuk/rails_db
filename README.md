@@ -64,7 +64,7 @@ Or only for development:
   end
 ```
 
-Run `bundle install`
+Run `bundle install`<sup>++</sup>
 
 Visit **`http://localhost:3000/rails/db`** and you will see your database tables and SQL editors.
 
@@ -161,6 +161,9 @@ Run SQL commands locally withing configuration of your `config/database.yml`
 [<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/runsql.png?token=AAArXf26vwsPwvV2MhgxWUepGb0tT6g4ks5WKlUJwA%3D%3D"
 />](https://rails-db.herokuapp.com/rails/db/)
 
+===
+
+<sup>++</sup>There is a dependency on MySQL.  You may need to `gem install mysql2 -v '0.3.20'`
 ## Contributing
 
 - Fork it
