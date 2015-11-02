@@ -13,7 +13,7 @@ Please **share** this gem with your friends to get more feedback. I would really
 />](https://rails-db.herokuapp.com/rails/db/)
 
 
-Quick way to inspect your Rails database **http://localhost:3000/rails/db**, see content of tables, export them to CSV, EXPLAIN SQL and run SQL queries.
+Quick way to inspect your Rails database **http://localhost:12345/rails/db**, see content of tables, export them to CSV, EXPLAIN SQL and run SQL queries.
 
 Demo available on: https://rails-db.herokuapp.com/rails/db/
 
