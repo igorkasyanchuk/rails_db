@@ -68,6 +68,8 @@ Run `bundle install`<sup>++</sup>
 
 Visit **`http://localhost:3000/rails/db`** and you will see your database tables and SQL editors.
 
+> Use port 12345 if running in 'standalone' mode
+
 ## Customization
 
 If you want to customize gem (create initializer) run in console:
