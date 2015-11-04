@@ -180,7 +180,7 @@ Run SQL commands locally withing configuration of your `config/database.yml`
 - cd test/dummy
 - bundle
 - rake db:migrate
-- rails s
+- rails s -b 0.0.0.0
 - open http://locahost:3000/
 
 ## Local Build
