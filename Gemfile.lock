@@ -1,17 +1,14 @@
 PATH
   remote: .
   specs:
-    rails_db (0.7)
+    rails_db (0.7.1)
       codemirror-rails
       font-awesome-rails
       jquery-rails
       launchy
-      mysql2 (<= 0.3.20)
-      pg
       rails (>= 3.1.0)
       sass
       sass-rails
-      sqlite3
       terminal-table
       therubyracer
 
@@ -147,7 +144,7 @@ DEPENDENCIES
   codemirror-rails
   font-awesome-rails
   jquery-rails
-  mysql2
+  mysql2 (<= 0.3.20)
   pg
   rails
   rails_db!

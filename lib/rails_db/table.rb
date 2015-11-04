@@ -1,5 +1,3 @@
-require 'csv'
-
 module RailsDb
 
   class Table

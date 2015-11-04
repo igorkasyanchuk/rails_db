@@ -7,9 +7,6 @@ gem 'sass'
 gem 'jquery-rails'
 gem 'font-awesome-rails'
 gem 'codemirror-rails'
-gem 'pg', require: false
-gem 'mysql2', require: false
-gem 'sqlite3', require: false
 gem 'terminal-table'
 
 group :assets do
