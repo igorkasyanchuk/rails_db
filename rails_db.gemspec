@@ -25,7 +25,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'codemirror-rails'
   s.add_dependency 'launchy'
   s.add_dependency 'terminal-table'
-  s.add_dependency 'therubyracer'
 
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "mysql2", '<= 0.3.20'
