@@ -22,6 +22,17 @@
 </ul>
 
 <div class='scrollable'>
+  <div class='top-section'><%= link_to 'Settings', '#', :class => 'settings-link' %></div>
+  <div class='rails-db-settings' style="display:none">
+    <h6>Settings</h6>
+    <% @table.columns.each do |column| %>
+      <div class="column-selection">
+        <%= check_box_tag(column.name, nil, {:class => "#{column.name}"}) %>
+        <span class='column-name'> <%= column.name %> </span>
+      </div>
+    <% end %>
+  </div>
+
   <table>
 
     <thead>
@@ -30,7 +41,7 @@
           <th class='delete_td'></th>
         <% end %>
         <% @table.columns.each do |column| %>
-          <th>
+          <th class=<%= column.name %>>
             <%= sortable column.name %>
           </th>
         <% end %>
@@ -49,7 +60,7 @@
           <% end %>
 
           <% @table.columns.each do |column| %>
-            <td>
+            <td class=<%= column.name %>>
               <% name = column.name %>
               <%= format_value(column, record[name]) %>
             </td>
