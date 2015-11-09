@@ -41,7 +41,7 @@
           <th class='delete_td'></th>
         <% end %>
         <% @table.columns.each do |column| %>
-          <th class=<%= column.name %>>
+          <th class="column_<%= column.name %>">
             <%= sortable column.name %>
           </th>
         <% end %>
@@ -60,7 +60,7 @@
           <% end %>
 
           <% @table.columns.each do |column| %>
-            <td class=<%= column.name %>>
+            <td class="column_<%= column.name %>">
               <% name = column.name %>
               <%= format_value(column, record[name]) %>
             </td>
