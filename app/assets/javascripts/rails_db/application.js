@@ -57,8 +57,8 @@ $(function(){
         remove_column_from_cookie(table_name, column_name);
       }
     }
-    $('th.' + column_name).toggle();
-    $('td.' + column_name).toggle();
+    $('th.column_' + column_name).toggle();
+    $('td.column_' + column_name).toggle();
   });
 
 });
