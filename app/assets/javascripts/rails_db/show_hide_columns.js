@@ -8,13 +8,20 @@ $(function(){
   $('body').on('click', '.column-name input', function() {
     table_name = $('h2')[0].innerHTML;
     column_name = $(this).prop('name');
-    if($(this).prop('checked') == false){
+    if($(this).prop('checked') == false) {
       write_column_to_cookie(table_name, column_name);
     } else {
       remove_column_from_cookie(table_name, column_name);
     }
-    $('th.column_' + column_name).toggle();
-    $('td.column_' + column_name).toggle();
+    switch_column_visibility(column_name);
+    if($('.column-name input:checked').length == 0) {
+      $('.column-name input[type=checkbox]').each(function() {
+        column_name = $(this).prop('name');
+        $(this).prop("checked", true);
+        remove_column_from_cookie(table_name, column_name);
+        switch_column_visibility(column_name);
+      });
+    }
   });
 
 });
@@ -37,3 +44,7 @@ function get_column_names_from_cookie(table_name) {
   }
 };
 
+function switch_column_visibility(column_name) {
+  $('th.column_' + column_name).toggle();
+  $('td.column_' + column_name).toggle();
+};
