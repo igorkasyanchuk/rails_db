@@ -26,10 +26,10 @@
   <div class='rails-db-settings' style="display:none">
     <h6>Settings</h6>
     <% @table.columns.each do |column| %>
-      <div class="column-selection">
+      <label class='column-name'>
         <%= check_box_tag(column.name, nil, {:class => "#{column.name}"}) %>
-        <span class='column-name'> <%= column.name %> </span>
-      </div>
+        <%= column.name %>
+      </label>
     <% end %>
   </div>
 
