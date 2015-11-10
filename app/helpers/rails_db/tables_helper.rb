@@ -43,5 +43,12 @@ module RailsDb
       params.merge({action: :data})
     end
 
+    def checked(column_name)
+      if cookies["Table: #{params[:table_id]}"].present?
+        !cookies["Table: #{params[:table_id]}"].include?(column_name)
+      else
+        true
+      end
+    end
   end
 end
