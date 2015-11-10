@@ -27,7 +27,7 @@
     <h6>Settings</h6>
     <% @table.columns.each do |column| %>
       <label class='column-name'>
-        <%= check_box_tag(column.name, nil, checked(column.name), class: "#{column.name}") %>
+        <%= check_box_tag(column.name, nil, column_is_checked?(column.name), class: "#{column.name}") %>
         <%= column.name %>
       </label>
     <% end %>
