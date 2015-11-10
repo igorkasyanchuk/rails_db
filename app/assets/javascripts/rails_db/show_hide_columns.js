@@ -14,14 +14,7 @@ $(function(){
       remove_column_from_cookie(table_name, column_name);
     }
     switch_column_visibility(column_name);
-    if($('.column-name input:checked').length == 0) {
-      $('.column-name input[type=checkbox]').each(function() {
-        column_name = $(this).prop('name');
-        $(this).prop("checked", true);
-        remove_column_from_cookie(table_name, column_name);
-        switch_column_visibility(column_name);
-      });
-    }
+    show_all_columns_after_last_became_hidden();
   });
 
 });
@@ -47,4 +40,15 @@ function get_column_names_from_cookie(table_name) {
 function switch_column_visibility(column_name) {
   $('th.column_' + column_name).toggle();
   $('td.column_' + column_name).toggle();
+};
+
+function show_all_columns_after_last_became_hidden() {
+  if($('.column-name input:checked').length == 0) {
+    $('.column-name input[type=checkbox]').each(function() {
+      column_name = $(this).prop('name');
+      $(this).prop("checked", true);
+      remove_column_from_cookie(table_name, column_name);
+      switch_column_visibility(column_name);
+    });
+  }
 };
