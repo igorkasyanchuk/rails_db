@@ -45,10 +45,15 @@ module RailsDb
 
     def column_is_checked?(column_name)
       if cookies["Table: #{params[:table_id]}"].present?
-        !cookies["Table: #{params[:table_id]}"].include?(column_name)
+        !cookies["Table: #{params[:table_id]}"].include?(" #{column_name}")
       else
         true
       end
     end
+
+    def display_style(column_name)
+      column_is_checked?(column_name) ? 'display' : 'display:none'
+    end
+
   end
 end
