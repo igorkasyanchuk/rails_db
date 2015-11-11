@@ -24,4 +24,16 @@ class TablesHelperTest < ActionView::TestCase
     assert_equal false, status
   end
 
+  test "method display_style_column returns 'display:none' if cookie contains record for this table:column" do
+    cookies['Table: users'] = ' created_at,'
+    style = display_style_column('users', 'created_at')
+    assert_match 'display:none', style
+  end
+
+  test "method display_style_column returns 'display' if cookie does not contain record for this table:column" do
+    cookies['Table: users'] = ' created_at,'
+    style = display_style_column('users', 'name')
+    assert_match 'display', style
+  end
+
 end
