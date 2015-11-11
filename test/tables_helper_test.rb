@@ -7,23 +7,20 @@ class TablesHelperTest < ActionView::TestCase
     clean_db
   end
 
-  test "method checked returns true for checkbox status if cookie does not contain hash_key for this table" do
-    params[:table_id] = 'users'
-    status = column_is_checked?('created_at')
+  test "method column_is_checked? returns true for checkbox status if cookie does not contain hash_key for this table" do
+    status = column_is_checked?('users', 'created_at')
     assert_equal true, status
   end
 
-  test "method checked returns true for checkbox status if cookie does not contain record for this table:column" do
-    params[:table_id] = 'users'
-    cookies['Table: users'] = 'created_at'
-    status = column_is_checked?('name')
+  test "method column_is_checked? returns true for checkbox status if cookie does not contain record for this table:column" do
+    cookies['Table: users'] = ' created_at,'
+    status = column_is_checked?('users', 'name')
     assert_equal true, status
   end
 
-  test "method checked returns false for checkbox status if cookie contains record for this table:column" do
-    params[:table_id] = 'users'
-    cookies['Table: users'] = 'created_at'
-    status = column_is_checked?('created_at')
+  test "method column_is_checked? returns false for checkbox status if cookie contains record for this table:column" do
+    cookies['Table: users'] = ' created_at,'
+    status = column_is_checked?('users', 'created_at')
     assert_equal false, status
   end
 
