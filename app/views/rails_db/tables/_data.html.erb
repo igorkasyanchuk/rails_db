@@ -15,6 +15,7 @@
   <dd>
     <a href="#" data-options="align: bottom" data-dropdown="drop"><%= fa_icon 'th-large' %> Functions</a>
   </dd>
+  <dd style="float:right"><%= link_to raw("#{fa_icon('cogs')} Settings"), '#', :class => 'settings-link', :table_name => "#{@table.name}" %></dd>
 </dl>
 
 <ul id="drop" class="f-dropdown" data-dropdown-content>
@@ -22,7 +23,6 @@
 </ul>
 
 <div class='scrollable'>
-  <div class='top-section'><%= link_to 'Settings', '#', :class => 'settings-link' %></div>
   <div class='rails-db-settings' style="display:none">
     <h6>Settings</h6>
     <% @table.columns.each do |column| %>
