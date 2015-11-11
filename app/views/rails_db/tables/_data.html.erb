@@ -27,7 +27,7 @@
     <h6>Settings</h6>
     <% @table.columns.each do |column| %>
       <label class='column-name'>
-        <%= check_box_tag(column.name, nil, column_is_checked?(column.name), class: "#{column.name}") %>
+        <%= check_box_tag(column.name, nil, column_is_checked?(@table.name, column.name), class: "#{column.name}") %>
         <%= column.name %>
       </label>
     <% end %>
@@ -41,7 +41,7 @@
           <th class='delete_td'></th>
         <% end %>
         <% @table.columns.each do |column| %>
-          <th class="column_<%= column.name %>" style=<%= display_style(column.name) %>>
+          <th class="column_<%= column.name %>" style=<%= display_style_column(@table.name, column.name) %>>
             <%= sortable column.name %>
           </th>
         <% end %>
@@ -60,7 +60,7 @@
           <% end %>
 
           <% @table.columns.each do |column| %>
-            <td class="column_<%= column.name %>" style=<%= display_style(column.name) %>>
+            <td class="column_<%= column.name %>" style=<%= display_style_column(@table.name, column.name) %>>
               <% name = column.name %>
               <%= format_value(column, record[name]) %>
             </td>
