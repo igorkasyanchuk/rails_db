@@ -43,16 +43,16 @@ module RailsDb
       params.merge({action: :data})
     end
 
-    def column_is_checked?(column_name)
-      if cookies["Table: #{params[:table_id]}"].present?
-        !cookies["Table: #{params[:table_id]}"].include?(" #{column_name}")
+    def column_is_checked?(table_name, column_name)
+      if cookies["Table: #{table_name}"].present?
+        !cookies["Table: #{table_name}"].split(',').include?(column_name)
       else
         true
       end
     end
 
-    def display_style(column_name)
-      column_is_checked?(column_name) ? 'display' : 'display:none'
+    def display_style_column(table_name, column_name)
+      column_is_checked?(table_name, column_name) ? 'display' : 'display:none'
     end
 
   end
