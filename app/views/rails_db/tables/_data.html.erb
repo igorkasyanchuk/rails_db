@@ -15,13 +15,26 @@
   <dd>
     <a href="#" data-options="align: bottom" data-dropdown="drop"><%= fa_icon 'th-large' %> Functions</a>
   </dd>
+  <dd class="right"><%= link_to raw("#{fa_icon('cogs')} Settings"), '#', :class => 'settings-link', :table_name => "#{@table.name}" %></dd>
 </dl>
+<div class="clearfix"></div>
+
 
 <ul id="drop" class="f-dropdown" data-dropdown-content>
   <li><%= link_to raw("#{fa_icon('trash-o')} Truncate Table"), table_truncate_path(@table), remote: true, confirm: 'Are you sure?', data: {confirm: 'Are you sure?'} %></a></li>
 </ul>
 
 <div class='scrollable'>
+  <div class='rails-db-settings' style="display:none">
+    <h6>Settings</h6>
+    <% @table.columns.each do |column| %>
+      <label class='column-name'>
+        <%= check_box_tag(column.name, nil, column_is_checked?(@table.name, column.name), class: "#{column.name}") %>
+        <%= column.name %>
+      </label>
+    <% end %>
+  </div>
+
   <table>
 
     <thead>
@@ -30,7 +43,7 @@
           <th class='delete_td'></th>
         <% end %>
         <% @table.columns.each do |column| %>
-          <th>
+          <th class="column_<%= column.name %>" style=<%= display_style_column(@table.name, column.name) %>>
             <%= sortable column.name %>
           </th>
         <% end %>
@@ -49,7 +62,7 @@
           <% end %>
 
           <% @table.columns.each do |column| %>
-            <td>
+            <td class="column_<%= column.name %>" style=<%= display_style_column(@table.name, column.name) %>>
               <% name = column.name %>
               <%= format_value(column, record[name]) %>
             </td>

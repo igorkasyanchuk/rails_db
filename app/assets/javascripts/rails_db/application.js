@@ -8,6 +8,7 @@
 //= require codemirror/modes/sql
 //= require codemirror/addons/hint/show-hint.js
 //= require codemirror/addons/hint/sql-hint.js
+//= require rails_db/show_hide_columns.js
 
 $(function(){
   $(document).foundation();
