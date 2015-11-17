@@ -1,5 +1,4 @@
 $(function(){
-  $(document).foundation();
 
   $('body').on('click', '.settings-link', function() {
     $('.rails-db-settings').toggle();

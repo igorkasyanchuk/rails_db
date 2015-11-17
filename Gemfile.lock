@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rails_db (0.7.1)
+    rails_db (0.7.2)
       codemirror-rails
       font-awesome-rails
       jquery-rails
@@ -147,3 +147,6 @@ DEPENDENCIES
   sqlite3
   terminal-table
   uglifier
+
+BUNDLED WITH
+   1.10.6
