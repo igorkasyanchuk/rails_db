@@ -29,4 +29,5 @@ Gem::Specification.new do |s|
   s.add_dependency "pg"
   s.add_dependency 'terminal-table'
   s.add_dependency 'therubyracer'
+  s.add_dependency 'axlsx_rails'
 end
