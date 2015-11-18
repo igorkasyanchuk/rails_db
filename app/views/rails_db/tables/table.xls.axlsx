@@ -1,6 +1,6 @@
 wb = xlsx_package.workbook
 wb.add_worksheet(name: @table.name.capitalize) do |sheet|
-  sheet.add_row @table.columns.map{|column| column.name.capitalize.sub(/_/, ' ')}
+  sheet.add_row @table.columns.map{|column| column.name}
   @table.data.each do |row|
     sheet.add_row row.values
   end
