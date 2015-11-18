@@ -24,10 +24,11 @@ Gem::Specification.new do |s|
   s.add_dependency "jquery-rails"
   s.add_dependency 'codemirror-rails'
   s.add_dependency 'launchy'
-  s.add_dependency "sqlite3"
-  s.add_dependency "mysql2", '<= 0.3.20'
-  s.add_dependency "pg"
   s.add_dependency 'terminal-table'
   s.add_dependency 'therubyracer'
   s.add_dependency 'axlsx_rails'
+
+  s.add_development_dependency "sqlite3"
+  s.add_development_dependency "mysql2", '<= 0.3.20'
+  s.add_development_dependency "pg"
 end
