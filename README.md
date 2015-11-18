@@ -31,6 +31,7 @@ For now was tested manually only with Ruby 2.X, and Rails 4.X. But expected to w
 * execute SQL queries
 * autocomplete for SQL queries
 * filter tables for easier navigation
+* show/hide columns in tables
 * use history of you SQL queries
 * see EXPLAIN results for your queries
 * export data to CSV

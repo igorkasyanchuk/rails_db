@@ -1,12 +1,17 @@
 BACKLOG:
-  - create dump
-  - visualize schema (ERD?)
-  - show/hide columns on Table Data view (using JS and cookies) (something like http://griddlegriddle.github.io/Griddle/)
-  - delete record in table without PK
-  - add sorting/filters to data-tables
-  - add quick aggregation functions for columns
+  - create dump (how handle different DB?)
+  - visualize schema (ERD? railsroady gem?)
+  - delete record in table without PK (cid?, what we can do for other DB?)
+  - add sorting/filters to data-tables (filters in header, multiple, <,=,>,LIKE,NOT LIKE, etc)
+  - add quick aggregation functions for columns (SUM, AVG, etc)
   - add ability to change width of columns (and remember selection in cookies) (something like http://www.bacubacu.com/colresizable/)
-  - edit table row in form
+  - edit table row in form (edit all fields, dynamically generate form and save values)
+  - support for i18n
+
+0.8 - November 1, 2015
+  - added show/hide for table columns
+  - added export to XLS
+  - bug fixes
 
 0.7 - November 1, 2015
   - added standalone app 'railsdb'

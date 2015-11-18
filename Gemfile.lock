@@ -56,6 +56,8 @@ GEM
       railties (>= 3.0, < 5)
     erubis (2.7.0)
     execjs (2.6.0)
+    faker (1.5.0)
+      i18n (~> 0.5)
     font-awesome-rails (4.4.0.0)
       railties (>= 3.2, < 5.0)
     globalid (0.3.6)
@@ -79,6 +81,7 @@ GEM
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     pg (0.18.3)
+    populator (1.0.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -136,10 +139,12 @@ PLATFORMS
 
 DEPENDENCIES
   codemirror-rails
+  faker
   font-awesome-rails
   jquery-rails
   mysql2 (<= 0.3.20)
   pg
+  populator
   rails
   rails_db!
   sass
