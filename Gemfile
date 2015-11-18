@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'font-awesome-rails'
 gem 'codemirror-rails'
 gem 'terminal-table'
+gem 'axlsx_rails'
 
 group :assets do
   gem 'sass-rails'

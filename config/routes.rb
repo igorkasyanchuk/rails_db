@@ -6,6 +6,7 @@ RailsDb::Engine.routes.draw do
     get 'csv'
     get 'truncate'
     get 'destroy' # to handle opens in new window (GET)
+    get 'xlsx'
   end
 
   get '/sql' => 'sql#index', as: :sql

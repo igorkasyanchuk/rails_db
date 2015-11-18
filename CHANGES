@@ -8,7 +8,7 @@ BACKLOG:
   - edit table row in form (edit all fields, dynamically generate form and save values)
   - support for i18n
 
-0.8 - November 1, 2015
+0.8 - November 18, 2015
   - added show/hide for table columns
   - added export to XLS
   - bug fixes

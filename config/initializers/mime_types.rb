@@ -1,0 +1,1 @@
+Mime::Type.register "application/vnd.ms-excel", :xls unless Mime::Type.lookup_by_extension(:xls)
