@@ -6,6 +6,7 @@ require "jquery-rails"
 require 'codemirror-rails'
 require 'terminal-table'
 require 'csv'
+require 'axlsx_rails'
 
 module RailsDb
   # Custom require relative that work with older rubies also

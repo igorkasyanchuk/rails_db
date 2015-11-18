@@ -34,9 +34,10 @@ For now was tested manually only with Ruby 2.X, and Rails 4.X. But expected to w
 * show/hide columns in tables
 * use history of you SQL queries
 * see EXPLAIN results for your queries
-* export data to CSV
+* export data to CSV and Excel
 * import SQL files
 * expand/collapse sidebar
+* hide/show columns
 * allow access for current user for example with appropriate role
 * added HTTP_BASIC auth for Rails DB
 * ability to turn on/off using initializer
