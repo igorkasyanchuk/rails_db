@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.email       = ["igorkasyanchuk@gmail.com"]
   s.homepage    = "https://github.com/igorkasyanchuk/rails_db"
   s.summary     = "Inspect your Rails DB (table content viewer, execute sql queries, export & import data"
-  s.description = "Quick way to inspect your Rails database, see content of tables, export them to CSV, EXPLAIN SQL and run SQL queries."
+  s.description = "Quick way to inspect your Rails database, see content of tables, filter, export them to CSV, Excel, EXPLAIN SQL and run SQL queries."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,lib,test}/**/*", "rails_db.gemspec", "Gemfile", "Gemfile.lock", "MIT-LICENSE", "Rakefile", "README.rdoc", "bin/rails_db", "bin/railsdb", "bin/runsql"]
