@@ -11,8 +11,10 @@ RailsDb::Engine.routes.draw do
 
   get '/sql' => 'sql#index', as: :sql
   get '/import' => 'sql#import', as: :sql_import
+
   post '/execute' => 'sql#execute', as: :sql_execute
   post '/sql-csv' => 'sql#csv', as: :sql_csv
+  post '/sql-xls' => 'sql#xls', as: :sql_xls
   post '/import-start' => 'sql#import_start', as: :sql_start_import
 
   get '/data-table' => 'dashboard#data_table', as: :data_table

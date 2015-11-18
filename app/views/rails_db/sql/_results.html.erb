@@ -5,7 +5,8 @@
       <span class="radius success label">Total: <%= pluralize sql_query.data.count, 'record' %></span>
       <span class="radius info label">Time: <%= sql_query.data.time %> seconds</span>
       <span class="radius secondary label"><a href="#" data-reveal-id="explain_modal" id='explain_modal_link'>Explain</a></span>
-      <span class="radius warning label"><%= link_to raw("#{fa_icon('file-excel-o')} Export"), sql_csv_path(sql: sql), method: :post %></span>
+      <span class="radius warning label"><%= link_to raw("#{fa_icon('file-text-o')} Export to CSV"), sql_csv_path(sql: sql, format: 'csv'), method: :post %></span>
+      <span class="radius warning label"><%= link_to raw("#{fa_icon('file-excel-o')} Export to Excel"), sql_xls_path(sql: sql, format: 'xls'), method: :post %></span>
     </p>
     <hr>
     <%= render 'explain', sql_query: sql_query, sql: sql %>

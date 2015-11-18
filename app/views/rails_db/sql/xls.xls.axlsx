@@ -1,0 +1,9 @@
+wb = xlsx_package.workbook
+
+wb.add_worksheet(name: 'Results') do |sheet|
+  sheet.add_row @sql_query.data.columns
+
+  @sql_query.data.rows.each do |row|
+    sheet.add_row row
+  end
+end

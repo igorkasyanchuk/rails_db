@@ -43,10 +43,22 @@ class DashboardControllerTest < ActionDispatch::IntegrationTest
     assert_equal 302, status
     assert_equal 0, User.count
 
-    get '/rails/db/tables/accounts/csv'
+    get '/rails/db/tables/users/csv'
     assert_equal 200, status
 
     get '/rails/db/standalone'
+    assert_equal 200, status
+
+    get '/rails/db/tables/users/xlsx.xls'
+    assert_equal 200, status
+
+    get '/rails/db/sql?sql=select+%2A+from+users+limit+10'
+    assert_equal 200, status
+
+    post '/rails/db/sql-csv.csv?sql=select+%2A+from+users+limit+10'
+    assert_equal 200, status
+
+    post '/rails/db/sql-xls.xls?sql=select+%2A+from+users+limit+10'
     assert_equal 200, status
   end
 

@@ -12,7 +12,7 @@
   <dd><%= link_to raw("#{fa_icon('tasks')} Schema"), table_path(@table), remote: true %></dd>
   <dd><%= select_top_from_table(@table.name) %></dd>
   <dd>
-    <a href="#" data-options="align: bottom" data-dropdown="download-files"><%= fa_icon 'download' %> Download Files</a>
+    <a href="#" data-options="align: bottom" data-dropdown="download-files"><%= fa_icon 'download' %> Export</a>
   </dd>
   <dd>
     <a href="#" data-options="align: bottom" data-dropdown="drop"><%= fa_icon 'th-large' %> Functions</a>
@@ -27,8 +27,8 @@
 </ul>
 
 <ul id="download-files" class="f-dropdown" data-dropdown-content>
-  <li><%= link_to raw("#{fa_icon('file-text-o')} Export table to csv"), table_csv_path(@table) %></li>
-  <li><%= link_to raw("#{fa_icon('file-excel-o')} Export table to xlsx"), table_xlsx_path(@table, format: 'xls') %></li>
+  <li><%= link_to raw("#{fa_icon('file-text-o')} Export to CSV"), table_csv_path(@table) %></li>
+  <li><%= link_to raw("#{fa_icon('file-excel-o')} Export to Excel"), table_xlsx_path(@table, format: 'xls') %></li>
 </ul>
 
 <div class='scrollable'>
@@ -43,7 +43,6 @@
   </div>
 
   <table>
-
     <thead>
       <tr>
         <% if @table.primary_key.present? %>

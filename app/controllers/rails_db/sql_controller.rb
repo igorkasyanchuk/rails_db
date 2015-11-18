@@ -15,6 +15,11 @@ module RailsDb
       send_data(@sql_query.to_csv, type: 'text/csv; charset=utf-8; header=present', filename: 'results.csv')
     end
 
+    def xls
+      load_query
+      render xlsx: 'xls', filename: 'results.xlsx'
+    end
+
     def import
     end
 
