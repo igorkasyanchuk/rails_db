@@ -55,6 +55,13 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.3.8)
     arel (6.0.3)
+    axlsx (2.0.1)
+      htmlentities (~> 4.3.1)
+      nokogiri (>= 1.4.1)
+      rubyzip (~> 1.0.0)
+    axlsx_rails (0.4.0)
+      axlsx (>= 2.0.1)
+      rails (>= 3.1)
     builder (3.2.2)
     codemirror-rails (5.6)
       railties (>= 3.0, < 5)
@@ -64,6 +71,7 @@ GEM
       railties (>= 3.2, < 5.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    htmlentities (4.3.4)
     i18n (0.7.0)
     jquery-rails (4.0.5)
       rails-dom-testing (~> 1.0)
@@ -113,6 +121,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
     ref (2.0.0)
+    rubyzip (1.0.0)
     sass (3.4.19)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -144,6 +153,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  axlsx_rails
   codemirror-rails
   font-awesome-rails
   jquery-rails

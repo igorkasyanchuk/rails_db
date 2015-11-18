@@ -11,6 +11,7 @@ gem 'pg', require: false
 gem 'mysql2', require: false
 gem 'sqlite3', require: false
 gem 'terminal-table'
+gem 'axlsx_rails'
 
 group :assets do
   gem 'sass-rails'
