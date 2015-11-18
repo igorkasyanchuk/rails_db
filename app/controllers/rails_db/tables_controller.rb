@@ -41,5 +41,10 @@ module RailsDb
       end
     end
 
+    def xlsx
+      @table = RailsDb::Table.new(params[:table_id])
+      render xlsx: "table", filename: "#{@table.name}.xlsx"
+    end
+
   end
 end
