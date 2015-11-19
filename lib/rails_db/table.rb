@@ -43,8 +43,10 @@ module RailsDb
       RailsDb::Database.delete(name, primary_key, id)
     end
 
-    def update(column_name, value, id)
-      RailsDb::Database.execute("update #{@name} set #{column_name} = '#{value}' where id == #{id}")
+    def update(column_names_and_values, id)
+      names_and_values = []
+      column_names_and_values.each_pair{|key, val| names_and_values << "#{key} = '#{val}'"}
+      RailsDb::Database.execute("update #{@name} set #{names_and_values.join(', ')} where id = #{id}")
     end
 
   end # module
