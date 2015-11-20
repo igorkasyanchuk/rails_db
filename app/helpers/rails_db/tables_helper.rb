@@ -55,5 +55,13 @@ module RailsDb
       column_is_checked?(table_name, column_name) ? 'display' : 'display:none'
     end
 
+    def update_row_path(table, record)
+      table_update_row_path(table,
+        pk_id: record[table.primary_key],
+        page: params[:page],
+        sort_column: params[:sort_column],
+        sort_order: params[:sort_order])
+    end
+
   end
 end
