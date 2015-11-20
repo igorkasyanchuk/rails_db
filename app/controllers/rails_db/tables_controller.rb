@@ -49,7 +49,7 @@ module RailsDb
     def edit_row
       @table = RailsDb::Table.new(params[:table_id])
       row = @table.data.each.detect{|row| row['id'] == params[:id].to_i}
-      render js: "alert('#{row}');"
+      render "edit_row.js.erb"
     end
 
     def update_row
