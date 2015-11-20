@@ -8,6 +8,7 @@ RailsDb::Engine.routes.draw do
     get 'destroy' # to handle opens in new window (GET)
     get 'xlsx'
     get 'update_row'
+    get 'edit_row'
   end
 
   get '/sql' => 'sql#index', as: :sql
