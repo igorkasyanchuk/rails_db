@@ -46,5 +46,17 @@ module RailsDb
       render xlsx: 'table', filename: "#{@table.name}.xlsx"
     end
 
+    def update_row
+      @table = RailsDb::Table.new(params[:table_id]).paginate page: params[:page],
+                                                              sort_column: params[:sort_column],
+                                                              sort_order: params[:sort_order],
+                                                              per_page: session[:per_page]
+      @table.update({comment: 'from web123'}, params[:pk_id])
+      respond_to do |page|
+        page.html { redirect_to action: :data, table_id: params[:table_id] }
+        page.js { render 'destroy' }
+      end
+    end
+
   end
 end
