@@ -46,6 +46,12 @@ module RailsDb
       render xlsx: 'table', filename: "#{@table.name}.xlsx"
     end
 
+    def edit_row
+      @table = RailsDb::Table.new(params[:table_id])
+      row = @table.data.each.detect{|row| row['id'] == params[:id].to_i}
+      render js: "alert('#{row}');"
+    end
+
     def update_row
       @table = RailsDb::Table.new(params[:table_id]).paginate page: params[:page],
                                                               sort_column: params[:sort_column],
