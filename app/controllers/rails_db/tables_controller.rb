@@ -41,9 +41,38 @@ module RailsDb
       end
     end
 
+    def edit
+      @table = RailsDb::Table.new(params[:table_id])
+      @record = @table.as_model.find(params[:pk_id])
+      respond_to do |page|
+        page.html { redirect_to action: :data, table_id: params[:table_id] }
+        page.js {}
+      end
+    end
+
+    def update
+      @table = RailsDb::Table.new(params[:table_id])
+      @record = @table.as_model.find(params[:pk_id])
+      @record.update_attributes(record_attributes)
+      respond_to do |page|
+        page.html { redirect_to action: :data, table_id: params[:table_id] }
+        page.js {}
+      end
+    end
+
     def xlsx
       @table = RailsDb::Table.new(params[:table_id])
       render xlsx: 'table', filename: "#{@table.name}.xlsx"
+    end
+
+    private
+
+    def record_attributes
+      if Rails::VERSION::MAJOR >= 4
+        params[:record].permit!
+      else
+        params[:record]
+      end
     end
 
   end

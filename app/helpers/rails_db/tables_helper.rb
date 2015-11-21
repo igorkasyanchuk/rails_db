@@ -38,6 +38,22 @@ module RailsDb
         sort_order: params[:sort_order])
     end
 
+    def edit_row_path(table, record)
+      table_edit_path(table,
+        pk_id: record[table.primary_key],
+        page: params[:page],
+        sort_column: params[:sort_column],
+        sort_order: params[:sort_order])
+    end
+
+    def update_row_path(table, record)
+      table_update_path(table,
+        page: params[:page],
+        pk_id: record[table.primary_key],
+        sort_column: params[:sort_column],
+        sort_order: params[:sort_order])
+    end
+
     def table_pagination_path
       params.delete(:pk_id)
       params.merge({action: :data})

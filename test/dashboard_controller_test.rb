@@ -7,6 +7,7 @@ class DashboardControllerTest < ActionDispatch::IntegrationTest
     Account.delete_all
 
     user = User.create(name: 'Igor')
+    edit_user = User.create(name: 'Edit')
     account = Account.create(name: 'Igor')
 
     get '/rails/db'
@@ -38,10 +39,10 @@ class DashboardControllerTest < ActionDispatch::IntegrationTest
     get '/rails/db/tables/users/data?sort_column=id&sort_order=desc'
     assert_equal 200, status
 
-    assert_equal 1, User.count
+    assert_equal 2, User.count
     get "/rails/db/tables/users/destroy?pk_id=#{user.id}"
     assert_equal 302, status
-    assert_equal 0, User.count
+    assert_equal 1, User.count
 
     get '/rails/db/tables/users/csv'
     assert_equal 200, status
@@ -60,6 +61,14 @@ class DashboardControllerTest < ActionDispatch::IntegrationTest
 
     post '/rails/db/sql-xls.xls?sql=select+%2A+from+users+limit+10'
     assert_equal 200, status
+
+    xhr :get, '/rails/db/tables/users/edit?pk_id=' + edit_user.id.to_s
+    assert_equal 200, status
+
+    xhr :put, '/rails/db/tables/users/update?pk_id=' + edit_user.id.to_s, {record: { name: 'JOHN' }}
+    assert_equal 200, status
+    edit_user.reload
+    assert_equal 'JOHN', edit_user.name
   end
 
 end

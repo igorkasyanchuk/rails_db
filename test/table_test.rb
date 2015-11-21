@@ -41,4 +41,12 @@ class TableTest < ActiveSupport::TestCase
     assert_equal 1, User.where(name: 'john').count
   end
 
+  test 'as_table' do
+    User.delete_all
+    user_1 = User.create(name: 'igor')
+
+    klass = @users_table.as_model
+    assert_equal 'igor', klass.first.name
+  end
+
 end

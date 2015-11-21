@@ -1,0 +1,3 @@
+$(".row_<%= @record[@table.primary_key] %>").html("<%= j(render 'row', record: @record) %>");
+
+$('#system_modal').foundation('reveal', 'close');

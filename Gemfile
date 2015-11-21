@@ -9,6 +9,9 @@ gem 'font-awesome-rails'
 gem 'codemirror-rails'
 gem 'terminal-table'
 gem 'axlsx_rails'
+gem 'simple_form'
+
+#gem 'pry'
 
 group :assets do
   gem 'sass-rails'

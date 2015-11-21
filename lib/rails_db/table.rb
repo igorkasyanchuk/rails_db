@@ -43,6 +43,16 @@ module RailsDb
       RailsDb::Database.delete(name, primary_key, id)
     end
 
+    def create_arec(table_name, &block)
+      klass = Class.new(ActiveRecord::Base) {self.table_name = table_name}
+      klass.class_eval(&block) if block_given?
+      klass
+    end
+
+    def as_model
+      @model ||= create_arec(name)
+    end
+
   end # module
 
 end
