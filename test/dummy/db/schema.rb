@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151028191429) do
+ActiveRecord::Schema.define(version: 20151121125538) do
 
   create_table "accounts", force: :cascade do |t|
     t.string   "name"
@@ -52,46 +52,46 @@ ActiveRecord::Schema.define(version: 20151028191429) do
 
   create_table "projects", force: :cascade do |t|
     t.string   "name"
-    t.string   "description_322468"
-    t.string   "description_95553"
-    t.string   "description_21209"
-    t.string   "description_513363"
-    t.string   "description_766479"
-    t.string   "description_975144"
-    t.string   "description_969771"
-    t.string   "description_119636"
-    t.string   "description_531650"
-    t.string   "description_895793"
-    t.string   "description_13748"
-    t.string   "description_314605"
-    t.string   "description_510532"
-    t.string   "description_720644"
-    t.string   "description_92962"
-    t.string   "description_497141"
-    t.string   "description_77365"
-    t.string   "description_79648"
-    t.string   "description_764603"
-    t.string   "description_545246"
-    t.integer  "amount_718718"
-    t.integer  "amount_391908"
-    t.integer  "amount_993305"
-    t.integer  "amount_700336"
-    t.integer  "amount_818045"
-    t.integer  "amount_85466"
-    t.integer  "amount_94983"
-    t.integer  "amount_408313"
-    t.integer  "amount_230470"
-    t.integer  "amount_190661"
-    t.integer  "amount_150129"
-    t.integer  "amount_420631"
-    t.integer  "amount_38683"
-    t.integer  "amount_321108"
-    t.integer  "amount_689893"
-    t.integer  "amount_894341"
-    t.integer  "amount_389007"
-    t.integer  "amount_903639"
-    t.integer  "amount_741556"
-    t.integer  "amount_90622"
+    t.string   "description_880941"
+    t.string   "description_609312"
+    t.string   "description_45120"
+    t.string   "description_646956"
+    t.string   "description_359190"
+    t.string   "description_414526"
+    t.string   "description_126104"
+    t.string   "description_21394"
+    t.string   "description_200553"
+    t.string   "description_47383"
+    t.string   "description_817819"
+    t.string   "description_297200"
+    t.string   "description_732496"
+    t.string   "description_578733"
+    t.string   "description_181448"
+    t.string   "description_591849"
+    t.string   "description_29523"
+    t.string   "description_859516"
+    t.string   "description_607626"
+    t.string   "description_634417"
+    t.integer  "amount_96786"
+    t.integer  "amount_118208"
+    t.integer  "amount_354589"
+    t.integer  "amount_529364"
+    t.integer  "amount_2748"
+    t.integer  "amount_265448"
+    t.integer  "amount_87259"
+    t.integer  "amount_69192"
+    t.integer  "amount_400320"
+    t.integer  "amount_981344"
+    t.integer  "amount_724725"
+    t.integer  "amount_233529"
+    t.integer  "amount_10548"
+    t.integer  "amount_918245"
+    t.integer  "amount_400389"
+    t.integer  "amount_630390"
+    t.integer  "amount_183655"
+    t.integer  "amount_83287"
+    t.integer  "amount_252578"
+    t.integer  "amount_147921"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end
@@ -109,10 +109,11 @@ ActiveRecord::Schema.define(version: 20151028191429) do
     t.integer  "age"
     t.decimal  "salary"
     t.text     "bio"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.integer  "account_id"
     t.date     "dob"
+    t.boolean  "active",     default: true
   end
 
   add_index "users", ["account_id"], name: "index_users_on_account_id"
