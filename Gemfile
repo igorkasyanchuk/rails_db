@@ -11,8 +11,6 @@ gem 'terminal-table'
 gem 'axlsx_rails'
 gem 'simple_form'
 
-#gem 'pry'
-
 group :assets do
   gem 'sass-rails'
   gem 'uglifier'

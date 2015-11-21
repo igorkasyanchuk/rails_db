@@ -9,7 +9,7 @@ BACKLOG:
   - changing link in browser (on ajax calls, so F5 refresh will work)
 
 0.9 - November 21, 2015
-  - edit content of rows
+  - edit content in table
   - bug fixes
   - added method 'as_model' to return ActiveRecord model to simplify future development
 

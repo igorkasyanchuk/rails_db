@@ -33,4 +33,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency "pg"
   # s.add_development_dependency 'populator'
   # s.add_development_dependency 'faker'
+  # s.add_development_dependency 'pry'
 end
