@@ -2,7 +2,7 @@
 
 <h2 id="modalTitle">Edit</h2>
 
-<%= simple_form_for @record, as: 'record', url: update_row_path(@table, @record), remote: true, method: :put, html: {class: 'vertical_form'} do |form| %>
+<%= simple_form_for @record, as: 'record', url: table_update_path(@table, pk_id: @record[@table.primary_key]), remote: true, method: :put, html: {class: 'vertical_form'} do |form| %>
     <div class='scrollable_form'>
       <% @record.class.columns.each do |column| %>
         <% name = column.name %>
