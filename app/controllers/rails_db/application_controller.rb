@@ -1,6 +1,5 @@
 module RailsDb
   class ApplicationController < ActionController::Base
-
     helper :all
 
     if Rails::VERSION::MAJOR >= 4
