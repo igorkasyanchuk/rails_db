@@ -48,16 +48,14 @@ module RailsDb
 
     def edit_row
       @table = RailsDb::Table.new(params[:table_id])
-      row = @table.data.each.detect{|row| row['id'] == params[:id].to_i}
+      @row = @table.data.each.detect{|row| row['id'] == params[:id].to_i}
+      @row.merge!({table_id: @table.name})
       render "edit_row.js.erb"
     end
 
     def update_row
-      @table = RailsDb::Table.new(params[:table_id]).paginate page: params[:page],
-                                                              sort_column: params[:sort_column],
-                                                              sort_order: params[:sort_order],
-                                                              per_page: session[:per_page]
-      @table.update({comment: 'from web123'}, params[:pk_id])
+      @table = RailsDb::Table.new(params[:table_id])
+      @table.update({comment: 'from web123'}, params[:id])
       respond_to do |page|
         page.html { redirect_to action: :data, table_id: params[:table_id] }
         page.js { render 'destroy' }
