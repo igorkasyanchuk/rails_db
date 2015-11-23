@@ -104,6 +104,7 @@
   <span class="radius info label">Time: <%= @table.data.time %> seconds</span>
 </p>
 
+<a href="#" data-reveal-id="myModal" style="display: none">Click Me For A Modal</a>
 <% if @table.data.total_entries > 0 %>
   <div class='left'>
     <%= form_tag table_pagination_path, method: :get, remote: true do %>
