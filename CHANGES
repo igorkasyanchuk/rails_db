@@ -7,8 +7,9 @@ BACKLOG:
   - add ability to change width of columns (and remember selection in cookies) (something like http://www.bacubacu.com/colresizable/)
   - support for i18n
   - changing link in browser (on ajax calls, so F5 refresh will work)
+  - add search using http://railscasts.com/episodes/370-ransack?autoplay=true
 
-0.9 - November 21, 2015
+0.9 - November 24, 2015
   - edit content in table
   - bug fixes
   - added method 'as_model' to return ActiveRecord model to simplify future development
