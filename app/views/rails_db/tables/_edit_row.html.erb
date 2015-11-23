@@ -1,0 +1,16 @@
+<div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="false" role="dialog">
+  <h2 id="modalTitle">Awesome. I have it.</h2>
+  <p> <%= table_data %> </p>
+  <%= form_tag(table_update_row_path(@table), method: "get") do %>
+    <% table_data.each_pair do |key, val| %>
+      <% if key == :table_id %>
+        <%= hidden_field_tag(:table_id, val) %>
+      <% else %>
+        <%= label_tag key %>
+        <%= text_field_tag key, val %>
+      <% end %>
+    <% end %>
+    <%= submit_tag("Edit") %>
+  <% end %>
+  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
