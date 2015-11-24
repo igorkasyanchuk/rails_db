@@ -27,6 +27,7 @@ For now was tested manually only with Ruby 2.X, and Rails 4.X. But expected to w
 
 * command line tools `railsdb` and `runsql` to run app and sql for your apps.
 * view content and schema of DB tables (including indexes)
+* edit content
 * sort content of DB tables
 * execute SQL queries
 * autocomplete for SQL queries

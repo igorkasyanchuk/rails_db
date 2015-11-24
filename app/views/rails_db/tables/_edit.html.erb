@@ -1,0 +1,25 @@
+<a class="close-reveal-modal" aria-label="Close">&#215;</a>
+
+<h2 id="modalTitle">Edit</h2>
+
+<%= simple_form_for @record, as: 'record', url: table_update_path(@table, pk_id: @record[@table.primary_key]), remote: true, method: :put, html: {class: 'vertical_form'} do |form| %>
+    <div class='scrollable_form'>
+      <% @record.class.columns.each do |column| %>
+        <% name = column.name %>
+        <% next if name == 'id' %>
+
+        <% if ['datetime', 'date', 'time'].include?(column.sql_type) %>
+          <div class='form-inline'>
+            <%= form.input name, label: name, input_html: {class: 'date_or_time'} %>
+          </div>
+
+        <% else %>
+          <%= form.input name, label: name %>
+        <% end %>
+      <% end %>
+    </div>
+    <%= form.submit 'SAVE', class: 'button small' %>
+    <a class='close' onclick="$('#system_modal').foundation('reveal', 'close');$">Close</a>
+<% end %>
+
+<span class="radius warning label">NOTE: Update will happen without any validations.</span>

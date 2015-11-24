@@ -1,5 +1,6 @@
 //= require jquery
 //= require jquery_ujs
+//= require rails_db/foundation.min
 //= require rails_db/foundation/foundation.abide
 //= require rails_db/foundation/foundation.accordion
 //= require rails_db/foundation/foundation.alert
@@ -8,7 +9,6 @@
 //= require rails_db/foundation/foundation.equalizer
 //= require rails_db/foundation/foundation.interchange
 //= require rails_db/foundation/foundation.joyride
-//= require rails_db/foundation.min
 //= require rails_db/foundation/foundation.magellan
 //= require rails_db/foundation/foundation.offcanvas
 //= require rails_db/foundation/foundation.orbit

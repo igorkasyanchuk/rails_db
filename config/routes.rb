@@ -6,6 +6,8 @@ RailsDb::Engine.routes.draw do
     get 'csv'
     get 'truncate'
     get 'destroy' # to handle opens in new window (GET)
+    get 'edit'    # to handle opens in new window (GET)
+    put 'update'  # to handle opens in new window (GET)
     get 'xlsx'
   end
 

@@ -9,6 +9,7 @@
  *= require rails_db/sidebar
  *= require rails_db/pagination
  *= require rails_db/table
+ *= require rails_db/forms
  *= require font-awesome
  */
 

@@ -1,22 +1,23 @@
 module RailsDb
   class SqlController < RailsDb::ApplicationController
+    if Rails::VERSION::MAJOR >= 4
+      before_action :load_query, only: [:index, :execute, :csv, :xls]
+    else
+      before_filter :load_query
+    end
 
     def index
-      load_query
     end
 
     def execute
-      load_query
       render :index
     end
 
     def csv
-      load_query
       send_data(@sql_query.to_csv, type: 'text/csv; charset=utf-8; header=present', filename: 'results.csv')
     end
 
     def xls
-      load_query
       render xlsx: 'xls', filename: 'results.xlsx'
     end
 
@@ -34,11 +35,10 @@ module RailsDb
       render :import
     end
 
-
     private
 
     def load_query
-      @sql = "#{params[:sql]}".strip
+      @sql       = "#{params[:sql]}".strip
       @sql_query = RailsDb::SqlQuery.new(@sql).execute
     end
 

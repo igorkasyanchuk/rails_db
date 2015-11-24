@@ -16,7 +16,7 @@ module RailsDb
 
     def import
       valid?
-      @time = Database.adapter.execute(@file.read)
+      @time   = Database.adapter.execute(@file.read)
       @result = Result.ok
     rescue RailsDbError, ActiveRecord::StatementInvalid => e
       @result = Result.new(e)

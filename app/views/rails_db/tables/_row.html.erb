@@ -1,0 +1,15 @@
+<% if @table.primary_key.present? %>
+  <td>
+    <%= link_to fa_icon('minus-circle'), delete_row_path(@table, record), :class => 'red', remote: true, title: 'Delete Record', confirm: 'Are you sure you want to delete this record?', data: {confirm: 'Are you sure you want to delete this record?'} %>
+  </td>
+  <td>
+    <%= link_to fa_icon('pencil-square'), table_edit_path(@table, pk_id: record[@table.primary_key]), :class => 'yellow', remote: true, title: 'Edit Record' %>
+  </td>
+<% end %>
+
+<% @table.columns.each do |column| %>
+  <td class="column_<%= column.name %>" style=<%= display_style_column(@table.name, column.name) %>>
+    <% name = column.name %>
+    <%= format_value(column, record[name]) %>
+  </td>
+<% end %>

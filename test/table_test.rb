@@ -8,7 +8,7 @@ class TableTest < ActiveSupport::TestCase
   end
 
   test 'columns' do
-    assert_equal @users_table.column_names, ["id", "name", "age", "salary", "bio", "created_at", "updated_at", "account_id", "dob"]
+    assert_equal @users_table.column_names, ["id", "name", "age", "salary", "bio", "created_at", "updated_at", "account_id", "dob", "active"]
   end
 
   test 'to_csv' do
@@ -39,6 +39,14 @@ class TableTest < ActiveSupport::TestCase
     assert_equal 1, User.count
     assert_equal 0, User.where(name: 'igor').count
     assert_equal 1, User.where(name: 'john').count
+  end
+
+  test 'as_table' do
+    User.delete_all
+    user_1 = User.create(name: 'igor')
+
+    klass = @users_table.as_model
+    assert_equal 'igor', klass.first.name
   end
 
 end

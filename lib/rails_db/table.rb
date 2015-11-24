@@ -16,6 +16,7 @@ module RailsDb
       throw 'Access Denied' unless RailsDb::Database.accessible_tables.include?(table_name)
       @name = table_name
       @data = RailsDb::TableData.new(self)
+      self
     end
 
     def to_csv
@@ -41,6 +42,16 @@ module RailsDb
 
     def delete(id)
       RailsDb::Database.delete(name, primary_key, id)
+    end
+
+    def create_model(table_name, &block)
+      klass = Class.new(ActiveRecord::Base) {self.table_name = table_name}
+      klass.class_eval(&block) if block_given?
+      klass
+    end
+
+    def as_model
+      @model ||= create_model(name)
     end
 
   end # module
