@@ -11,6 +11,7 @@ module RailsDb
     delegate :order,     to: :data
     delegate :asc,       to: :data
     delegate :desc,      to: :data
+    delegate :find,      to: :data
 
     def initialize(table_name)
       throw 'Access Denied' unless RailsDb::Database.accessible_tables.include?(table_name)
