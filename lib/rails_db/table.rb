@@ -11,6 +11,7 @@ module RailsDb
     delegate :order,     to: :data
     delegate :asc,       to: :data
     delegate :desc,      to: :data
+    delegate :find,      to: :data
 
     def initialize(table_name)
       throw 'Access Denied' unless RailsDb::Database.accessible_tables.include?(table_name)
@@ -41,6 +42,12 @@ module RailsDb
 
     def delete(id)
       RailsDb::Database.delete(name, primary_key, id)
+    end
+
+    def update(column_names_and_values, id)
+      names_and_values = []
+      column_names_and_values.each_pair{|key, val| names_and_values << "#{key} = '#{val}'"}
+      RailsDb::Database.execute("update #{@name} set #{names_and_values.join(', ')} where id = #{id}")
     end
 
   end # module

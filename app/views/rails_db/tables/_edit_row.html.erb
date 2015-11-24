@@ -1,0 +1,14 @@
+<div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="false" role="dialog">
+  <%= form_tag(table_update_row_path(@table), method: "get", remote: true) do %>
+    <% table_data.each_pair do |key, val| %>
+      <% if key == 'id' %>
+        <%= hidden_field_tag key, val %>
+      <% else %>
+        <%= label_tag key %>
+        <%= text_field_tag key, val %>
+      <% end %>
+    <% end %>
+    <%= submit_tag("Edit", class: 'button') %>
+  <% end %>
+  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>

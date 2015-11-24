@@ -46,5 +46,17 @@ module RailsDb
       render xlsx: 'table', filename: "#{@table.name}.xlsx"
     end
 
+    def edit_row
+      @table = RailsDb::Table.new(params[:table_id])
+      @row = @table.find(params[:id])
+    end
+
+    def update_row
+      @table = RailsDb::Table.new(params[:table_id])
+      row = @table.find(params[:id])
+      @row = (row.keys & params.keys).inject({}){|hash, key| hash.merge!({key => params[key]})}
+      @table.update(@row, params[:id])
+    end
+
   end
 end
