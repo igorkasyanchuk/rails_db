@@ -4,7 +4,8 @@ module RailsDb
     include TablePagination
 
     attr_reader :table, :time
-    attr_accessor :current_page, :offset, :per_page, :sort_column, :sort_order, :select_columns
+    attr_accessor :current_page, :offset, :per_page,
+      :sort_column, :sort_order, :select_columns, :find_by_id
 
     delegate :each,  to: :data
     delegate :count, to: :table
@@ -26,6 +27,9 @@ module RailsDb
         end
         if per_page
           commands.push("LIMIT #{per_page.to_i} OFFSET #{offset.to_i}")
+        end
+        if find_by_id
+          commands.push("where id = #{find_by_id.to_i}")
         end
         results, @time = Database.select(commands.join(' '))
         results
@@ -61,6 +65,12 @@ module RailsDb
       self.select_columns = Array.wrap(select_columns).flatten
       self
     end
+
+    def find(id)
+      self.find_by_id = id
+      data.columns.inject({}){|hash, el| hash.merge!({el => data.rows.first.shift})}
+    end
+
 
     def columns
       if select_columns && select_columns.any?
