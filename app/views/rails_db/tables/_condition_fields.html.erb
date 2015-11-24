@@ -1,0 +1,10 @@
+<div class="field">
+  <%= f.attribute_fields do |a| %>
+    <%= a.attribute_select associations: [:category] %>
+  <% end %>
+  <%= f.predicate_select %>
+  <%= f.value_fields do |v| %>
+    <%= v.text_field :value %>
+  <% end %>
+  <%= link_to raw("#{fa_icon 'minus'} remove"), '#', class: "remove_fields" %>
+</div>

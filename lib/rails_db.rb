@@ -8,6 +8,7 @@ require 'terminal-table'
 require 'csv'
 require 'axlsx_rails'
 require 'simple_form'
+require 'ransack'
 
 module RailsDb
   # Custom require relative that work with older rubies also

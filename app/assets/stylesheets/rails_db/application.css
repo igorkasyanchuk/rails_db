@@ -10,6 +10,7 @@
  *= require rails_db/pagination
  *= require rails_db/table
  *= require rails_db/forms
+ *= require rails_db/search
  *= require font-awesome
  */
 

@@ -7,6 +7,8 @@ BACKLOG:
   - add ability to change width of columns (and remember selection in cookies) (something like http://www.bacubacu.com/colresizable/)
   - support for i18n
   - changing link in browser (on ajax calls, so F5 refresh will work)
+
+1.0 - XXXXX
   - add search using http://railscasts.com/episodes/370-ransack?autoplay=true
 
 0.9 - November 24, 2015

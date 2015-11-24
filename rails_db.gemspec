@@ -17,16 +17,17 @@ Gem::Specification.new do |s|
 
   s.executables   = ["railsdb", "rails_db", 'runsql']
 
-  s.add_dependency "rails", ">= 3.1.0"
-  s.add_dependency "font-awesome-rails"
-  s.add_dependency "sass"
-  s.add_dependency "sass-rails"
-  s.add_dependency "jquery-rails"
+  s.add_dependency 'rails', ">= 3.1.0"
+  s.add_dependency 'font-awesome-rails'
+  s.add_dependency 'sass'
+  s.add_dependency 'sass-rails'
+  s.add_dependency 'jquery-rails'
   s.add_dependency 'codemirror-rails'
   s.add_dependency 'launchy'
   s.add_dependency 'terminal-table'
   s.add_dependency 'axlsx_rails'
   s.add_dependency 'simple_form'
+  s.add_dependency 'ransack'
 
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "mysql2", '<= 0.3.20'

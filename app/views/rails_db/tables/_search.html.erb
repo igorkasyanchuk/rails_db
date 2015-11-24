@@ -1,0 +1,34 @@
+<% title "'#{@table.name}'"%>
+
+<h2>Table: <%= @table.name %></h2>
+
+<%= search_form_for @q, url: table_search_path(@table), method: :get, html: { id: 'search_form' } do |f| %>
+  <%= f.condition_fields do |c| %>
+    <%= render "condition_fields", f: c %>
+  <% end %>
+  <p><%= link_to_add_fields raw("#{fa_icon 'plus'} Add Conditions"), f, :condition %></p>
+  <div class="field sorting_options">
+    Sort:
+    <%= f.sort_fields do |s| %>
+      <%= s.sort_select %>
+    <% end %>
+  </div>
+  <div class="actions"><%= f.submit "Search", class: 'button' %></div>
+<% end %>
+
+<div class='scrollable'>
+  <table id="search_records" class='table'>
+    <tr>
+      <% @model.column_names.each do |column| %>
+        <th> <%= column %> </th>
+      <% end %>
+    </tr>
+  <% @records.each do |record| %>
+    <tr>
+      <% @model.column_names.each do |column| %>
+        <td> <%= record.send(column) %> </td>
+      <% end %>
+    </tr>
+  <% end %>
+  </table>
+</div>

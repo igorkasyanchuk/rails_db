@@ -1,0 +1,15 @@
+#search_form {
+  select, input, button {
+    width: auto;
+    display: inline-block;
+  }
+  .sorting_options {
+    select {
+      margin-right: 5px;
+    }
+  }
+}
+
+#search_records {
+
+}

@@ -1,7 +1,7 @@
 module RailsDb
   class TablesController < RailsDb::ApplicationController
     if Rails::VERSION::MAJOR >= 4
-      before_action :find_table, only: [:show, :data, :csv, :truncate, :destroy, :edit, :update, :xlsx]
+      before_action :find_table, only: [:show, :data, :csv, :truncate, :destroy, :edit, :update, :xlsx, :search]
     else
       before_filter :find_table
     end
@@ -11,6 +11,16 @@ module RailsDb
     end
 
     def show
+    end
+
+    def search
+      session[:per_page] = per_page
+      @model   = @table.as_model
+      @q       = @model.ransack(params[:q])
+      @sql     = @q.result.to_sql
+      @records = @q.result
+      @q.build_condition if @q.conditions.empty?
+      @q.build_sort      if @q.sorts.empty?
     end
 
     def data
