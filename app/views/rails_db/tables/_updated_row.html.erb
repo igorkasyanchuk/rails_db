@@ -1,0 +1,14 @@
+<tr id="record-<%= @row['id'] %>">
+  <% if @table.primary_key.present? %>
+    <td>
+      <%= link_to fa_icon('minus-circle'), delete_row_path(@table, @row), :class => 'red', remote: true, title: 'Delete Record', data: {confirm: 'Are you sure you want to delete this record?'} %>
+      <%= link_to fa_icon('pencil-square-o'), table_edit_row_path(@table, @row), :class => 'edit-row', remote: true, title: 'Edit Record' %>
+    </td>
+  <% end %>
+
+  <% @row.each_pair do |column_name, val| %>
+    <td class="column_<%= column_name %>" style=<%= display_style_column(@table.name, column_name) %>>
+      <%= format_value(@row, @row[column_name]) %>
+    </td>
+  <% end %>
+</tr>
