@@ -24,12 +24,14 @@ table {
     background-position: right center;
   }
 
-  th .asc {
-    background-image: asset-url('rails_db/up_arrow.gif');
-  }
+  &.custom_sorting {
+    th .asc {
+      background-image: asset-url('rails_db/up_arrow.gif');
+    }
 
-  th .desc {
-    background-image: asset-url('rails_db/down_arrow.gif');
+    th .desc {
+      background-image: asset-url('rails_db/down_arrow.gif');
+    }
   }
 
   th, td {
@@ -95,4 +97,8 @@ table {
 .sql_exp_col {
   padding-top: 8px;
   padding-left: 26px;
+}
+
+.panel.no_bottom_padding {
+  padding-bottom: 0;
 }

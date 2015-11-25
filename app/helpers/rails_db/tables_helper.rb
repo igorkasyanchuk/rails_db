@@ -15,13 +15,6 @@ module RailsDb
       end
     end
 
-    def sortable(column, title = nil)
-      title = titleize_column(column, title)
-      css_class  = (column == params[:sort_column]) ? "current #{params[:sort_order]}" : nil
-      sort_order = (column == params[:sort_column] && params[:sort_order] == 'asc') ? 'desc' : 'asc'
-      link_to title, params.merge({ action: :data, sort_column: column, sort_order: sort_order }), {remote: true, class: css_class }
-    end
-
     def titleize_column(column, title = nil)
       column
     end
@@ -34,8 +27,7 @@ module RailsDb
       table_destroy_path(table,
         pk_id: record[table.primary_key],
         page: params[:page],
-        sort_column: params[:sort_column],
-        sort_order: params[:sort_order])
+        q: params[:q])
     end
 
     def table_pagination_path
@@ -53,6 +45,10 @@ module RailsDb
 
     def display_style_column(table_name, column_name)
       column_is_checked?(table_name, column_name) ? 'display' : 'display:none'
+    end
+
+    def search_form_class
+      params[:q].present? ? '' : 'hide'
     end
 
   end

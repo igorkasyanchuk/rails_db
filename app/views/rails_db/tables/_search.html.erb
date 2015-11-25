@@ -2,7 +2,36 @@
 
 <h2>Table: <%= @table.name %></h2>
 
-<%= search_form_for @q, url: table_search_path(@table), method: :get, html: { id: 'search_form' } do |f| %>
+<div class='clear'></div>
+
+<hr/>
+
+<dl class="sub-nav">
+  <dd><%= render '/rails_db/shared/exp_col' %></dd>
+  <dd class="active"><%= link_to raw("#{fa_icon('table')} Records"), table_data_path(@table), remote: true %></dd>
+  <dd><%= link_to raw("#{fa_icon('tasks')} Schema"), table_path(@table), remote: true %></dd>
+  <dd><%= select_top_from_table(@table.name) %></dd>
+  <dd>
+    <a href="#" data-options="align: bottom" data-dropdown="download-files"><%= fa_icon 'download' %> Export</a>
+  </dd>
+  <dd>
+    <a href="#" data-options="align: bottom" data-dropdown="drop"><%= fa_icon 'th-large' %> Functions</a>
+  </dd>
+  <dd class="right"><%= link_to raw("#{fa_icon('cogs')} Settings"), '#', :class => 'settings-link', :table_name => "#{@table.name}" %></dd>
+  <dd class="right"><%= link_to raw("#{fa_icon('search')} Search"), '#', :class => 'search-link' %></dd>
+</dl>
+<div class="clearfix"></div>
+
+<ul id="drop" class="f-dropdown" data-dropdown-content>
+  <li><%= link_to raw("#{fa_icon('trash-o')} Truncate Table"), table_truncate_path(@table), data: {confirm: 'Are you sure?'} %></li>
+</ul>
+
+<ul id="download-files" class="f-dropdown" data-dropdown-content>
+  <li><%= link_to raw("#{fa_icon('file-text-o')} Export to CSV"), table_csv_path(@table) %></li>
+  <li><%= link_to raw("#{fa_icon('file-excel-o')} Export to Excel"), table_xlsx_path(@table, format: 'xls') %></li>
+</ul>
+
+<%= search_form_for @q, url: table_search_path(@table), method: :get, remote: true, html: { id: 'search_form', class: search_form_class } do |f| %>
   <%= f.condition_fields do |c| %>
     <%= render "condition_fields", f: c %>
   <% end %>
@@ -13,22 +42,35 @@
       <%= s.sort_select %>
     <% end %>
   </div>
-  <div class="actions"><%= f.submit "Search", class: 'button' %></div>
+  <div class="actions"><%= f.submit "Search", class: 'button small' %></div>
 <% end %>
 
 <div class='scrollable'>
   <table id="search_records" class='table'>
-    <tr>
-      <% @model.column_names.each do |column| %>
-        <th> <%= column %> </th>
+    <thead>
+      <tr>
+        <% if @table.primary_key %>
+          <th colspan="2">Actions</th>
+        <% end %>
+        <% @model.column_names.each do |column| %>
+          <th> <%= sort_link(@q, column) %> </th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <% @records.each do |record| %>
+        <tr class="row_<%= record[@table.primary_key] %>">
+          <%= render 'row', record: record %>
+        </tr>
       <% end %>
-    </tr>
-  <% @records.each do |record| %>
-    <tr>
-      <% @model.column_names.each do |column| %>
-        <td> <%= record.send(column) %> </td>
+
+      <% if @records.none? %>
+        <td>No Records</td>
       <% end %>
-    </tr>
-  <% end %>
+    </tbody>
   </table>
 </div>
+
+<p>
+  <%= paginate @records, remote: true %>
+</p>

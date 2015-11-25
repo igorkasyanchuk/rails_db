@@ -9,7 +9,6 @@ RailsDb::Engine.routes.draw do
     get 'edit'    # to handle opens in new window (GET)
     put 'update'  # to handle opens in new window (GET)
     get 'xlsx'
-    get 'search', as: :search
   end
 
   get '/sql' => 'sql#index', as: :sql

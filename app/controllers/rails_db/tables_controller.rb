@@ -13,22 +13,18 @@ module RailsDb
     def show
     end
 
-    def search
+    def data
       session[:per_page] = per_page
       @model   = @table.as_model
       @q       = @model.ransack(params[:q])
-      @sql     = @q.result.to_sql
-      @records = @q.result
+      @sql     = @q.result.page(params[:page]).per(per_page).to_sql
+      @records = @q.result.page(params[:page]).per(per_page)
       @q.build_condition if @q.conditions.empty?
       @q.build_sort      if @q.sorts.empty?
-    end
-
-    def data
-      session[:per_page] = per_page
-      @table  = @table.paginate page: params[:page],
-                                sort_column: params[:sort_column],
-                                sort_order: params[:sort_order],
-                                per_page: per_page
+      respond_to do |page|
+        page.html {}
+        page.js {}
+      end
     end
 
     def csv
@@ -45,10 +41,12 @@ module RailsDb
     end
 
     def destroy
-      @table = @table.paginate page: params[:page],
-                               sort_column: params[:sort_column],
-                               sort_order: params[:sort_order],
-                               per_page: per_page
+      @model   = @table.as_model
+      @q       = @model.ransack(params[:q])
+      @sql     = @q.result.page(params[:page]).per(per_page).to_sql
+      @records = @q.result.page(params[:page]).per(per_page)
+      @q.build_condition if @q.conditions.empty?
+      @q.build_sort      if @q.sorts.empty?
       @table.delete(params[:pk_id])
       respond_to do |page|
         page.html { redirect_to action: :data, table_id: params[:table_id] }
@@ -85,10 +83,6 @@ module RailsDb
 
     def find_table
       @table ||= RailsDb::Table.new(params[:id] || params[:table_id])
-    end
-
-    def per_page
-      params[:per_page] || session[:per_page]
     end
 
   end

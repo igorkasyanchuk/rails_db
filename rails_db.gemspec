@@ -28,6 +28,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'axlsx_rails'
   s.add_dependency 'simple_form'
   s.add_dependency 'ransack'
+  s.add_dependency 'kaminari'
 
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "mysql2", '<= 0.3.20'
