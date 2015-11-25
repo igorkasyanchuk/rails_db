@@ -6,7 +6,7 @@
     </td>
   <% end %>
 
-  <% @row.each_pair do |column_name, val| %>
+  <% @row.each_key do |column_name| %>
     <td class="column_<%= column_name %>" style=<%= display_style_column(@table.name, column_name) %>>
       <%= format_value(@row, @row[column_name]) %>
     </td>
