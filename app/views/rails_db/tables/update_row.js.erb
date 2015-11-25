@@ -1,0 +1,2 @@
+$("a.close-reveal-modal").trigger("click");
+$("#record-<%= @row['id'] %>").replaceWith("<%= j(render 'updated_row') %>");
