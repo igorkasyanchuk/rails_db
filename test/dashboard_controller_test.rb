@@ -60,6 +60,16 @@ class DashboardControllerTest < ActionDispatch::IntegrationTest
 
     post '/rails/db/sql-xls.xls?sql=select+%2A+from+users+limit+10'
     assert_equal 200, status
+
+    andriy = User.create(name: 'Andriy')
+    xhr :get, "/rails/db/tables/users/edit_row?id=#{andriy.id}"
+    assert_equal 200, status
+
+    xhr :get, "/rails/db/tables/users/update_row?id=#{andriy.id}", { name: 'JOHN' }
+    assert_equal 200, status
+    andriy.reload
+    assert_equal 'JOHN', andriy.name
+
   end
 
 end
