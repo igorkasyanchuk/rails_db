@@ -43,7 +43,9 @@ class TableTest < ActiveSupport::TestCase
 
   test 'update' do
     user = User.create(name: 'igor')
-    assert_equal @users_table.update({name: 'andriy'}, user.id).class, Float
+    assert_nothing_raised do
+      @users_table.update({name: 'andriy'}, user.id)
+    end
     assert_equal @users_table.find(user.id)['name'], 'andriy'
   end
 
