@@ -41,4 +41,10 @@ class TableTest < ActiveSupport::TestCase
     assert_equal 1, User.where(name: 'john').count
   end
 
+  test 'update' do
+    user = User.create(name: 'igor')
+    assert_equal @users_table.update({name: 'andriy'}, user.id).class, Float
+    assert_equal @users_table.find(user.id)['name'], 'andriy'
+  end
+
 end
