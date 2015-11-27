@@ -47,7 +47,7 @@ module RailsDb
     def update(column_names_and_values, id)
       names_and_values = []
       column_names_and_values.each_pair{|key, val| names_and_values << "#{key} = '#{val}'"}
-      RailsDb::Database.execute("update #{@name} set #{names_and_values.join(', ')} where id = #{id}")
+      RailsDb::Database.execute("update #{@name} set #{names_and_values.join(', ')} where #{primary_key} = #{id}")
     end
 
   end # module
