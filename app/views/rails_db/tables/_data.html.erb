@@ -60,7 +60,7 @@
 
     <tbody>
       <% @table.data.each do |record| %>
-        <tr id="record-<%= record['id'] %>">
+        <tr id="record-<%= record[@table.primary_key] %>">
           <% if @table.primary_key.present? %>
             <td>
               <%= link_to fa_icon('minus-circle'), delete_row_path(@table, record), :class => 'red', remote: true, title: 'Delete Record', data: {confirm: 'Are you sure you want to delete this record?'} %>
