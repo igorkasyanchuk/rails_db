@@ -48,14 +48,14 @@ module RailsDb
 
     def edit_row
       @table = RailsDb::Table.new(params[:table_id])
-      @row = @table.find(params[:id])
+      @row = @table.find(params[@table.primary_key])
     end
 
     def update_row
       @table = RailsDb::Table.new(params[:table_id])
       row = @table.find(params[:id])
       @row = (row.keys & params.keys).inject({}){|hash, key| hash.merge!({key => params[key]})}
-      @table.update(@row, params[:id])
+      @table.update(@row, params[@table.primary_key])
     end
 
   end
