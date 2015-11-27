@@ -1,7 +1,7 @@
 <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="false" role="dialog">
   <%= form_tag(table_update_row_path(@table), method: "get", remote: true) do %>
     <% table_data.each_pair do |key, val| %>
-      <% if key == 'id' %>
+      <% if key == @table.primary_key %>
         <%= hidden_field_tag key, val %>
       <% else %>
         <%= label_tag key %>
