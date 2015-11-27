@@ -29,7 +29,7 @@ module RailsDb
           commands.push("LIMIT #{per_page.to_i} OFFSET #{offset.to_i}")
         end
         if find_by_id
-          commands.push("where id = #{find_by_id.to_i}")
+          commands.push("where #{table.primary_key} = #{find_by_id.to_i}")
         end
         results, @time = Database.select(commands.join(' '))
         results
