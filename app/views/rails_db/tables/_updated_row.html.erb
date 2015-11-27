@@ -1,4 +1,4 @@
-<tr id="record-<%= @row['id'] %>">
+<tr id="record-<%= @row[@table.primary_key] %>">
   <% if @table.primary_key.present? %>
     <td>
       <%= link_to fa_icon('minus-circle'), delete_row_path(@table, @row), :class => 'red', remote: true, title: 'Delete Record', data: {confirm: 'Are you sure you want to delete this record?'} %>
