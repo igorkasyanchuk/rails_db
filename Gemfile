@@ -10,6 +10,8 @@ gem 'codemirror-rails'
 gem 'terminal-table'
 gem 'axlsx_rails'
 gem 'simple_form'
+gem 'ransack'
+gem 'kaminari'
 
 group :assets do
   gem 'sass-rails'

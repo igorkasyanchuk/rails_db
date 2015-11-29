@@ -1,6 +1,7 @@
 module RailsDb
   class ApplicationController < ActionController::Base
     helper :all
+    helper_method :per_page
 
     if Rails::VERSION::MAJOR >= 4
       before_action :verify_access
@@ -18,6 +19,10 @@ module RailsDb
     def verify_access
       result = RailsDb.verify_access_proc.call(self)
       redirect_to('/', error: 'Access Denied', status: 401) unless result
+    end
+
+    def per_page
+      params[:per_page] || session[:per_page]
     end
 
   end

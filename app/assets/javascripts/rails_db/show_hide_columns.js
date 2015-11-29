@@ -1,7 +1,7 @@
 $(function(){
-
   $('body').on('click', '.settings-link', function() {
     $('.rails-db-settings').toggle();
+    return false;
   });
 
   $('body').on('click', '.column-name input', function() {

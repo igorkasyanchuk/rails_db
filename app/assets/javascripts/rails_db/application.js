@@ -24,6 +24,7 @@
 //= require codemirror/addons/hint/show-hint.js
 //= require codemirror/addons/hint/sql-hint.js
 //= require rails_db/show_hide_columns.js
+//= require rails_db/search.js
 
 $(function(){
   $(document).foundation();
@@ -93,3 +94,18 @@ function init_sql_editor(mime, tables) {
   editor.setSize('100%', '300');
   editor.focus();
 };
+
+function set_browser_url(url) {
+  if (typeof (history.pushState) != "undefined") {
+    window.history.pushState({"path": url}, '', url);
+  }
+}
+
+$(window).bind('popstate', function(event) {
+  if (typeof (history.pushState) != "undefined") {
+    var state = event.originalEvent.state;
+    if (state) {
+      window.location = state.path;
+    }
+  }
+});
