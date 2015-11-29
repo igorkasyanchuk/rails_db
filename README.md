@@ -17,7 +17,7 @@ Quick way to inspect your Rails database **http://localhost:12345/rails/db**, se
 
 Demo available on: https://rails-db.herokuapp.com/rails/db/
 
-Video Demo: https://www.youtube.com/watch?v=ZBY9YPQdbx8
+Video Demo: https://www.youtube.com/watch?v=ZBY9YPQdbx8, https://youtu.be/dfViQPZw9zE
 
 ## Requirements
 
@@ -29,6 +29,7 @@ For now was tested manually only with Ruby 2.X, and Rails 4.X. But expected to w
 * view content and schema of DB tables (including indexes)
 * edit content
 * sort content of DB tables
+* filtering data (multiple filters supported too)
 * execute SQL queries
 * autocomplete for SQL queries
 * filter tables for easier navigation
