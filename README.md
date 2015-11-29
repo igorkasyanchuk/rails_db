@@ -5,7 +5,7 @@ Please **share** this gem with your friends to get more feedback. I would really
 [![Build Status](https://travis-ci.org/igorkasyanchuk/rails_db.svg)](https://travis-ci.org/igorkasyanchuk/rails_db)
 [![Gem Version](https://badge.fury.io/rb/rails_db.svg)](https://badge.fury.io/rb/rails_db)
 
-[<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/home.png?token=AAArXeu9-vtuW8nIvc9RE0nOIhGbwxkbks5WKlTLwA%3D%3D"
+[<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/main_view.png?token=AAArXeu9-vtuW8nIvc9RE0nOIhGbwxkbks5WKlTLwA%3D%3D"
 />](https://rails-db.herokuapp.com/rails/db/)
 [<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/railsdb.png?token=AAArXeu9-vtuW8nIvc9RE0nOIhGbwxkbks5WKlTLwA%3D%3D"
 />](https://rails-db.herokuapp.com/rails/db/)
@@ -17,7 +17,7 @@ Quick way to inspect your Rails database **http://localhost:12345/rails/db**, se
 
 Demo available on: https://rails-db.herokuapp.com/rails/db/
 
-Video Demo: https://www.youtube.com/watch?v=ZBY9YPQdbx8, https://youtu.be/dfViQPZw9zE
+Video Demos: https://youtu.be/TYsRxXRFp1g, https://youtu.be/dfViQPZw9zE
 
 ## Requirements
 
@@ -166,6 +166,12 @@ Run SQL commands locally withing configuration of your `config/database.yml`
 
 [<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/runsql.png?token=AAArXf26vwsPwvV2MhgxWUepGb0tT6g4ks5WKlUJwA%3D%3D"
 />](https://rails-db.herokuapp.com/rails/db/)
+
+### Edit Content in Rails DB
+
+[<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/edit_popup.png?token=AAArXf26vwsPwvV2MhgxWUepGb0tT6g4ks5WKlUJwA%3D%3D"
+/>](https://youtu.be/TYsRxXRFp1g)
+
 
 ===
 

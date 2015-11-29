@@ -17,9 +17,9 @@ module RailsDb
 
     def sidebar_classes
       if show_sidebar?
-        'large-3 pull-9 columns'
+        'large-3 large-pull-9 columns'
       else
-        'large-3 pull-9 columns hide'
+        'large-3 large-pull-9 columns hide'
       end
     end
 
