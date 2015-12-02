@@ -1,12 +1,12 @@
 <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 
-<h2 id="modalTitle">Edit</h2>
+<h2 id="modalTitle">New</h2>
 
-<%= simple_form_for @record, as: 'record', url: table_update_path(@table, pk_id: @record[@table.primary_key]), remote: true, method: :put, html: {class: 'vertical_form'} do |form| %>
+<%= simple_form_for @record, as: 'record', url: table_create_path(@table, pk_id: @record[@table.primary_key]), remote: true, method: :post, html: {class: 'vertical_form'} do |form| %>
     <div class='scrollable_form'>
       <% @record.class.columns.each do |column| %>
         <% name = column.name %>
-        <% next if name == @table.primary_key %>
+        <% next if [@table.primary_key, 'created_at', 'updated_at'].include?(column.name) %>
 
         <% if ['datetime', 'date', 'time'].include?(column.sql_type) %>
           <div class='form-inline'>

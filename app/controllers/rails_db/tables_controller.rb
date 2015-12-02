@@ -1,9 +1,11 @@
 module RailsDb
   class TablesController < RailsDb::ApplicationController
+    LOAD_TABLE_ACTIONS = [:show, :data, :csv, :truncate, :destroy, :edit, :update, :xlsx, :search, :new, :create]
+
     if Rails::VERSION::MAJOR >= 4
-      before_action :find_table, only: [:show, :data, :csv, :truncate, :destroy, :edit, :update, :xlsx, :search]
+      before_action :find_table, only: LOAD_TABLE_ACTIONS
     else
-      before_filter :find_table
+      before_filter :find_table, only: LOAD_TABLE_ACTIONS
     end
 
     def index
@@ -13,14 +15,23 @@ module RailsDb
     def show
     end
 
+    def new
+      @record = model.new
+    end
+
+    def create
+      @record = model.new(record_attributes)
+      @record.save!
+      build_search
+      respond_to do |page|
+        page.html { redirect_to action: :data, table_id: params[:table_id] }
+        page.js {}
+      end
+    end
+
     def data
       session[:per_page] = per_page
-      @model   = @table.as_model
-      @q       = @model.ransack(params[:q])
-      @sql     = @q.result.page(params[:page]).per(per_page).to_sql
-      @records = @q.result.page(params[:page]).per(per_page)
-      @q.build_condition if @q.conditions.empty?
-      @q.build_sort      if @q.sorts.empty?
+      build_search
       respond_to do |page|
         page.html {}
         page.js {}
@@ -41,12 +52,7 @@ module RailsDb
     end
 
     def destroy
-      @model   = @table.as_model
-      @q       = @model.ransack(params[:q])
-      @sql     = @q.result.page(params[:page]).per(per_page).to_sql
-      @records = @q.result.page(params[:page]).per(per_page)
-      @q.build_condition if @q.conditions.empty?
-      @q.build_sort      if @q.sorts.empty?
+      build_search
       @table.delete(params[:pk_id])
       respond_to do |page|
         page.html { redirect_to action: :data, table_id: params[:table_id] }
@@ -72,6 +78,18 @@ module RailsDb
     end
 
     private
+
+    def build_search
+      @q       = model.ransack(params[:q])
+      @sql     = @q.result.page(params[:page]).per(per_page).to_sql
+      @records = @q.result.page(params[:page]).per(per_page)
+      @q.build_condition if @q.conditions.empty?
+      @q.build_sort      if @q.sorts.empty?
+    end
+
+    def model
+      @model ||= @table.as_model
+    end
 
     def record_attributes
       if Rails::VERSION::MAJOR >= 4

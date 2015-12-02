@@ -1,6 +1,9 @@
 <% title "'#{@table.name}'"%>
 
-<h2>Table: <%= @table.name %></h2>
+<h2 class='left'>Table: <%= @table.name %></h2>
+<div class='right'>
+  <%= link_to '+ ADD', table_new_path(@table), remote: true, class: 'button small' %>
+</div>
 
 <div class='clear'></div>
 
@@ -68,7 +71,7 @@
         <% end %>
         <% @model.column_names.each do |column| %>
           <th class="column_<%= column %>" style="<%= display_style_column(@table.name, column)%>">
-            <%= sort_link(@q, column) %>
+            <%= sort_link @q, column, controller: :tables, action: :data %>
           </th>
         <% end %>
       </tr>
@@ -92,7 +95,7 @@
             <th colspan="2">Actions</th>
           <% end %>
           <% @model.column_names.each do |column| %>
-            <th> <%= sort_link(@q, column) %> </th>
+            <th> <%= sort_link @q, column, controller: :tables, action: :data %> </th>
           <% end %>
         </tr>
       </tfoot>
@@ -102,6 +105,7 @@
 
 <p>
   <span class="radius success label">Total: <%= pluralize @records.total_count, 'record' %></span>
+  <span class="radius secondary label"><a href="#" data-reveal-id="sql_modal" id='sql_modal_link'>SQL</a></span>
 </p>
 
 <% if @records.total_count > 10 %>
@@ -112,8 +116,10 @@
   </div>
 
   <div class='left per_page_pagination'>
-    <%= paginate @records, remote: true %>
+    <%= paginate @records, remote: true, params: { controller: :tables, action: :data } %>
   </div>
 <% end %>
 
 <div class='clear'></div>
+
+<%= render 'sql', sql: @sql %>

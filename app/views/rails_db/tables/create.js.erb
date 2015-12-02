@@ -1,0 +1,9 @@
+$('#main_content').html("<%= j(render 'data') %>");
+
+$('#system_modal').foundation('reveal', 'close');
+
+stickyFooter();
+
+$(document).foundation('reflow');
+
+$(document).scrollTop(0);

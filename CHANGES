@@ -5,9 +5,12 @@ BACKLOG:
   - add quick aggregation functions for columns (SUM, AVG, etc)
   - add ability to change width of columns (and remember selection in cookies) (something like http://www.bacubacu.com/colresizable/)
   - support for i18n
+  - export to json
 
-1.0 - Xxxxx
+1.0 - December 2, 2015
   - add CREATE functionality support
+  - show query SQL in popup
+  - code cleanup
 
 0.9.9 - November 29, 2015
   - add search using http://railscasts.com/episodes/370-ransack?autoplay=true
