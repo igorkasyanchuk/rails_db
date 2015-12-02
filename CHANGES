@@ -5,6 +5,7 @@ BACKLOG:
   - add quick aggregation functions for columns (SUM, AVG, etc)
   - add ability to change width of columns (and remember selection in cookies) (something like http://www.bacubacu.com/colresizable/)
   - support for i18n
+  - export to json
 
 1.0 - Xxxxx
   - add CREATE functionality support

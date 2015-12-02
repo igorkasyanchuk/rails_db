@@ -1,0 +1,7 @@
+$('#system_modal').html("<%= j(render 'new') %>");
+
+$('#system_modal').foundation('reveal', 'open');
+
+stickyFooter();
+
+$(document).foundation('reflow');

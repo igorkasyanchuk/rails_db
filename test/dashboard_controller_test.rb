@@ -69,6 +69,14 @@ class DashboardControllerTest < ActionDispatch::IntegrationTest
     assert_equal 200, status
     edit_user.reload
     assert_equal 'JOHN', edit_user.name
+
+    xhr :get, '/rails/db/tables/users/new'
+    assert_equal 200, status
+
+    assert_equal 1, User.count
+    xhr :post, '/rails/db/tables/users/create', {record: { name: 'XXX' }}
+    assert_equal 200, status
+    assert_equal 2, User.count
   end
 
 end

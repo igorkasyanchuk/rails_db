@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rails_db (0.9.9)
+    rails_db (1.0)
       axlsx_rails
       codemirror-rails
       font-awesome-rails
