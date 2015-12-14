@@ -215,6 +215,7 @@ You can also change locally DB to verify gem accross multiple Databases (mysql, 
 - "Automatic routes mounting" - https://github.com/igorkasyanchuk/rails_db/issues/4
 - "uninitialised constant Sass::Script" - https://github.com/igorkasyanchuk/rails_db/issues/13
 - gems(mysql, pg) are not found - RailsDB doesn't have any strict dependency inside. So you need to install gems manually `gem install pg` or `gem install mysql -v=0.3.18`.
+- "ActionView::Template::Error (No input found for `jsonb`):" - https://github.com/igorkasyanchuk/rails_db/issues/39
 
 ## Plans
 
