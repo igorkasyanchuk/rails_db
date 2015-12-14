@@ -7,15 +7,7 @@
       <% @record.class.columns.each do |column| %>
         <% name = column.name %>
         <% next if name == @table.primary_key %>
-
-        <% if ['datetime', 'date', 'time'].include?(column.sql_type) %>
-          <div class='form-inline'>
-            <%= form.input name, label: name, input_html: {class: 'date_or_time'} %>
-          </div>
-
-        <% else %>
-          <%= form.input name, label: name %>
-        <% end %>
+        <%= form.input name, label: name %>
       <% end %>
     </div>
     <%= form.submit 'SAVE', class: 'button small' %>
