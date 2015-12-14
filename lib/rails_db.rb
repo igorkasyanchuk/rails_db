@@ -57,7 +57,7 @@ module RailsDb
   def self.use_default_configuration!
     self.enabled                            = true
     self.automatic_routes_mount             = true
-    self.black_list_tables                  = white_list_tables = []
+    self.black_list_tables                  = self.white_list_tables = []
     self.http_basic_authentication_enabled  = false
     self.verify_access_proc                 = proc { |controller| true }
   end
