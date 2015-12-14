@@ -1,4 +1,5 @@
 require 'test_helper'
+require 'axlsx_rails'
 
 class DashboardControllerTest < ActionDispatch::IntegrationTest
 
@@ -8,7 +9,6 @@ class DashboardControllerTest < ActionDispatch::IntegrationTest
 
     user = User.create(name: 'Igor')
     edit_user = User.create(name: 'Edit')
-    account = Account.create(name: 'Igor')
 
     get '/rails/db'
     assert_equal 200, status

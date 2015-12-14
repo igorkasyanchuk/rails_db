@@ -28,7 +28,9 @@
 
 <ul id="download-files" class="f-dropdown" data-dropdown-content>
   <li><%= link_to raw("#{fa_icon('file-text-o')} Export to CSV"), table_csv_path(@table) %></li>
-  <li><%= link_to raw("#{fa_icon('file-excel-o')} Export to Excel"), table_xlsx_path(@table, format: 'xls') %></li>
+  <% if defined? Axlsx %>
+    <li><%= link_to raw("#{fa_icon('file-excel-o')} Export to Excel"), table_xlsx_path(@table, format: 'xls') %></li>
+  <% end %>
 </ul>
 
 <%= search_form_for @q, url: table_search_path(@table), method: :get, remote: true, html: { id: 'search_form', class: search_form_class } do |f| %>

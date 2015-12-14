@@ -43,7 +43,11 @@ module RailsDb
     end
 
     def xlsx
-      render xlsx: 'table', filename: "#{@table.name}.xlsx"
+      if defined? Axlsx
+        render xlsx: 'table', filename: "#{@table.name}.xlsx"
+      else
+        raise 'RailsDb could not find Axlsx, please add it to your Gemfile: "gem \'axlsx_rails\'"'
+      end
     end
 
     def truncate
