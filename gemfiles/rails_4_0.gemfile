@@ -18,6 +18,7 @@ gem 'sass'
 gem 'jquery-rails'
 gem "font-awesome-rails"
 gem 'codemirror-rails'
+gem 'axlsx_rails'
 
 group :development do
   gem 'quiet_assets'

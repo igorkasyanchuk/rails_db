@@ -2,7 +2,6 @@ PATH
   remote: .
   specs:
     rails_db (1.0)
-      axlsx_rails
       codemirror-rails
       font-awesome-rails
       jquery-rails
@@ -53,7 +52,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    addressable (2.3.8)
+    addressable (2.4.0)
     arel (6.0.3)
     axlsx (2.0.1)
       htmlentities (~> 4.3.1)
@@ -178,3 +177,6 @@ DEPENDENCIES
   sqlite3
   terminal-table
   uglifier
+
+BUNDLED WITH
+   1.10.6
