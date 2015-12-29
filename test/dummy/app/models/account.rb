@@ -10,4 +10,10 @@
 #
 
 class Account < ActiveRecord::Base
+
+  # to test search
+  def self.search(name)
+    where('1=1')
+  end
+
 end
