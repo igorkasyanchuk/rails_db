@@ -7,6 +7,10 @@ BACKLOG:
   - support for i18n
   - export to json
 
+1.1 - December 31, 2015
+  - code cleanup
+  - bug fixes and optimizations (thanks @bbenezech)
+
 1.0 - December 2, 2015
   - add CREATE functionality support
   - show query SQL in popup
