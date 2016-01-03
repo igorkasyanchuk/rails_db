@@ -6,13 +6,15 @@
     </div>
     <div class="large-6 columns">
       <ul class="inline-list right">
+        <% if defined?  main_app.root_url %>
         <li>
-          <%= link_to '/' do %>
+          <%= link_to main_app.root_url do %>
             <%= fa_icon 'home' %>
             Home
           <% end %>
         </li>
         <li>|</li>
+        <% end %>
         <li>
           <%= link_to rails_db.root_path do %>
             <%= fa_icon 'list-ul' %>
