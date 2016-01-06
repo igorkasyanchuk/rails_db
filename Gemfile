@@ -21,3 +21,5 @@ group :test do
   gem "sqlite3"
   gem "jquery-rails"
 end
+
+gem 'will_paginate', '~> 3.0.6'

@@ -156,6 +156,7 @@ GEM
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    will_paginate (3.0.7)
 
 PLATFORMS
   ruby
@@ -177,6 +178,7 @@ DEPENDENCIES
   sqlite3
   terminal-table
   uglifier
+  will_paginate (~> 3.0.6)
 
 BUNDLED WITH
    1.10.6
