@@ -68,7 +68,7 @@ Or only for development:
   end
 ```
 
-Run `bundle install`<sup>++</sup>
+Run `bundle install`
 
 Visit **`http://localhost:3000/rails/db`** and you will see your database tables and SQL editors.
 
