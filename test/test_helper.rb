@@ -1,6 +1,10 @@
 # Configure Rails Environment
 ENV["RAILS_ENV"] = "test"
 
+# Simplecov
+require 'simplecov'
+SimpleCov.start
+
 puts "TRYING TO USE DB: #{ENV['DB'] || 'default'}"
 
 require File.expand_path("../../test/dummy/config/environment.rb",  __FILE__)

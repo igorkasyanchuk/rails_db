@@ -20,6 +20,7 @@ end
 group :test do
   gem "sqlite3"
   gem "jquery-rails"
+  gem "simplecov", :require => false
 end
 
 gem 'will_paginate', '~> 3.0.6'
