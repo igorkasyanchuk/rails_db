@@ -13,3 +13,4 @@ test/standalone/db/*.sqlite3-journal
 test/standalone/log/*.log
 test/standalone/tmp/
 test/standalone/.sass-cache
+coverage/
