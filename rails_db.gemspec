@@ -18,7 +18,6 @@ Gem::Specification.new do |s|
   s.executables   = ["railsdb", "rails_db", 'runsql']
 
   s.add_dependency 'rails', ">= 3.1.0"
-  s.add_dependency 'font-awesome-rails'
   s.add_dependency 'sass'
   s.add_dependency 'sass-rails'
   s.add_dependency 'jquery-rails'

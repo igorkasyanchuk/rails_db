@@ -5,7 +5,6 @@ gemspec
 gem 'rails'
 gem 'sass'
 gem 'jquery-rails'
-gem 'font-awesome-rails'
 gem 'codemirror-rails'
 gem 'terminal-table'
 gem 'simple_form'

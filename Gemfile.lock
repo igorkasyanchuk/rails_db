@@ -3,7 +3,6 @@ PATH
   specs:
     rails_db (1.1)
       codemirror-rails
-      font-awesome-rails
       jquery-rails
       kaminari
       launchy
@@ -66,8 +65,6 @@ GEM
       railties (>= 3.0, < 5)
     erubis (2.7.0)
     execjs (2.6.0)
-    font-awesome-rails (4.4.0.0)
-      railties (>= 3.2, < 5.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     htmlentities (4.3.4)
@@ -164,7 +161,6 @@ PLATFORMS
 DEPENDENCIES
   axlsx_rails
   codemirror-rails
-  font-awesome-rails
   jquery-rails
   kaminari
   mysql2 (<= 0.3.20)
@@ -181,4 +177,4 @@ DEPENDENCIES
   will_paginate (~> 3.0.6)
 
 BUNDLED WITH
-   1.10.6
+   1.11.2

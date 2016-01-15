@@ -1,7 +1,5 @@
 module RailsDb
   module ApplicationHelper
-    include ::FontAwesome::Rails::IconHelper
-
     def rails_db_tables
       RailsDb::Database.accessible_tables
     end
@@ -40,6 +38,10 @@ module RailsDb
       content_for :title do
         raw("#{str}"[0].upcase + "#{str}"[1..-1])
       end
+    end
+
+    def fa_icon(icon_name)
+      %{<i class="fa fa-#{icon_name}"></i>}.html_safe
     end
 
     def db_hint_options

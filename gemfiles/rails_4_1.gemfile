@@ -16,7 +16,6 @@ gemspec :path => '../'
 # gem 'byebug', group: [:development, :test]
 gem 'sass'
 gem 'jquery-rails'
-gem "font-awesome-rails"
 gem 'codemirror-rails'
 gem 'axlsx_rails'
 
