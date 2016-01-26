@@ -5,7 +5,6 @@ PATH
       codemirror-rails
       jquery-rails
       kaminari
-      launchy
       rails (>= 3.1.0)
       ransack
       simple_form
@@ -153,6 +152,7 @@ DEPENDENCIES
   codemirror-rails
   jquery-rails
   kaminari
+  launchy
   mysql2 (<= 0.3.20)
   pg
   rails
