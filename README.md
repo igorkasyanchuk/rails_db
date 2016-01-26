@@ -71,10 +71,9 @@ Or only for development:
 Run `bundle install`
 
 Visit **`http://localhost:3000/rails/db`** and you will see your database tables and SQL editors.
+> Use port 12345 if running in 'standalone' mode
 
 Optionally, add `gem 'axlsx_rails'` to your application's Gemfile to be able to export to excel `.xlsx` files.
-
-> Use port 12345 if running in 'standalone' mode
 
 ## Customization
 
