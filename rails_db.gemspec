@@ -20,12 +20,12 @@ Gem::Specification.new do |s|
   s.add_dependency 'rails', ">= 3.1.0"
   s.add_dependency 'jquery-rails'
   s.add_dependency 'codemirror-rails'
-  s.add_dependency 'launchy'
   s.add_dependency 'terminal-table'
   s.add_dependency 'simple_form'
   s.add_dependency 'ransack'
   s.add_dependency 'kaminari'
 
+  s.add_development_dependency "launchy"
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "mysql2", '<= 0.3.20'
   s.add_development_dependency "pg"

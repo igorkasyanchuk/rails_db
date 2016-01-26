@@ -36,6 +36,7 @@ module Standalone
       require 'launchy'
       Launchy.open("http://#{HOST}:#{PORT}/rails/db")
     rescue Exception
+      puts 'Please run `gem install launchy` to have the browser window opened automatically at launch'
       # silence
       # in case it won't work
     end
