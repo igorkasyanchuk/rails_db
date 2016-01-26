@@ -1,6 +1,4 @@
 require "rails"
-require "sass"
-require "sass-rails"
 require "jquery-rails"
 require 'codemirror-rails'
 require 'terminal-table'

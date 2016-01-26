@@ -1,5 +1,4 @@
 /*
- *= require_self
  *= require rails_db/foundation.min
  *= require rails_db/foundation_and_overrides
  *= require codemirror
@@ -12,5 +11,3 @@
  *= require rails_db/forms
  *= require rails_db/search
  */
-
-

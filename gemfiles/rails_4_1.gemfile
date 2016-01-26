@@ -14,7 +14,6 @@ gemspec :path => '../'
 
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
-gem 'sass'
 gem 'jquery-rails'
 gem 'codemirror-rails'
 gem 'axlsx_rails'
@@ -24,7 +23,6 @@ group :development do
 end
 
 group :assets do
-  gem 'sass-rails'
   gem 'therubyracer', platforms: :ruby
   gem 'uglifier'
 end

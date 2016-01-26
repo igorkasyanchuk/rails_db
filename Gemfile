@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'rails'
-gem 'sass'
 gem 'jquery-rails'
 gem 'codemirror-rails'
 gem 'terminal-table'
@@ -12,7 +11,6 @@ gem 'ransack'
 gem 'kaminari'
 
 group :assets do
-  gem 'sass-rails'
   gem 'uglifier'
 end
 

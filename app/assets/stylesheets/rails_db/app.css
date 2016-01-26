@@ -17,32 +17,29 @@ body {
 
 table {
   border-spacing: 2px;
+}
 
-  th .current {
-    padding-right: 12px;
-    background-repeat: no-repeat;
-    background-position: right center;
-  }
+table th .current {
+  padding-right: 12px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
 
-  &.custom_sorting {
-    th .asc {
-      background-image: asset-url('rails_db/up_arrow.gif');
-    }
+table.custom_sorting th .asc {
+  background-image: <%= asset_path('rails_db/up_arrow.gif') %>;
+}
 
-    th .desc {
-      background-image: asset-url('rails_db/down_arrow.gif');
-    }
-  }
+table.custom_sorting th .desc {
+  background-image: <%= asset_path('rails_db/down_arrow.gif') %>;
+}
 
-  th, td {
-    white-space: nowrap;
-    vertical-align: top;
-  }
+table th, table td {
+  white-space: nowrap;
+  vertical-align: top;
+}
 
-  td.text {
-    white-space: normal;
-  }
-
+table td.text {
+  white-space: normal;
 }
 
 .scrollable {
@@ -76,22 +73,19 @@ table {
   color: white;
 }
 
-.expanded {
-  .collapse {
-    display: inline;
-  }
-  .expand {
-    display: none;
-  }
+.expanded .collapse {
+  display: inline;
 }
 
-.collapsed {
-  .collapse {
-    display: none;
-  }
-  .expand {
+.expanded .expand {
+  display: none;
+}
+
+.collapsed .collapse {
+  display: none;
+}
+.collapsed .expand {
     display: inline;
-  }
 }
 
 .sql_exp_col {

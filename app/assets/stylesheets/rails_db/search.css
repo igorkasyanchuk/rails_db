@@ -1,0 +1,7 @@
+#search_form select, #search_form input, #search_form button {
+  width: auto;
+  display: inline-block;
+}
+#search_form .sorting_options select {
+  margin-right: 5px;
+}

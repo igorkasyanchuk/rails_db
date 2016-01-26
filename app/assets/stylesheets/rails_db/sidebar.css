@@ -1,0 +1,22 @@
+.side-nav.tables {
+  padding-top: 6px;
+}
+
+.side-nav.tables li {
+  margin: 0;
+  margin-left: 3px;
+}
+
+.side-nav.tables li a {
+  padding: 2px 4px;
+}
+
+.side-nav.tables li a.selected {
+  font-weight: bold;
+}
+
+#sidebar h3 {
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
