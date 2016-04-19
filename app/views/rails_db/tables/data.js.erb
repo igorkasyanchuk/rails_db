@@ -11,4 +11,4 @@ $(document).foundation('reflow');
 
 $(document).scrollTop(0);
 
-set_browser_url('<%= url_for(params) %>');
+set_browser_url('<%= url_for(params_to_hash(params)) %>');

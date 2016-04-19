@@ -32,7 +32,7 @@ module RailsDb
 
     def table_pagination_path
       params.delete(:pk_id)
-      params.merge({action: :data})
+      params_to_hash params.merge({action: :data})
     end
 
     def column_is_checked?(table_name, column_name)
