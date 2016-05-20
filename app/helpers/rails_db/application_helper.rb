@@ -52,5 +52,12 @@ module RailsDb
       result
     end
 
+    def params_to_hash(p)
+      if p.respond_to?(:to_unsafe_h)
+        p.to_unsafe_h
+      else
+        p
+      end
+    end
   end
 end
