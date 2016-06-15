@@ -153,6 +153,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   launchy
+  mime-types (< 3.0)
   mysql2 (<= 0.3.20)
   pg
   rails
