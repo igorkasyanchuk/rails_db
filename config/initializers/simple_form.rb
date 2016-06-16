@@ -155,7 +155,9 @@ SimpleForm.setup do |config|
 
   # Define the default class of the input wrapper of the boolean input.
 
-  config.boolean_label_class = 'checkbox' rescue nil
+  if config.respond_to?(:boolean_label_class)
+    config.boolean_label_class = 'checkbox'
+  end
 
   # Defines if the default input wrapper class should be included in radio
   # collection wrappers.
