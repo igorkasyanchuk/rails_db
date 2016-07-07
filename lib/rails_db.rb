@@ -62,3 +62,4 @@ end
 
 require_relative "rails_db/engine"
 require_relative "rails/routes"
+require_relative "ext/simple_form_ext"
