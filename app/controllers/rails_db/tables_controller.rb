@@ -84,7 +84,12 @@ module RailsDb
     private
 
     def build_search
-      @q       = model.ransack(params[:q])
+      if Rails::VERSION::MAJOR >= 5
+        search_params = params.dup.permit!.to_h.with_indifferent_access
+      else
+        search_params = params
+      end
+      @q       = model.ransack(search_params[:q])
       @sql     = @q.result.page(params[:page]).per(per_page).to_sql
       @records = @q.result.page(params[:page]).per(per_page)
       @q.build_condition if @q.conditions.empty?

@@ -8,7 +8,7 @@ gem 'codemirror-rails'
 gem 'terminal-table'
 gem 'simple_form'
 gem 'ransack'
-gem 'kaminari'
+gem 'kaminari', '>= 0.17.0'
 
 group :assets do
   gem 'uglifier'
