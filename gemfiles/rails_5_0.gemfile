@@ -48,3 +48,5 @@ group :test do
     gem "pry-byebug"
   end
 end
+
+gem 'kaminari', '>= 0.17.0'
