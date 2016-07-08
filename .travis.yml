@@ -22,6 +22,7 @@ before_deploy:
   - gem install mime-types -v "~> 2.0"
 
 before_script:
+  - rm Gemfile.lock
   - cp config/database.travis.yml config/database.yml
   - cp config/database.travis.yml test/dummy/config/database.yml
   - psql -c 'create database rails_db;' -U postgres
@@ -51,7 +52,7 @@ matrix:
       gemfile: gemfiles/rails_3_2.gemfile
     - rvm: "2.2"
       gemfile: gemfiles/rails_3_2.gemfile
-    - rvm: "2.3"
+    - rvm: "2.3.0"
       gemfile: gemfiles/rails_3_2.gemfile
     - rvm: "1.9.3"
       gemfile: gemfiles/rails_5_0.gemfile
