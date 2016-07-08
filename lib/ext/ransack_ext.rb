@@ -6,8 +6,11 @@ module Ransack
 
         def url_options_with_feature
           result = url_options_without_feature
-          return result.permit! if result.respond_to?(:permit!)
-          result
+          if result.respond_to?(:permit!)
+            result.permit!
+          else
+            result
+          end
         end
 
         alias_method :url_options_without_feature, :url_options
