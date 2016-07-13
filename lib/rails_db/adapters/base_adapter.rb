@@ -40,7 +40,12 @@ module RailsDb
       end
 
       def self.delete(table_name, pk_name, pk_id)
-        execute("DELETE FROM #{table_name} WHERE #{pk_name} = #{pk_id};")
+        case pk_id
+          when Fixnum, Bignum then
+            execute("DELETE FROM #{table_name} WHERE #{pk_name} = #{pk_id};")
+          else
+            execute("DELETE FROM #{table_name} WHERE #{pk_name} = '#{pk_id}';")
+        end
       end
 
       def self.count(table_name)
