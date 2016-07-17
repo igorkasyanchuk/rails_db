@@ -23,6 +23,10 @@ Video Demos: https://youtu.be/TYsRxXRFp1g, https://youtu.be/dfViQPZw9zE
 
 For now was tested manually only with Ruby 2.X, and Rails 4.X. But expected to work with older versions too. Also there are automated tests running on Travis CI.
 
+## Note (!)
+
+Current version works with Ransack 1.7.0 gem. Please add to gemfile `gem 'ransack`, '1.7.0'`.
+
 ## Main Features
 
 * command line tools `railsdb` and `runsql` to run app and sql for your apps.
