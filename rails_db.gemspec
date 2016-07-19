@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'simple_form'
   s.add_dependency 'ransack'
   s.add_dependency 'kaminari'
+  s.add_dependency 'sass'
 
   s.add_development_dependency "launchy"
   s.add_development_dependency "sqlite3"
