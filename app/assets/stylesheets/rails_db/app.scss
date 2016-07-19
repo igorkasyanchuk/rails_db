@@ -26,11 +26,11 @@ table th .current {
 }
 
 table.custom_sorting th .asc {
-  background-image: <%= asset_path('rails_db/up_arrow.gif') %>;
+  background-image: asset-path('rails_db/up_arrow.gif');
 }
 
 table.custom_sorting th .desc {
-  background-image: <%= asset_path('rails_db/down_arrow.gif') %>;
+  background-image: asset-path('rails_db/down_arrow.gif');
 }
 
 table th, table td {
