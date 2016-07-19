@@ -6,7 +6,7 @@ PATH
       jquery-rails
       kaminari
       rails (>= 3.1.0)
-      ransack
+      ransack (<= 1.7.0)
       sass
       simple_form
       terminal-table

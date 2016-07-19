@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'codemirror-rails'
   s.add_dependency 'terminal-table'
   s.add_dependency 'simple_form'
-  s.add_dependency 'ransack'
+  s.add_dependency 'ransack', '<= 1.7.0'
   s.add_dependency 'kaminari'
   s.add_dependency 'sass'
 
