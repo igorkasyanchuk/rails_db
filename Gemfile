@@ -7,7 +7,7 @@ gem 'jquery-rails'
 gem 'codemirror-rails'
 gem 'terminal-table'
 gem 'simple_form'
-gem 'ransack', '< 1.8.0'
+gem 'ransack', '<= 1.7.0'
 gem 'kaminari', '>= 0.17.0'
 
 group :assets do
