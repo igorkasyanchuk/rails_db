@@ -13,7 +13,6 @@ ENGINE_ROOT = File.expand_path('../..', __FILE__)
 ENGINE_PATH = File.expand_path('../../lib/rails_db/engine', __FILE__)
 
 require "#{ENGINE_ROOT}/lib/ext/string_ext"
-require "#{ENGINE_ROOT}/lib/libs"
 
 database_yml = ::File.expand_path(File.join('.', 'config', 'database.yml'))
 app_path     = ::File.expand_path(File.join('.'))
