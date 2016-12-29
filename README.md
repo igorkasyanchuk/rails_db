@@ -25,7 +25,7 @@ For now was tested manually only with Ruby 2.X, and Rails 4.X. But expected to w
 
 ## Note (!)
 
-Current version works with Ransack 1.7.0 gem. Please add to gemfile `gem 'ransack`, '1.7.0'`.
+Current version works with Ransack 1.7.0 gem. Please add to gemfile `gem 'ransack', '1.7.0'`.
 
 ## Main Features
 
