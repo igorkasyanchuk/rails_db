@@ -58,7 +58,11 @@ module RailsDb
     end
 
     def as_model
-      @model ||= create_model(name)
+      begin
+        @model ||= name.classify.constantize
+      rescue
+        @model ||= create_model(name)
+      end
     end
 
   end # module
