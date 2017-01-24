@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 5.0.0'
+gem 'rails', '5.0.1'
 
 # Declare your gem's dependencies in rails_db.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
