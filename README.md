@@ -25,7 +25,7 @@ For now was tested manually only with Ruby 2.X, and Rails 4.X. But expected to w
 
 ## Note (!)
 
-Current version works with Ransack 1.7.0 gem. Please add to gemfile `gem 'ransack', '1.7.0'`.
+Gem works with ruby 1.9.3 but you need to use kaminari < 1.0.0 gem. Please add to gemfile `gem 'kaminari', '< 1.0.0'`.
 
 ## Main Features
 
