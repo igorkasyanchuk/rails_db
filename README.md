@@ -235,4 +235,4 @@ This project uses MIT-LICENSE.
 
 ## Other Links
 
-[Ruby News www.Rubyroid.net](https://www.rubyroid.net)
+[Ruby News www.Rubyroid.net](http://www.rubyroid.net)
