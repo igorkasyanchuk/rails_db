@@ -232,3 +232,7 @@ You can also change locally DB to verify gem accross multiple Databases (mysql, 
 ## License
 
 This project uses MIT-LICENSE.
+
+## Other Links
+
+[Ruby News www.Rubyroid.net](https://www.rubyroid.net)
