@@ -47,22 +47,21 @@ module RailsDb
     end
 
     def create_model(table_name, &block)
-      klass = Class.new(ActiveRecord::Base) do
-        def self.model_name
-          ActiveModel::Name.new(self, nil, table_name)
+      klass = ActiveRecord::Base.descendants.select { |c| c.table_name == table_name }.first
+      unless klass
+        klass = Class.new(ActiveRecord::Base) do
+          def self.model_name
+            ActiveModel::Name.new(self, nil, table_name)
+          end
+          self.table_name = table_name
         end
-        self.table_name = table_name
       end
       klass.class_eval(&block) if block_given?
       klass
     end
 
     def as_model
-      begin
-        @model ||= name.classify.constantize
-      rescue
-        @model ||= create_model(name)
-      end
+      @model ||= create_model(name)
     end
 
   end # module
