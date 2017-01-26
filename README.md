@@ -95,7 +95,7 @@ If will create file config/initializers/rails_db.rb.
 *   **http_basic_authentication_password** - HTTP_BASIC authentication password.
 *   **black_list_tables** - black list for tables (hide tables from sidebar).
 *   **white_list_tables** - black list for tables (show only these tables in sidebar).
-*   **verify_access_proc** - allow access by specific conditions, for example by role for current_user (default: `proc { |controller| true }`)
+*   **verify_access_proc** - allow access by specific conditions, for example by role for current_user, or you can use for example Pundit here (default: `proc { |controller| true }`)
 
 If you want to add routes manually (or customize the mounted location) you need to first turn off automatic_routes_mount and then add to your `routes.rb`
 
