@@ -6,9 +6,11 @@ class DashboardControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
     User.delete_all
     Account.delete_all
+    Customer.delete_all
 
-    user = User.create(name: 'Igor')
+    user      = User.create(name: 'Igor')
     edit_user = User.create(name: 'Edit')
+    customer  = Customer.create(name: 'Customer 1', bio: 'this is bio text')
 
     get '/rails/db'
     assert_equal 200, status
@@ -39,10 +41,10 @@ class DashboardControllerTest < ActionDispatch::IntegrationTest
     get '/rails/db/tables/users/data?sort_column=id&sort_order=desc'
     assert_equal 200, status
 
-    assert_equal 2, User.count
+    assert_equal 3, User.count
     get "/rails/db/tables/users/destroy?pk_id=#{user.id}"
     assert_equal 302, status
-    assert_equal 1, User.count
+    assert_equal 2, User.count
 
     get '/rails/db/tables/users/csv'
     assert_equal 200, status
@@ -73,10 +75,18 @@ class DashboardControllerTest < ActionDispatch::IntegrationTest
     xhr :get, '/rails/db/tables/users/new'
     assert_equal 200, status
 
-    assert_equal 1, User.count
+    assert_equal 2, User.count
     xhr :post, '/rails/db/tables/users/create', {record: { name: 'XXX' }}
     assert_equal 200, status
-    assert_equal 2, User.count
+    assert_equal 3, User.count
+
+    xhr :get, '/rails/db/tables/users/edit?pk_id=' + customer.id.to_s
+    assert_equal 200, status
+
+    xhr :put, '/rails/db/tables/users/update?pk_id=' + customer.id.to_s, {record: { name: 'STI' }}
+    assert_equal 200, status
+    customer.reload
+    assert_equal 'STI', customer.name
   end
 
 end

@@ -18,3 +18,9 @@
 <%= rails_db_data_table_sql 'select id, name, age from users order by age desc limit 10',
                             footer: false,
                             header: true %>
+
+<h3>Stats</h3>
+
+<p>Users: <%= User.count %></p>
+<p>Customer: <%= Customer.count %></p>
+<p>Account: <%= Account.count %></p>

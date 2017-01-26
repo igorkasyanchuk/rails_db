@@ -8,7 +8,7 @@ class TableTest < ActiveSupport::TestCase
   end
 
   test 'columns' do
-    assert_equal @users_table.column_names, ["id", "name", "age", "salary", "bio", "created_at", "updated_at", "account_id", "dob", "active"]
+    assert_equal @users_table.column_names, ["id", "name", "age", "salary", "bio", "created_at", "updated_at", "account_id", "dob", "active", "type"]
   end
 
   test 'to_csv' do

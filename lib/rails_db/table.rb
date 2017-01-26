@@ -47,15 +47,19 @@ module RailsDb
     end
 
     def create_model(table_name, &block)
-      klass = ActiveRecord::Base.descendants.select { |c| c.table_name == table_name }.first
-      unless klass
+      begin
         klass = Class.new(ActiveRecord::Base) do
           def self.model_name
             ActiveModel::Name.new(self, nil, table_name)
           end
           self.table_name = table_name
+          self.inheritance_column = nil
         end
+        temp  = klass.count # verify that it works, if not load other
+      rescue
+        klass = ActiveRecord::Base.descendants.detect { |c| c.table_name == table_name }
       end
+
       klass.class_eval(&block) if block_given?
       klass
     end

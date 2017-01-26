@@ -19,7 +19,6 @@ gem 'codemirror-rails'
 gem 'axlsx_rails'
 
 group :development do
-  gem 'quiet_assets'
 end
 
 group :assets do
@@ -40,8 +39,6 @@ end
 
 group :test do
   gem "rspec"
-  gem "jquery-rails"
-  gem "quiet_assets"
   if RUBY_VERSION >= '2.0'
     gem "pry"
     gem "pry-rails"

@@ -11,6 +11,7 @@ require "rails/test_help"
 ActiveSupport::TestCase.use_transactional_fixtures = false
 
 puts "USING DB: #{RailsDb::Database.adapter.adapter_name}"
+puts "USING Rails: #{Gem.loaded_specs['rails'].version}"
 
 # Filter out Minitest backtrace while allowing backtrace from other libraries
 # to be shown.
