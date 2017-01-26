@@ -6,11 +6,15 @@ class DatabaseTest < ActiveSupport::TestCase
   end
 
   test "tables" do
-    assert_equal RailsDb::Database.tables, ["accounts", "comments", "contacts", "legacy_accounts", "payments", "projects", "projects_users", "users"]
+    ["accounts", "comments", "contacts", "legacy_accounts", "payments", "projects", "projects_users", "users"].each do |t|
+      assert RailsDb::Database.tables.include?(t)
+    end
   end
 
   test "accessible tables" do
-    assert_equal RailsDb::Database.accessible_tables, ["accounts", "comments", "contacts", "legacy_accounts", "payments", "projects", "projects_users", "users"]
+    ["accounts", "comments", "contacts", "legacy_accounts", "payments", "projects", "projects_users", "users"].each do |t|
+      assert RailsDb::Database.accessible_tables.include?(t)
+    end
   end
 
   test 'adapter' do
