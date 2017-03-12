@@ -25,14 +25,6 @@ table th .current {
   background-position: right center;
 }
 
-table.custom_sorting th .asc {
-  background-image: asset-path('rails_db/up_arrow.gif');
-}
-
-table.custom_sorting th .desc {
-  background-image: asset-path('rails_db/down_arrow.gif');
-}
-
 table th, table td {
   white-space: nowrap;
   vertical-align: top;

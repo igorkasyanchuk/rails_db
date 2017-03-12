@@ -22,6 +22,10 @@ group :development do
   gem 'quiet_assets'
 end
 
+if RUBY_VERSION < '2.1'
+  gem 'nokogiri', '1.6.8.1'
+end
+
 group :assets do
   gem 'therubyracer', platforms: :ruby
   gem 'uglifier'

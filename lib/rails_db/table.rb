@@ -61,6 +61,14 @@ module RailsDb
       end
 
       klass.class_eval(&block) if block_given?
+
+      if Rails::VERSION::MAJOR == 3
+        klass.class_eval do
+          klass.columns.each do |e|
+            attr_accessor e.name
+          end
+        end
+      end
       klass
     end
 
