@@ -36,7 +36,6 @@ end
 gem 'pg'
 gem 'mysql2'
 gem 'populator'
-gem 'faker'
 
 if RUBY_VERSION > "2.1.0"
   gem 'sqlite3'
