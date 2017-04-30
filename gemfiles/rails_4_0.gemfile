@@ -14,7 +14,6 @@ gemspec :path => '../'
 
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
-gem 'jquery-rails'
 gem 'codemirror-rails'
 gem 'axlsx_rails'
 
@@ -48,7 +47,6 @@ gem 'i18n'
 
 group :test do
   gem "rspec"
-  gem "jquery-rails"
   gem "quiet_assets"
   if RUBY_VERSION >= '2.0'
     gem "pry"

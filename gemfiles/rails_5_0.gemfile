@@ -14,7 +14,6 @@ gemspec :path => '../'
 
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
-gem 'jquery-rails'
 gem 'codemirror-rails'
 gem 'axlsx_rails'
 

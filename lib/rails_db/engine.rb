@@ -3,9 +3,8 @@ module RailsDb
     isolate_namespace RailsDb
     config.autoload_paths += Dir["#{config.root}/lib"]
 
-    initializer 'any_login.assets_precompile', :group => :all do |app|
-      app.config.assets.precompile += ['rails_db/logo_mini.png', 'rails_db/*', 'vendor/modernizr.js', 'rails_db/up_arrow.gif', 'rails_db/down_arrow.gif', 'rails_db/logo.png']
-      app.config.assets.precompile += ["codemirror*", "codemirror/**/*"]
+    initializer 'rails_db.assets_precompile', :group => :all do |app|
+      app.config.assets.precompile += ['rails_db/application.js', 'rails_db/application.css', 'rails_db/*.png']
     end
 
     initializer 'rails_db.helpers' do

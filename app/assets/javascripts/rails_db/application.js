@@ -1,30 +1,14 @@
-//= require jquery
-//= require jquery_ujs
-//= require rails_db/foundation.min
-//= require rails_db/foundation/foundation.abide
-//= require rails_db/foundation/foundation.accordion
-//= require rails_db/foundation/foundation.alert
-//= require rails_db/foundation/foundation.clearing
-//= require rails_db/foundation/foundation.dropdown
-//= require rails_db/foundation/foundation.equalizer
-//= require rails_db/foundation/foundation.interchange
-//= require rails_db/foundation/foundation.joyride
-//= require rails_db/foundation/foundation.magellan
-//= require rails_db/foundation/foundation.offcanvas
-//= require rails_db/foundation/foundation.orbit
-//= require rails_db/foundation/foundation.reveal
-//= require rails_db/foundation/foundation.slider
-//= require rails_db/foundation/foundation.tab
-//= require rails_db/foundation/foundation.tooltip
-//= require rails_db/foundation/foundation.topbar
-//= require rails_db/sticky
+//= require rails_db/jquery
 //= require rails_db/jquery.cookie
+//= require rails_db/rails-ujs
+//= require rails_db/foundation.min
+//= require rails_db/sticky
+//= require rails_db/show_hide_columns.js
+//= require rails_db/search.js
 //= require codemirror
 //= require codemirror/modes/sql
 //= require codemirror/addons/hint/show-hint.js
 //= require codemirror/addons/hint/sql-hint.js
-//= require rails_db/show_hide_columns.js
-//= require rails_db/search.js
 
 $(function(){
   $(document).foundation();
