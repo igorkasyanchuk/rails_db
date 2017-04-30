@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -32,8 +33,9 @@ ActiveRecord::Schema.define(version: 20170126124628) do
     t.text     "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["name", "email"], name: "index_contacts_on_name_and_email"
   end
+
+  add_index "contacts", ["name", "email"], name: "index_contacts_on_name_and_email"
 
   create_table "legacy_accounts", primary_key: "uuid", force: :cascade do |t|
     t.string "name"
@@ -44,51 +46,52 @@ ActiveRecord::Schema.define(version: 20170126124628) do
     t.integer  "project_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["project_id"], name: "index_payments_on_project_id"
   end
+
+  add_index "payments", ["project_id"], name: "index_payments_on_project_id"
 
   create_table "projects", force: :cascade do |t|
     t.string   "name"
-    t.string   "description_880941"
-    t.string   "description_609312"
-    t.string   "description_45120"
-    t.string   "description_646956"
-    t.string   "description_359190"
-    t.string   "description_414526"
-    t.string   "description_126104"
-    t.string   "description_21394"
-    t.string   "description_200553"
-    t.string   "description_47383"
-    t.string   "description_817819"
-    t.string   "description_297200"
-    t.string   "description_732496"
-    t.string   "description_578733"
-    t.string   "description_181448"
-    t.string   "description_591849"
-    t.string   "description_29523"
-    t.string   "description_859516"
-    t.string   "description_607626"
-    t.string   "description_634417"
-    t.integer  "amount_96786"
-    t.integer  "amount_118208"
-    t.integer  "amount_354589"
-    t.integer  "amount_529364"
-    t.integer  "amount_2748"
-    t.integer  "amount_265448"
-    t.integer  "amount_87259"
-    t.integer  "amount_69192"
-    t.integer  "amount_400320"
-    t.integer  "amount_981344"
-    t.integer  "amount_724725"
-    t.integer  "amount_233529"
-    t.integer  "amount_10548"
-    t.integer  "amount_918245"
-    t.integer  "amount_400389"
-    t.integer  "amount_630390"
-    t.integer  "amount_183655"
-    t.integer  "amount_83287"
-    t.integer  "amount_252578"
-    t.integer  "amount_147921"
+    t.string   "description_492106"
+    t.string   "description_200949"
+    t.string   "description_180665"
+    t.string   "description_806273"
+    t.string   "description_93256"
+    t.string   "description_191220"
+    t.string   "description_147227"
+    t.string   "description_18924"
+    t.string   "description_280694"
+    t.string   "description_398815"
+    t.string   "description_552891"
+    t.string   "description_30028"
+    t.string   "description_492900"
+    t.string   "description_925333"
+    t.string   "description_418541"
+    t.string   "description_703855"
+    t.string   "description_25680"
+    t.string   "description_273217"
+    t.string   "description_235296"
+    t.string   "description_398291"
+    t.integer  "amount_723167"
+    t.integer  "amount_973995"
+    t.integer  "amount_10079"
+    t.integer  "amount_478676"
+    t.integer  "amount_293483"
+    t.integer  "amount_99616"
+    t.integer  "amount_449220"
+    t.integer  "amount_715853"
+    t.integer  "amount_235541"
+    t.integer  "amount_427091"
+    t.integer  "amount_782579"
+    t.integer  "amount_358029"
+    t.integer  "amount_930716"
+    t.integer  "amount_27449"
+    t.integer  "amount_935730"
+    t.integer  "amount_545041"
+    t.integer  "amount_81780"
+    t.integer  "amount_206186"
+    t.integer  "amount_68814"
+    t.integer  "amount_962381"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end
@@ -96,9 +99,10 @@ ActiveRecord::Schema.define(version: 20170126124628) do
   create_table "projects_users", id: false, force: :cascade do |t|
     t.integer "project_id"
     t.integer "user_id"
-    t.index ["project_id"], name: "index_projects_users_on_project_id"
-    t.index ["user_id"], name: "index_projects_users_on_user_id"
   end
+
+  add_index "projects_users", ["project_id"], name: "index_projects_users_on_project_id"
+  add_index "projects_users", ["user_id"], name: "index_projects_users_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -111,9 +115,10 @@ ActiveRecord::Schema.define(version: 20170126124628) do
     t.date     "dob"
     t.boolean  "active",     default: true
     t.string   "type"
-    t.index ["account_id"], name: "index_users_on_account_id"
-    t.index ["name"], name: "index_users_on_name"
-    t.index ["salary"], name: "index_users_on_salary"
   end
+
+  add_index "users", ["account_id"], name: "index_users_on_account_id"
+  add_index "users", ["name"], name: "index_users_on_name"
+  add_index "users", ["salary"], name: "index_users_on_salary"
 
 end
