@@ -28,7 +28,6 @@ Gem::Specification.new do |s|
   else
     s.add_dependency 'kaminari'
   end
-  s.add_dependency 'sass'
 
   s.add_development_dependency "launchy"
   s.add_development_dependency "sqlite3"

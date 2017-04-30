@@ -36,10 +36,10 @@ table td.text {
 
 .scrollable {
   overflow: auto;
-  table {
+}
+.scrollable table {
     min-width: 99%;
   }
-}
 
 .main_nav {
   padding-top: 30px;
