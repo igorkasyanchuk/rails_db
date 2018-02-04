@@ -52,3 +52,5 @@ group :test do
 end
 
 gem 'kaminari', '>= 0.17.0'
+
+gem 'minitest', '~> 5.10', '!= 5.10.2'
