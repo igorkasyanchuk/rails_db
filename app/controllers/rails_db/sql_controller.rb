@@ -1,10 +1,6 @@
 module RailsDb
   class SqlController < RailsDb::ApplicationController
-    if Rails::VERSION::MAJOR >= 4
-      before_action :load_query, only: [:index, :execute, :csv, :xls]
-    else
-      before_filter :load_query
-    end
+    before_action :load_query, only: [:index, :execute, :csv, :xls]
 
     def index
     end

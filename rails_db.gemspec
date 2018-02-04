@@ -22,11 +22,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'terminal-table'
   s.add_dependency 'simple_form'
   s.add_dependency 'ransack'
-  if RUBY_VERSION == '1.9.3'
-    s.add_dependency 'kaminari', '< 1.0.0'
-  else
-    s.add_dependency 'kaminari'
-  end
+  s.add_dependency 'kaminari'
 
   s.add_development_dependency "launchy"
   s.add_development_dependency "sqlite3"

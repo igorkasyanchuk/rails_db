@@ -3,11 +3,7 @@ module RailsDb
     helper :all
     helper_method :per_page
 
-    if Rails::VERSION::MAJOR >= 4
-      before_action :verify_access
-    else
-      before_filter :verify_access
-    end
+    before_action :verify_access
 
     if RailsDb.http_basic_authentication_enabled
       http_basic_authenticate_with name: RailsDb.http_basic_authentication_user_name,
