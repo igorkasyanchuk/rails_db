@@ -1,9 +1,6 @@
 require 'test_helper'
 
 class DatabaseTest < ActiveSupport::TestCase
-  def setup
-    clean_db
-  end
 
   test "tables" do
     ["accounts", "comments", "contacts", "legacy_accounts", "payments", "projects", "projects_users", "users"].each do |t|
