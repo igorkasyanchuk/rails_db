@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
 
   s.executables   = ["railsdb", "rails_db", 'runsql']
 
-  s.add_dependency 'rails', ">= 3.1.0"
+  s.add_dependency 'rails', ">= 5.0.0"
   s.add_dependency 'codemirror-rails'
   s.add_dependency 'terminal-table'
   s.add_dependency 'simple_form'

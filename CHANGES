@@ -7,6 +7,14 @@ BACKLOG:
   - support for i18n
   - export to json
 
+2.0
+  - drop Rails 4.x support
+  - verified support for Ruby 2.3+
+  - removed not needed code
+
+1.6
+  - Bugfixes
+
 1.4.0 - January 24, 2017
   - works with Rails 6
   - upgraded ransack

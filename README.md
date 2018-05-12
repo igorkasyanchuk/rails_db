@@ -21,8 +21,10 @@ Video Demos: https://youtu.be/TYsRxXRFp1g, https://youtu.be/dfViQPZw9zE
 
 ## Requirements
 
-For now was tested manually only with Ruby 2.X, and Rails 4.X. But expected to work with older versions too. Also there are automated tests running on Travis CI.
+For now was tested manually only with Ruby 2.3+, and Rails 5+. But expected to work with older versions too. Also there are automated tests running on Travis CI.
 Supports: PostgresSQL, MySQL, SQLite. Not sure about other adapters. Since gem is using ActiveRecord it will work with others DBs.
+
+For older versions of Rails please user `gem "rails_db", "1.6"`.
 
 ## Note (!)
 

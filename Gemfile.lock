@@ -15,7 +15,7 @@ PATH
     rails_db (2.0.0)
       codemirror-rails
       kaminari
-      rails (>= 3.1.0)
+      rails (>= 5.0.0)
       ransack
       simple_form
       terminal-table
