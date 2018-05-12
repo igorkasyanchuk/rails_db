@@ -16,7 +16,15 @@ Dummy::Application.configure do
   config.eager_load = false
 
   # Configure static file server for tests with Cache-Control for performance.
-  config.serve_static_files   = true
+  begin
+    config.serve_static_files = true
+  rescue NoMethodError
+  end
+
+  begin
+    config.public_file_server.enabled = true
+  rescue NoMethodError
+  end
   #config.static_cache_control = 'public, max-age=3600'
 
   # Show full error reports and disable caching.
