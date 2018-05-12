@@ -19,6 +19,16 @@ Rails.application.configure do
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
+  begin
+    config.serve_static_files = true
+  rescue NoMethodError
+  end
+
+  begin
+    config.public_file_server.enabled = true
+  rescue NoMethodError
+  end
+
   # Raise an error on page load if there are pending migrations.
   # config.active_record.migration_error = false
 

@@ -13,6 +13,16 @@ Rails.application.configure do
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
 
+  begin
+    config.serve_static_files = true
+  rescue NoMethodError
+  end
+
+  begin
+    config.public_file_server.enabled = true
+  rescue NoMethodError
+  end
+
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 

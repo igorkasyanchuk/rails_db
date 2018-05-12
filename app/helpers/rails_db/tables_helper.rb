@@ -24,10 +24,11 @@ module RailsDb
     end
 
     def delete_row_path(table, record)
+      options = params.permit!
       table_destroy_path(table,
         pk_id: record[table.primary_key],
-        page: params[:page],
-        q: params[:q])
+        page: options[:page],
+        q: options[:q])
     end
 
     def table_pagination_path
