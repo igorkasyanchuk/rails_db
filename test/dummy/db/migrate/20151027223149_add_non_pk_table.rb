@@ -1,4 +1,10 @@
-class AddNonPkTable < ActiveRecord::Migration[4.2]
+klass = if Rails::VERSION::MAJOR < 5
+  ActiveRecord::Migration
+else
+  ActiveRecord::Migration[4.2]
+end
+
+class AddNonPkTable < klass
   def change
     create_table :projects_users, id: false do |t|
       t.integer :project_id

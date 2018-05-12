@@ -1,4 +1,10 @@
-class AddBd < ActiveRecord::Migration[4.2]
+klass = if Rails::VERSION::MAJOR < 5
+  ActiveRecord::Migration
+else
+  ActiveRecord::Migration[4.2]
+end
+
+class AddBd < klass
   def change
     add_column :users, :dob, :date
     User.all.each do |user|

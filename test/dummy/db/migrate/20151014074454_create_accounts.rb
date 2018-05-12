@@ -1,4 +1,10 @@
-class CreateAccounts < ActiveRecord::Migration[4.2]
+klass = if Rails::VERSION::MAJOR < 5
+  ActiveRecord::Migration
+else
+  ActiveRecord::Migration[4.2]
+end
+
+class CreateAccounts < klass
   def change
     create_table :accounts do |t|
       t.string :name
