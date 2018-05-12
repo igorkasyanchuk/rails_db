@@ -1,10 +1,4 @@
-klass = if Rails::VERSION::MAJOR < 5
-  ActiveRecord::Migration
-else
-  ActiveRecord::Migration[4.2]
-end
-
-class PopulateData < klass
+class PopulateData < ActiveRecord::Migration[4.2]
   def change
     # name:string age:integer salary:decimal bio:text
     user_1 = User.create(:name => "John Smith", :age => 30, :salary => 123.45, :bio => 'This is text')

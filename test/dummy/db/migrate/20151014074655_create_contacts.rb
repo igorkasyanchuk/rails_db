@@ -1,10 +1,4 @@
-klass = if Rails::VERSION::MAJOR < 5
-  ActiveRecord::Migration
-else
-  ActiveRecord::Migration[4.2]
-end
-
-class CreateContacts < klass
+class CreateContacts < ActiveRecord::Migration[4.2]
   def change
     create_table :contacts do |t|
       t.string :name

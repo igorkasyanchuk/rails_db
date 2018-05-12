@@ -1,10 +1,4 @@
-klass = if Rails::VERSION::MAJOR < 5
-  ActiveRecord::Migration
-else
-  ActiveRecord::Migration[4.2]
-end
-
-class CreatePayments < klass
+class CreatePayments < ActiveRecord::Migration[4.2]
   def change
     create_table :payments do |t|
       t.decimal :amount

@@ -1,10 +1,4 @@
-klass = if Rails::VERSION::MAJOR < 5
-  ActiveRecord::Migration
-else
-  ActiveRecord::Migration[4.2]
-end
-
-class CreateComments < klass
+class CreateComments < ActiveRecord::Migration[4.2]
   def change
     create_table :comments do |t|
       t.text :comment

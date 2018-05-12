@@ -1,10 +1,4 @@
-klass = if Rails::VERSION::MAJOR < 5
-  ActiveRecord::Migration
-else
-  ActiveRecord::Migration[4.2]
-end
-
-class AddBooleanFieldToUser < klass
+class AddBooleanFieldToUser < ActiveRecord::Migration[4.2]
   def change
     add_column :users, :active, :boolean, default: true
   end

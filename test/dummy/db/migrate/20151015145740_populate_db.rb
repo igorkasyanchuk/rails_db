@@ -1,10 +1,4 @@
-klass = if Rails::VERSION::MAJOR < 5
-  ActiveRecord::Migration
-else
-  ActiveRecord::Migration[4.2]
-end
-
-class PopulateDb < klass
+class PopulateDb < ActiveRecord::Migration[4.2]
   def change
   end
 end
