@@ -49,7 +49,11 @@ module RailsDb
     end
 
     def search_form_class
-      params[:q].present? ? '' : 'hide'
+      hash = params.permit!.to_hash.fetch('q', {})
+      keys = hash.keys
+      return 'hide' if keys.empty?
+      return 'hide' if keys == ['s']
+      nil
     end
 
   end
