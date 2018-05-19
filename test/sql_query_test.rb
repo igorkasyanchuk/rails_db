@@ -2,10 +2,6 @@ require 'test_helper'
 
 class DatabaseTest < ActiveSupport::TestCase
 
-  def setup
-    clean_db
-  end
-
   test "query" do
     User.delete_all
     User.create(name: 'Igor')

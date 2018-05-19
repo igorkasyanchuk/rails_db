@@ -1,4 +1,4 @@
-class AddBd < ActiveRecord::Migration
+class AddBd < ActiveRecord::Migration[4.2]
   def change
     add_column :users, :dob, :date
     User.all.each do |user|

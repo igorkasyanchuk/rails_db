@@ -1,4 +1,4 @@
-<% title "'#{@table.name}' Schema" %>
+<% title "\"#{@table.name}\" Schema"%>
 
 <h2>Table: <%= @table.name %></h2>
 
@@ -76,11 +76,9 @@
       <th>Columns</th>
       <th>Length</th>
       <th>Orders</th>
-      <% if Rails::VERSION::MAJOR >= 4 %>
-        <th>Where</th>
-        <th>Type</th>
-        <th>Using</th>
-      <% end %>
+      <th>Where</th>
+      <th>Type</th>
+      <th>Using</th>
     </tr>
   </thead>
   <tbody>
@@ -91,11 +89,9 @@
       <td><%= index.columns %></td>
       <td><%= index.lengths %></td>
       <td><%= index.orders %></td>
-      <% if Rails::VERSION::MAJOR >= 4 %>
-        <td><%= index.where %></td>
-        <td><%= index.type %></td>
-        <td><%= index.using %></td>
-      <% end %>
+      <td><%= index.where %></td>
+      <td><%= index.type %></td>
+      <td><%= index.using %></td>
      </tr>
     <% end %>
     <% if @table.indexes.none? %>

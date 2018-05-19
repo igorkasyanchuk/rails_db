@@ -2,11 +2,7 @@ module RailsDb
   class TablesController < RailsDb::ApplicationController
     LOAD_TABLE_ACTIONS = [:show, :data, :csv, :truncate, :destroy, :edit, :update, :xlsx, :search, :new, :create]
 
-    if Rails::VERSION::MAJOR >= 4
-      before_action :find_table, only: LOAD_TABLE_ACTIONS
-    else
-      before_filter :find_table, only: LOAD_TABLE_ACTIONS
-    end
+    before_action :find_table, only: LOAD_TABLE_ACTIONS
 
     def index
       @tables = RailsDb::Database.accessible_tables
@@ -101,11 +97,7 @@ module RailsDb
     end
 
     def record_attributes
-      if Rails::VERSION::MAJOR >= 4
-        params[:record].permit!
-      else
-        params[:record]
-      end
+      params[:record].permit!
     end
 
     def find_table

@@ -1,4 +1,4 @@
-class AddStiModel < ActiveRecord::Migration
+class AddStiModel < ActiveRecord::Migration[4.2]
   def change
     add_column :users, :type, :string
   end

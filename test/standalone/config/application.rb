@@ -7,7 +7,10 @@ require 'sprockets/railtie'
 
 require "rails_db"
 
-Ransack::Adapters::ActiveRecord::Base.class_eval('remove_method :search')
+begin
+  Ransack::Adapters::ActiveRecord::Base.class_eval('remove_method :search')
+rescue Exception
+end
 
 module OverideDatabaseYmlPath
   def paths

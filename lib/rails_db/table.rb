@@ -55,20 +55,13 @@ module RailsDb
           self.table_name = table_name
           self.inheritance_column = nil
         end
-        temp  = klass.count # verify that it works, if not load other
+        klass.count # verify that it works, if not load other, hack
       rescue
         klass = ActiveRecord::Base.descendants.detect { |c| c.table_name == table_name }
       end
 
       klass.class_eval(&block) if block_given?
 
-      if Rails::VERSION::MAJOR == 3
-        klass.class_eval do
-          klass.columns.each do |e|
-            attr_accessor e.name
-          end
-        end
-      end
       klass
     end
 

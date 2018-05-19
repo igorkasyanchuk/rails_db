@@ -6,7 +6,10 @@ Bundler.require(*Rails.groups)
 
 require "rails_db"
 
-Ransack::Adapters::ActiveRecord::Base.class_eval('remove_method :search')
+begin
+  Ransack::Adapters::ActiveRecord::Base.class_eval('remove_method :search')
+rescue Exception
+end
 
 module Dummy
   class Application < Rails::Application

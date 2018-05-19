@@ -2,10 +2,6 @@ require 'test_helper'
 
 class SqlImportTest < ActiveSupport::TestCase
 
-  def setup
-    clean_db
-  end
-
   test "import" do
     ["accounts", "comments", "contacts", "legacy_accounts", "payments", "projects", "projects_users", "users"].each do |t|
       assert RailsDb::Database.tables.include?(t)

@@ -3,10 +3,6 @@ require 'test_helper'
 class RailsDbDataTableHelperTest < ActionView::TestCase
   include RailsDb::RailsDbDataTableHelper
 
-  def setup
-    clean_db
-  end
-
   test "default rails_db_data_table works" do
     user = User.create(name: 'Igor')
     content = rails_db_data_table('users')

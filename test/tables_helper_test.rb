@@ -3,10 +3,6 @@ require 'test_helper'
 class TablesHelperTest < ActionView::TestCase
   include RailsDb::TablesHelper
 
-  def setup
-    clean_db
-  end
-
   test "method column_is_checked? returns true for checkbox status if cookie does not contain hash_key for this table" do
     status = column_is_checked?('users', 'created_at')
     assert_equal true, status

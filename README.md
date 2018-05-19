@@ -21,12 +21,14 @@ Video Demos: https://youtu.be/TYsRxXRFp1g, https://youtu.be/dfViQPZw9zE
 
 ## Requirements
 
-For now was tested manually only with Ruby 2.X, and Rails 4.X. But expected to work with older versions too. Also there are automated tests running on Travis CI.
+Version >2.x 100 works with Ruby 2.3+, and Rails 5+. As for other versions of RoR use 1.6 version of gem. Also there are automated tests running on Travis CI.
 Supports: PostgresSQL, MySQL, SQLite. Not sure about other adapters. Since gem is using ActiveRecord it will work with others DBs.
+
+For older versions of Rails please user `gem "rails_db", "1.6"`.
 
 ## Note (!)
 
-Gem works with ruby 1.9.3 but you need to use kaminari < 1.0.0 gem. Please add to gemfile `gem 'kaminari', '< 1.0.0'`.
+Gem works with ruby 1.9.3 but you need to use kaminari < 1.0.0 gem and rails_db <= 1.6. Please add to gemfile `gem 'kaminari', '< 1.0.0'`.
 
 ## Main Features
 
@@ -229,11 +231,9 @@ You can also change locally DB to verify gem accross multiple Databases (mysql, 
 * Verify all environments
 * Add DB schema visualization
 * Create WIKI pages, improve documentation
+* Add favicon for standalone and dummy apps
+* Add ERD schema
 
 ## License
 
 This project uses MIT-LICENSE.
-
-## Other Links
-
-[Ruby News www.Rubyroid.net](http://www.rubyroid.net)
