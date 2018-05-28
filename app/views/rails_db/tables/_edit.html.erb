@@ -7,7 +7,16 @@
       <% @record.class.columns.each do |column| %>
         <% name = column.name %>
         <% next if name == @table.primary_key %>
-        <%= form.input name, label: name %>
+
+        <% options = { label: name } %>
+        <% options[:include_blank] = true if column.type.to_s =~ /time|date/ %>
+        <% if column.type.to_s =~ /text/ %>
+          <% options[:input_html] = {} %>
+          <% options[:input_html][:rows] = 4 %>
+          <% options[:input_html][:cols] = 80 %>
+        <% end %>
+
+        <%= form.input name, options %>
       <% end %>
     </div>
     <%= form.submit 'SAVE', class: 'button small' %>

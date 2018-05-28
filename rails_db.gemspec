@@ -31,6 +31,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency "axlsx_rails"
   s.add_development_dependency 'will_paginate', '~> 3.0.6'
   s.add_development_dependency 'mime-types', '< 3.0'
+  s.add_development_dependency 'paranoia'
+  s.add_development_dependency 'pry-rails'
   # s.add_development_dependency 'populator'
   # s.add_development_dependency 'faker'
   # s.add_development_dependency 'pry'
