@@ -13,9 +13,11 @@ gemfile:
 before_install:
   - gem install bundler
   - gem install mime-types -v "~> 2.0"
+  - gem install paranoia
 
 before_deploy:
   - gem install mime-types -v "~> 2.0"
+  - gem install paranoia
 
 before_script:
   - rm Gemfile.lock
