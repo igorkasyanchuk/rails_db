@@ -13,7 +13,5 @@ class CreateProjects < ActiveRecord::Migration[4.2]
 
       t.timestamps null: false
     end
-    Project.create(name: 'Project 1')
-    Project.create(name: 'Project 2')
   end
 end

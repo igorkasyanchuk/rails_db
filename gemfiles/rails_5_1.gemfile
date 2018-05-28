@@ -46,3 +46,5 @@ end
 gem 'kaminari', '>= 0.17.0'
 
 gem "minitest", '5.10.1'
+
+gem "paranoia"
