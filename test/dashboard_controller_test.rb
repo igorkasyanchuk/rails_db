@@ -87,6 +87,12 @@ class DashboardControllerTest < ActionDispatch::IntegrationTest
     assert_equal 200, status
     customer.reload
     assert_equal 'STI', customer.name
+
+    get '/x/y/db'
+    assert_equal 200, status
+    RailsDb::Database.accessible_tables.each do |table|
+      assert_match(table, response.body)
+    end
   end
 
 end

@@ -12,7 +12,7 @@ GIT
 PATH
   remote: .
   specs:
-    rails_db (2.0.0)
+    rails_db (2.0.1)
       codemirror-rails
       kaminari
       rails (>= 5.0.0)
