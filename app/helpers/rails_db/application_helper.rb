@@ -1,5 +1,22 @@
 module RailsDb
   module ApplicationHelper
+
+    def rails_db
+      super
+    rescue NameError
+      guess_name
+    end
+
+    # in case engine was added in namespace
+    def guess_name
+      sections = request.path.split('/').reject(&:blank?)
+      if sections.size > 1
+        sections[-1] = 'rails_db'
+        variable = sections.join("_")
+        result = eval(variable)
+      end
+    end
+
     def rails_db_tables
       RailsDb::Database.accessible_tables
     end
