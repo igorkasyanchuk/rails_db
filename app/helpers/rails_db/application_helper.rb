@@ -4,17 +4,19 @@ module RailsDb
     def rails_db
       super
     rescue NameError
-      guess_name
+      guess_name(request.path.split('/').reject(&:blank?))
     end
 
     # in case engine was added in namespace
-    def guess_name
-      sections = request.path.split('/').reject(&:blank?)
+    def guess_name(sections)
       if sections.size > 1
         sections[-1] = 'rails_db'
-        variable = sections.join("_")
-        result = eval(variable)
+        variable     = sections.join("_")
+        result       = eval(variable)
       end
+    rescue NameError
+      sections.delete_at(-2)
+      guess_name(sections)
     end
 
     def rails_db_tables
