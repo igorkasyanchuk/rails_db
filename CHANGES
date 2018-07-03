@@ -7,6 +7,9 @@ BACKLOG:
   - support for i18n
   - export to json
 
+2.0.3
+  - fix for namespaces (e.g. /admin/tools/rails_db)
+
 2.0
   - drop Rails 4.x support
   - verified support for Ruby 2.3+

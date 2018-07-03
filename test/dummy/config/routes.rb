@@ -9,9 +9,9 @@ Rails.application.routes.draw do
   #   end
   # end
 
-  # namespace :admin do
-  #   namespace :tools do
-  #     mount RailsDb::Engine => '/db', :as => 'rails_db'
-  #   end
-  # end
+  namespace :admin do
+    namespace :tools do
+      mount RailsDb::Engine => '/db', :as => 'rails_db'
+    end
+  end
 end
