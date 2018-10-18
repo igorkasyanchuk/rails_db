@@ -7,6 +7,10 @@ BACKLOG:
   - support for i18n
   - export to json
 
+2.0.4  
+  - support for simple_form 4.0+ only
+  - added support for "tsvector" field type
+
 2.0.3
   - fix for namespaces (e.g. /admin/tools/rails_db)
 
