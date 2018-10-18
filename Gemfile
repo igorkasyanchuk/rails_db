@@ -5,7 +5,7 @@ gemspec
 gem 'rails', '5.1.6'
 gem 'codemirror-rails'
 gem 'terminal-table'
-gem 'simple_form'
+gem 'simple_form', '~> 4.0.1'
 gem 'ransack', '1.8.8'
 gem 'kaminari', '>= 0.17.0'
 
