@@ -12,12 +12,12 @@ GIT
 PATH
   remote: .
   specs:
-    rails_db (2.0.4)
+    rails_db (2.0.5)
       codemirror-rails
       kaminari
       rails (>= 5.0.0)
       ransack
-      simple_form (~> 4.0.1)
+      simple_form (>= 4.0.1)
       terminal-table
 
 GEM
@@ -203,4 +203,4 @@ DEPENDENCIES
   will_paginate (~> 3.0.6)
 
 BUNDLED WITH
-   1.16.2
+   1.17.2
