@@ -7,6 +7,9 @@ BACKLOG:
   - support for i18n
   - export to json
 
+2.0.6
+  - require activerecord (to support non-RoR apps)
+
 2.0.5
   - allow newer version of simple_form
 
