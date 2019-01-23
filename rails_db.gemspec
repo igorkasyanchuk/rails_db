@@ -21,6 +21,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'codemirror-rails'
   s.add_dependency 'terminal-table'
   s.add_dependency 'simple_form', '>= 4.0.1'
+  s.add_dependency 'activerecord'
   s.add_dependency 'ransack'
   s.add_dependency 'kaminari'
 
