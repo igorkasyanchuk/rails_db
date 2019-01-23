@@ -3,6 +3,7 @@ require 'codemirror-rails'
 require 'terminal-table'
 require 'csv'
 require 'simple_form'
+require 'active_record'
 require 'ransack'
 require 'kaminari'
 
