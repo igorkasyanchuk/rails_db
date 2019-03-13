@@ -234,6 +234,10 @@ You can also change locally DB to verify gem accross multiple Databases (mysql, 
 * Add favicon for standalone and dummy apps
 * Add ERD schema
 
+## Other stuff
+
+As a good addition to this gem (or as separate utility) you can use this gem: https://github.com/igorkasyanchuk/execute_sql which allows to execute SQL in rails console or app.
+
 ## License
 
 This project uses MIT-LICENSE.
