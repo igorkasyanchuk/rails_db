@@ -105,13 +105,11 @@ GEM
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
     minitest (5.11.3)
-    mysql2 (0.3.20)
     nio4r (2.3.1)
     nokogiri (1.8.5)
       mini_portile2 (~> 2.3.0)
     paranoia (2.4.1)
       activerecord (>= 4.0, < 5.3)
-    pg (1.0.0)
     polyamorous (1.3.3)
       activerecord (>= 3.0)
     pry (0.11.3)
@@ -189,9 +187,7 @@ DEPENDENCIES
   kaminari (>= 0.17.0)
   launchy
   mime-types (< 3.0)
-  mysql2 (<= 0.3.20)
   paranoia
-  pg
   pry-rails
   rails (= 5.1.6)
   rails_db!
@@ -204,4 +200,4 @@ DEPENDENCIES
   will_paginate (~> 3.0.6)
 
 BUNDLED WITH
-   1.17.2
+   1.17.3

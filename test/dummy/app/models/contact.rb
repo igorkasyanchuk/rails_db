@@ -11,5 +11,5 @@
 #
 
 class Contact < ActiveRecord::Base
-  scope :search, -> { where('1=1') }
+  scope :searchx, -> { where('1=1') }
 end
