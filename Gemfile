@@ -19,7 +19,7 @@ group :assets do
 end
 
 group :test do
-  gem "sqlite3"
+  gem "sqlite3", '1.3.6'
 end
 
 gem 'will_paginate', '~> 3.0.6'
