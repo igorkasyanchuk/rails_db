@@ -27,6 +27,7 @@ development:
 
 test:
   <<: *defaults
+  database: <%= ENV['TRAVIS'] ? '":memory:"' : 'db/test.sqlite3' %>
 
 production:
   <<: *defaults
