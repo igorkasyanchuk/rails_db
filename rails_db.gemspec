@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'kaminari'
 
   s.add_development_dependency "launchy"
-  s.add_development_dependency "sqlite3"
+  s.add_development_dependency "sqlite3", "1.4.1"
   s.add_development_dependency "mysql2", '<= 0.3.20'
   s.add_development_dependency "pg"
   s.add_development_dependency "axlsx_rails"
