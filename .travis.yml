@@ -19,6 +19,10 @@ before_install:
 before_deploy:
   - gem install mime-types -v "~> 2.0"
   - gem install paranoia
+  
+services:
+  - mysql
+  - postgresql
 
 before_script:
   - rm Gemfile.lock
