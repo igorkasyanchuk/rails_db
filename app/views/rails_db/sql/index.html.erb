@@ -2,7 +2,7 @@
 
 <%= form_tag :sql_execute do %>
 
-  <div class="large-11">
+  <div class="large-12">
     <div class='left'>
       <h3>Execute SQL</h3>
     </div>
@@ -16,7 +16,7 @@
 
   <% if @sql_query.valid? %>
     <% if @sql_query.data.is_error? %>
-      <div class="large-11">
+      <div class="large-12">
         <div class='alert-box alert'>
           <%= @sql_query.data.error.message %>
         </div>
@@ -24,11 +24,11 @@
     <% end %>
   <% end %>
 
-  <div class="large-11">
+  <div class="large-12">
     <textarea name='sql' id="sql" cols="120" rows="60"><%= @sql %></textarea>
   </div>
 
-  <div class="large-11">
+  <div class="large-12">
     <div class='panel execute_panel'>
       <p>
         <span class="radius secondary label">* be careful with your SQL. You may corrupt your DB. Make sure you have DB backup if making modifications.</span>

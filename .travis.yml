@@ -1,12 +1,12 @@
 language: ruby
 
 rvm:
-  - "2.3.7"
   - "2.4.4"
   - "2.5.3"
   - "2.6.3"
 
 gemfile:
+  - gemfiles/rails_6_0.gemfile
   - gemfiles/rails_5_2.gemfile
   - gemfiles/rails_5_1.gemfile
   - gemfiles/rails_5_0.gemfile

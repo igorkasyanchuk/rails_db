@@ -1,5 +1,4 @@
 require "rails"
-require 'codemirror-rails'
 require 'terminal-table'
 require 'csv'
 require 'simple_form'
