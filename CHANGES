@@ -6,6 +6,7 @@ BACKLOG:
   - add ability to change width of columns (and remember selection in cookies) (something like http://www.bacubacu.com/colresizable/)
   - support for i18n
   - export to json
+  - MS-SQL export/import https://github.com/igorkasyanchuk/rails_db/issues/80
 
 2.1.0
   - now using newer version of CodeMirror (bundled inside Rails DB)
