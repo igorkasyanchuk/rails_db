@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails'
-gem 'codemirror-rails'
 gem 'terminal-table'
 gem 'axlsx_rails'
 gem 'simple_form'

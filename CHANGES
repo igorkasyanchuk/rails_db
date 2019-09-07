@@ -7,6 +7,11 @@ BACKLOG:
   - support for i18n
   - export to json
 
+2.1.0
+  - now using newer version of CodeMirror (bundled inside Rails DB)
+  - support Rails 6
+  - simplified matrix of tests on Travis CI (removed Rails 5.0, 5.1 from tests, but they are still supported)
+
 2.0.6
   - require activerecord (to support non-RoR apps)
 

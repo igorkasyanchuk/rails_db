@@ -88,3 +88,7 @@ table td.text {
 .panel.no_bottom_padding {
   padding-bottom: 0;
 }
+
+.CodeMirror {
+  font-size: 14px;
+}
