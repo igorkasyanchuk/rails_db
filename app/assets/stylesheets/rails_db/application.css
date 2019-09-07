@@ -1,9 +1,9 @@
 /*
  *= require rails_db/foundation.min
  *= require rails_db/foundation_and_overrides
- *= require stylesheets/codemirror
- *= require stylesheets/codemirror/themes/pastel-on-dark.css
- *= require stylesheets/codemirror/addons/hint/show-hint.css
+ *= require codemirror/codemirror.css
+ *= require codemirror/codemirror/themes/pastel-on-dark.css
+ *= require codemirror/codemirror/addons/hint/show-hint.css
  *= require rails_db/app
  *= require rails_db/sidebar
  *= require rails_db/pagination

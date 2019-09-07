@@ -5,10 +5,10 @@
 //= require rails_db/sticky
 //= require rails_db/show_hide_columns.js
 //= require rails_db/search.js
-//= require javascripts/codemirror
-//= require javascripts/codemirror/modes/sql
-//= require javascripts/codemirror/addons/hint/show-hint.js
-//= require javascripts/codemirror/addons/hint/sql-hint.js
+//= require codemirror/codemirror.js
+//= require codemirror/codemirror/modes/sql
+//= require codemirror/codemirror/addons/hint/show-hint.js
+//= require codemirror/codemirror/addons/hint/sql-hint.js
 
 $(function(){
   $(document).foundation();
