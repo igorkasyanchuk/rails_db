@@ -4,7 +4,7 @@ gemspec
 
 gem 'rails', '5.1.6'
 gem 'terminal-table'
-gem 'simple_form', '~> 4.0.1'
+gem 'simple_form', '>= 5.0.1'
 gem 'ransack', '1.8.8'
 gem 'kaminari', '>= 0.17.0'
 
