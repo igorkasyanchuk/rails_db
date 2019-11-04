@@ -17,7 +17,8 @@ Gem::Specification.new do |s|
 
   s.executables   = ["railsdb", "rails_db", 'runsql']
 
-  s.add_dependency 'rails', ">= 5.0.0"
+  s.add_dependency 'rails', "~>5.2.0"
+  s.add_dependency 'sprockets', "~>3.0"
   s.add_dependency 'terminal-table'
   s.add_dependency 'simple_form', '>= 4.0.1'
   s.add_dependency 'activerecord'
@@ -26,7 +27,7 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency "launchy"
   s.add_development_dependency "sqlite3", '~> 1.3.6'
-  s.add_development_dependency "mysql2", '<= 0.3.20'
+  s.add_development_dependency "mysql2"#, '<= 0.3.20'
   s.add_development_dependency "pg"
   s.add_development_dependency "axlsx_rails"
   s.add_development_dependency 'will_paginate', '~> 3.0.6'

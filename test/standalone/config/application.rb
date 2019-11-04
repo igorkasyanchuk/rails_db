@@ -40,6 +40,7 @@ module Dummy
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     # config.active_record.raise_in_transactional_callbacks = true
+
+    config.active_record.sqlite3.represent_boolean_as_integer = true
   end
 end
-
