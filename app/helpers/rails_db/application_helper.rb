@@ -66,7 +66,7 @@ module RailsDb
     def db_hint_options
       result = {}
       RailsDb::Database.accessible_tables.each do |table_name|
-        result[table_name] = RailsDb::Table.new(table_name).columns.inject({}) {|res, e| res[e.name] = nil; res }
+        result[table_name] = RailsDb::Table.new(table_name).columns.inject([]) {|res, e| res << e.name; res }
       end
       result
     end

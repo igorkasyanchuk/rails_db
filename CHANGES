@@ -10,6 +10,10 @@ BACKLOG:
 
 2.2.0
   - use more secure version of Simple Form (>= 5.0.1)
+  - use smaller amount of JS from codemirror
+  - upgraded codemirror to 5.49.2
+  - fixed SQL hit for SQL (now shows columns)
+  - other minor gems upgrades
 
 2.1.0
   - now using newer version of CodeMirror (bundled inside Rails DB)
