@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'rails', ">= 5.0.0"
   s.add_dependency 'terminal-table'
-  s.add_dependency 'simple_form', '>= 4.0.1'
+  s.add_dependency 'simple_form', '>= 5.0.1'
   s.add_dependency 'activerecord'
   s.add_dependency 'ransack'
   s.add_dependency 'kaminari'
