@@ -64,14 +64,22 @@ Add this to the development group in your `Gemfile`
 For all environments (be careful with production environment):
 
 ```ruby
-  gem 'rails_db', '2.2.0'
+  # Rails >= 6
+  gem 'rails_db', '2.3.0'
+
+  # Rails < 6
+  gem 'rails_db', '2.2.1'
 ```
 
 Or only for development:
 
 ```ruby
   group :development do
-    gem 'rails_db', '2.2.0'
+    # Rails >= 6
+    gem 'rails_db', '2.3.0'
+
+    # Rails < 6
+    gem 'rails_db', '2.2.1'
   end
 ```
 

@@ -9,12 +9,12 @@ BACKLOG:
   - MS-SQL export/import https://github.com/igorkasyanchuk/rails_db/issues/80
 
 2.3.0
-  - drop support Rails 5.2, 5.1, 5.0 (for older user version 2.2.0 of this gem)
+  - drop support Rails 5.2, 5.1, 5.0 (for older user version 2.2.1 of this gem)
   - required versions of gems (will_paginate >= 3.1, ransack >= 2.3.2)
   - fixed issue with ransack for Rails 6 and new ransack
   - migration to caxlsx / caxlsx-rails
 
-2.2.0
+2.2.0 + 2.2.1
   - use more secure version of Simple Form (>= 5.0.1)
   - use smaller amount of JS from codemirror
   - upgraded codemirror to 5.49.2
