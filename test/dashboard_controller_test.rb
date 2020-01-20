@@ -1,5 +1,5 @@
 require 'test_helper'
-require 'axlsx_rails'
+require 'caxlsx_rails'
 
 class DashboardControllerTest < ActionDispatch::IntegrationTest
 

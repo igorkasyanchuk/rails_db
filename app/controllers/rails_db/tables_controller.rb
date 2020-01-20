@@ -42,7 +42,7 @@ module RailsDb
       if defined? Axlsx
         render xlsx: 'table', filename: "#{@table.name}.xlsx"
       else
-        raise 'RailsDb could not find Axlsx, please add it to your Gemfile: "gem \'axlsx_rails\'"'
+        raise 'RailsDb could not find Axlsx, please add it to your Gemfile: "gem \'caxlsx_rails\'"'
       end
     end
 
