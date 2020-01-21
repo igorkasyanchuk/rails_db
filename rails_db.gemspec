@@ -21,15 +21,15 @@ Gem::Specification.new do |s|
   s.add_dependency 'terminal-table'
   s.add_dependency 'simple_form', '>= 5.0.1'
   s.add_dependency 'activerecord'
-  s.add_dependency 'ransack'
+  s.add_dependency 'ransack', '>= 2.3.2'
   s.add_dependency 'kaminari'
 
   s.add_development_dependency "launchy"
   s.add_development_dependency "sqlite3", '~> 1.3.6'
   s.add_development_dependency "mysql2", '<= 0.3.20'
   s.add_development_dependency "pg"
-  s.add_development_dependency "axlsx_rails"
-  s.add_development_dependency 'will_paginate', '~> 3.0.6'
+  s.add_development_dependency "caxlsx_rails"
+  s.add_development_dependency 'will_paginate', '>= 3.1.0'
   s.add_development_dependency 'mime-types', '< 3.0'
   s.add_development_dependency 'paranoia'
   s.add_development_dependency 'pry-rails'

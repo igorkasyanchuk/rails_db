@@ -50,7 +50,7 @@ module RailsDb
 
     def show_sidebar?
       return true if controller_name == 'dashboard' && action_name == 'index'
-      cookies['sidebar_visible'] == 'true'
+      cookies['sidebar_hidden'] != 'true'
     end
 
     def title(str)

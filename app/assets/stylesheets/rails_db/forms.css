@@ -5,5 +5,10 @@ select.datetime, select.date, select.time {
 
 .scrollable_form {
   max-height: 600px;
-  overflow: scroll;
+  overflow: auto;
+  margin-bottom: 10px;
+}
+
+.scrollable_form label {
+  font-weight: bold;
 }

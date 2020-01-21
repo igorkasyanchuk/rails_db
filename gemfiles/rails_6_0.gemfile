@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '6.0.0'
+gem 'rails', '6.0.2'
 
 # Declare your gem's dependencies in rails_db.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
@@ -15,8 +15,8 @@ gemspec :path => '../'
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
 gem 'rubyzip', '>= 1.2.1'
-gem 'axlsx', git: 'https://github.com/randym/axlsx.git', ref: 'c8ac844'
-gem 'axlsx_rails'
+gem 'caxlsx'
+gem 'caxlsx_rails'
 
 group :development do
 end

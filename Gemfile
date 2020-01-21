@@ -2,16 +2,16 @@ source 'https://rubygems.org'
 
 gemspec
 
-gem 'rails', '5.1.6'
+gem 'rails'
 gem 'terminal-table'
 gem 'simple_form', '>= 5.0.1'
-gem 'ransack', '1.8.8'
+gem 'ransack', '>= 2.3.2'
 gem 'kaminari', '>= 0.17.0'
 
 # for Rails 5+
 gem 'rubyzip', '>= 1.2.1'
-gem 'axlsx', git: 'https://github.com/randym/axlsx.git', ref: 'c8ac844'
-gem 'axlsx_rails'
+gem 'caxlsx'
+gem 'caxlsx_rails'
 
 group :assets do
   gem 'uglifier'

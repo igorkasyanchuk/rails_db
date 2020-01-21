@@ -47,8 +47,8 @@ function expand_collapse() {
 };
 
 function save_expand_collapse() {
-  $.removeCookie('sidebar_visible');
-  $.cookie('sidebar_visible', $('.expand').is(':visible'), { expires: 30, path: '/' });
+  $.removeCookie('sidebar_hidden');
+  $.cookie('sidebar_hidden', !$('.expand').is(':visible'), { expires: 30, path: '/' });
 };
 
 // https://github.com/codemirror/CodeMirror/blob/master/mode/sql/index.html
