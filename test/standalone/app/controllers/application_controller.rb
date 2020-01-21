@@ -1,6 +1,3 @@
-require 'rubygems'
-require 'pry'
-
 class ApplicationController < ActionController::Base
 #  rescue_from Exception, :with => :error_generic
   # Prevent CSRF attacks by raising an exception.
