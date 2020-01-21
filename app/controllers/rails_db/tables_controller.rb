@@ -70,7 +70,7 @@ module RailsDb
 
     def update
       @record = @table.as_model.find(params[:pk_id])
-      @record.update_attributes(record_attributes)
+      @record.update(record_attributes)
       respond_to do |page|
         page.html { redirect_to action: :data, table_id: params[:table_id] }
         page.js {}
