@@ -34,7 +34,7 @@ module Dummy
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'
 
-    config.hosts.clear
+    config.hosts.clear rescue nil
 
     # config.logger = ::Logger.new($stdout)
     # config.logger.level = ::Logger::DEBUG
