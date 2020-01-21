@@ -76,6 +76,7 @@ Or only for development:
 ```ruby
   group :development do
     # Rails >= 6
+    # and there are is a big change it will work with Rails 5.2 too
     gem 'rails_db', '2.3.0'
 
     # Rails < 6
