@@ -1,7 +1,7 @@
 PATH
   remote: ..
   specs:
-    rails_db (2.2.1)
+    rails_db (2.3.0)
       activerecord
       kaminari
       rails (>= 5.0.0)
