@@ -3,7 +3,7 @@
 Please **share** this gem with your friends to get more feedback. I would really appreciate for the gem review if you have a  blog. If you have ideas - please create an issue or contact me by email: `igorkasyanchuk[@]gmail.com`.
 
 [![Build Status](https://travis-ci.org/igorkasyanchuk/rails_db.svg)](https://travis-ci.org/igorkasyanchuk/rails_db)
-[![Gem Version](https://badge.fury.io/rb/rails_db.svg)](https://badge.fury.io/rb/rails_db)
+[![Financial Contributors on Open Collective](https://opencollective.com/ruby-and-ruby-on-rails-opensource-projects/all/badge.svg?label=financial+contributors)](https://opencollective.com/ruby-and-ruby-on-rails-opensource-projects) [![Gem Version](https://badge.fury.io/rb/rails_db.svg)](https://badge.fury.io/rb/rails_db)
 
 [<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/main_view.png?token=AAArXeu9-vtuW8nIvc9RE0nOIhGbwxkbks5WKlTLwA%3D%3D"
 />](https://rails-db.herokuapp.com/rails/db/)
@@ -246,6 +246,36 @@ You can also change locally DB to verify gem accross multiple Databases (mysql, 
 ## Other stuff
 
 As a good addition to this gem (or as separate utility) you can use this gem: https://github.com/igorkasyanchuk/execute_sql which allows to execute SQL in rails console or app.
+
+## Contributors
+
+### Code Contributors
+
+This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
+<a href="https://github.com/igorkasyanchuk/rails_db/graphs/contributors"><img src="https://opencollective.com/ruby-and-ruby-on-rails-opensource-projects/contributors.svg?width=890&button=false" /></a>
+
+### Financial Contributors
+
+Become a financial contributor and help us sustain our community. [[Contribute](https://opencollective.com/ruby-and-ruby-on-rails-opensource-projects/contribute)]
+
+#### Individuals
+
+<a href="https://opencollective.com/ruby-and-ruby-on-rails-opensource-projects"><img src="https://opencollective.com/ruby-and-ruby-on-rails-opensource-projects/individuals.svg?width=890"></a>
+
+#### Organizations
+
+Support this project with your organization. Your logo will show up here with a link to your website. [[Contribute](https://opencollective.com/ruby-and-ruby-on-rails-opensource-projects/contribute)]
+
+<a href="https://opencollective.com/ruby-and-ruby-on-rails-opensource-projects/organization/0/website"><img src="https://opencollective.com/ruby-and-ruby-on-rails-opensource-projects/organization/0/avatar.svg"></a>
+<a href="https://opencollective.com/ruby-and-ruby-on-rails-opensource-projects/organization/1/website"><img src="https://opencollective.com/ruby-and-ruby-on-rails-opensource-projects/organization/1/avatar.svg"></a>
+<a href="https://opencollective.com/ruby-and-ruby-on-rails-opensource-projects/organization/2/website"><img src="https://opencollective.com/ruby-and-ruby-on-rails-opensource-projects/organization/2/avatar.svg"></a>
+<a href="https://opencollective.com/ruby-and-ruby-on-rails-opensource-projects/organization/3/website"><img src="https://opencollective.com/ruby-and-ruby-on-rails-opensource-projects/organization/3/avatar.svg"></a>
+<a href="https://opencollective.com/ruby-and-ruby-on-rails-opensource-projects/organization/4/website"><img src="https://opencollective.com/ruby-and-ruby-on-rails-opensource-projects/organization/4/avatar.svg"></a>
+<a href="https://opencollective.com/ruby-and-ruby-on-rails-opensource-projects/organization/5/website"><img src="https://opencollective.com/ruby-and-ruby-on-rails-opensource-projects/organization/5/avatar.svg"></a>
+<a href="https://opencollective.com/ruby-and-ruby-on-rails-opensource-projects/organization/6/website"><img src="https://opencollective.com/ruby-and-ruby-on-rails-opensource-projects/organization/6/avatar.svg"></a>
+<a href="https://opencollective.com/ruby-and-ruby-on-rails-opensource-projects/organization/7/website"><img src="https://opencollective.com/ruby-and-ruby-on-rails-opensource-projects/organization/7/avatar.svg"></a>
+<a href="https://opencollective.com/ruby-and-ruby-on-rails-opensource-projects/organization/8/website"><img src="https://opencollective.com/ruby-and-ruby-on-rails-opensource-projects/organization/8/avatar.svg"></a>
+<a href="https://opencollective.com/ruby-and-ruby-on-rails-opensource-projects/organization/9/website"><img src="https://opencollective.com/ruby-and-ruby-on-rails-opensource-projects/organization/9/avatar.svg"></a>
 
 ## License
 
