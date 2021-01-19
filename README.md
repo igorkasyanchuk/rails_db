@@ -4,6 +4,8 @@ Please **share** this gem with your friends to get more feedback. I would really
 
 [![Build Status](https://travis-ci.org/igorkasyanchuk/rails_db.svg)](https://travis-ci.org/igorkasyanchuk/rails_db)
 [![Gem Version](https://badge.fury.io/rb/rails_db.svg)](https://badge.fury.io/rb/rails_db)
+[![RailsJazz](https://github.com/igorkasyanchuk/rails_time_travel/blob/main/docs/my_other.svg?raw=true)](https://www.railsjazz.com)
+
 
 [<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/main_view.png?token=AAArXeu9-vtuW8nIvc9RE0nOIhGbwxkbks5WKlTLwA%3D%3D"
 />](https://rails-db.herokuapp.com/rails/db/)
