@@ -5,7 +5,9 @@ module RailsDb
 
       def self.execute(sql)
         t0 = Time.now
-        multiple_execute(sql)
+        execute_with_sandbox_if_needed do
+          multiple_execute(sql)
+        end
         Time.now - t0
       end
 

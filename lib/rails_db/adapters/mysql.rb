@@ -11,7 +11,12 @@ module RailsDb
 
       def self.exec_query(sql, log = true)
         t0      = Time.now
-        results = connection.execute(sql, 'SQL') # used from RoR mysql adapter source
+        results = nil
+
+        execute_with_sandbox_if_needed do
+          results = connection.execute(sql, 'SQL') # used from RoR mysql adapter source
+        end
+
         result  = MysqlResult.new(results)
         execution_time = Time.now - t0
         [result, execution_time]

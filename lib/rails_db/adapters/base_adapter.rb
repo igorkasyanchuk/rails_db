@@ -6,15 +6,33 @@ module RailsDb
 
       MULTI_STATEMENT_HELP_TEXT = "EXPERIMENTAL: You can import only file with SQL statements separated by ';'. Each new statement must start from new line."
 
+      def self.execute_with_sandbox_if_needed
+        if RailsDb.sandbox
+          ActiveRecord::Base.transaction do
+            yield
+            raise ActiveRecord::Rollback
+          end
+        else
+          yield
+        end
+      end
+
       def self.execute(sql)
         t0 = Time.now
-        connection.execute(sql)
+        execute_with_sandbox_if_needed do
+          connection.execute(sql)
+        end
         Time.now - t0
       end
 
       def self.exec_query(sql)
         t0 = Time.now
-        results = connection.exec_query(sql)
+        results = nil
+
+        execute_with_sandbox_if_needed do
+          results = connection.exec_query(sql)
+        end
+
         execution_time = Time.now - t0
         [results, execution_time]
       end
@@ -64,7 +82,9 @@ module RailsDb
 
       def self.multiple_execute(sql, divider = ";\n")
         sql.split(divider).each do |statement|
-          connection.execute(statement)
+          execute_with_sandbox_if_needed do
+            connection.execute(statement)
+          end
         end
       end
 

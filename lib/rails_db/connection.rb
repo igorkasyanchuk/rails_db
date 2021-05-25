@@ -4,13 +4,7 @@ module RailsDb
     def connection
       ActiveRecord::Base.connection
     rescue ActiveRecord::ConnectionNotEstablished
-      ActiveRecord::Base.establish_connection(Rails.application.config.database_configuration[Rails.env])
-
-      if RailsDb.sandbox
-        ActiveRecord::Base.connection.execute("SET SESSION CHARACTERISTICS AS TRANSACTION READ ONLY")
-      end
-
-      ActiveRecord::Base.connection
+      ActiveRecord::Base.establish_connection(Rails.application.config.database_configuration[Rails.env]).connection
     end
 
     def columns
