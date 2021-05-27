@@ -19,7 +19,7 @@ module RailsDb
 
   # Allow read only operations
   mattr_accessor :sandbox
-  @@sandbox = true
+  @@sandbox = false
 
   # automatic engine routes mouting
   mattr_accessor :automatic_routes_mount
