@@ -68,7 +68,7 @@ For all environments (be careful with production environment):
 
 ```ruby
   # Rails >= 6
-  gem 'rails_db', '2.3.1'
+  gem 'rails_db', '>= 2.3.1'
 
   # Rails < 6
   gem 'rails_db', '2.2.1'
@@ -80,7 +80,7 @@ Or only for development:
   group :development do
     # Rails >= 6
     # and there are is a big change it will work with Rails 5.2 too
-    gem 'rails_db', '2.3.1'
+    gem 'rails_db', '>= 2.3.1'
 
     # Rails < 6
     gem 'rails_db', '2.2.1'
