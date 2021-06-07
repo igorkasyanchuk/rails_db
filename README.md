@@ -2,7 +2,7 @@
 
 Please **share** this gem with your friends to get more feedback. I would really appreciate for the gem review if you have a  blog. If you have ideas - please create an issue or contact me by email: `igorkasyanchuk[@]gmail.com`.
 
-[![Build Status](https://travis-ci.org/igorkasyanchuk/rails_db.svg)](https://travis-ci.org/igorkasyanchuk/rails_db)
+[![Build Status](https://www.travis-ci.com/igorkasyanchuk/rails_db.svg?branch=master)](https://www.travis-ci.com/igorkasyanchuk/rails_db)
 [![Gem Version](https://badge.fury.io/rb/rails_db.svg)](https://badge.fury.io/rb/rails_db)
 [![RailsJazz](https://github.com/igorkasyanchuk/rails_time_travel/blob/main/docs/my_other.svg?raw=true)](https://www.railsjazz.com)
 [![https://www.patreon.com/igorkasyanchuk](https://github.com/igorkasyanchuk/rails_time_travel/blob/main/docs/patron.svg?raw=true)](https://www.patreon.com/igorkasyanchuk)
@@ -110,7 +110,9 @@ If will create file config/initializers/rails_db.rb.
 *   **http_basic_authentication_password** - HTTP_BASIC authentication password.
 *   **black_list_tables** - black list for tables (hide tables from sidebar).
 *   **white_list_tables** - black list for tables (show only these tables in sidebar).
-*   **verify_access_proc** - allow access by specific conditions, for example by role for current_user, or you can use for example Pundit here (default: `proc { |controller| true }`)
+*   **verify_access_proc** - allow access by specific conditions, for example by role for current_user, or 
+you can use for example Pundit here (default: `proc { |controller| true }`)
+*   **sandbox** - allow only read-only queries (https://github.com/igorkasyanchuk/rails_db/pull/122)
 
 If you want to add routes manually (or customize the mounted location) you need to first turn off automatic_routes_mount and then add to your `routes.rb`
 

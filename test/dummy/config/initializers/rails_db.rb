@@ -20,4 +20,6 @@ RailsDb.setup do |config|
   # # Enable http basic authentication
   # config.http_basic_authentication_password = 'password'
   config.verify_access_proc = proc { |e| true }
+
+  config.sandbox = false
 end

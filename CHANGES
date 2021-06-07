@@ -8,6 +8,11 @@ BACKLOG:
   - export to json
   - MS-SQL export/import https://github.com/igorkasyanchuk/rails_db/issues/80
 
+2.4.0
+  - added sandbox option https://github.com/igorkasyanchuk/rails_db/pull/122 (virtual360-io)
+  - fixing tests and moving to new travis domain
+  - dummy app run with rails 6
+
 2.3.0, 2.3.1
   - drop support Rails 5.2, 5.1, 5.0 (for older user version 2.2.1 of this gem)
   - required versions of gems (will_paginate >= 3.1, ransack >= 2.3.2)
