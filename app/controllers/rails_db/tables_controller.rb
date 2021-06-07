@@ -16,8 +16,11 @@ module RailsDb
     end
 
     def create
-      @record = model.new(record_attributes)
-      @record.save!
+      unless RailsDb.sandbox
+        @record = model.new(record_attributes)
+        @record.save!
+      end
+
       build_search
       respond_to do |page|
         page.html { redirect_to action: :data, table_id: params[:table_id] }
@@ -47,13 +50,19 @@ module RailsDb
     end
 
     def truncate
-      @table.truncate
+      unless RailsDb.sandbox
+        @table.truncate
+      end
       render :data
     end
 
     def destroy
       build_search
-      @table.delete(params[:pk_id])
+
+      unless RailsDb.sandbox
+        @table.delete(params[:pk_id])
+      end
+
       respond_to do |page|
         page.html { redirect_to action: :data, table_id: params[:table_id] }
         page.js {}
@@ -70,7 +79,11 @@ module RailsDb
 
     def update
       @record = @table.as_model.find(params[:pk_id])
-      @record.update(record_attributes)
+
+      unless RailsDb.sandbox
+        @record.update(record_attributes)
+      end
+
       respond_to do |page|
         page.html { redirect_to action: :data, table_id: params[:table_id] }
         page.js {}
