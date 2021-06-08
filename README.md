@@ -231,7 +231,7 @@ After your push to git, all tests will be executed on Travis CI environment.
 
 You can also change locally DB to verify gem accross multiple Databases (mysql, postgres, sqlite). For more details see `test/dummy/config/database.yml` (you need to set DB ENV variable).
 
-On CI tests are executed with `GEMFILE=./gemfiles/rails_6_0.gemfile rails test`.
+On CI tests are executed with `BUNDLE_GEMFILE=./gemfiles/rails_6_0.gemfile rails test`.
 
 ## Common Issues and Solutions
 
