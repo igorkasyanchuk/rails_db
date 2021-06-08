@@ -1,7 +1,7 @@
 require 'test_helper'
 
-class RailsDbDataTableHelperTest < ActionView::TestCase
-  include RailsDb::RailsDbDataTableHelper
+class RailsDbHelpersTest < ActionView::TestCase
+  include RailsDb::Helpers
 
   test "default rails_db_data_table works" do
     user = User.create(name: 'Igor')

@@ -1,5 +1,5 @@
 module RailsDb
-  module RailsDbDataTableHelper
+  module Helpers
     # TODO check styles
     STYLES = {
       default: {
@@ -69,6 +69,5 @@ module RailsDb
       style = STYLES[style] || STYLES[:default]
       style[tag.to_sym]
     end
-
   end
 end
