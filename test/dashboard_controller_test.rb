@@ -67,7 +67,7 @@ class DashboardControllerTest < ActionDispatch::IntegrationTest
     get '/rails/db/tables/users/edit?pk_id=' + edit_user.id.to_s, xhr: true
     assert_equal 200, status
 
-    put '/rails/db/tables/users/update?pk_id=' + edit_user.id.to_s, {xhr: true, params: { record: { name: 'JOHN' }}}
+    put '/rails/db/tables/users/update?pk_id=' + edit_user.id.to_s, xhr: true, params: { record: { name: 'JOHN' }}
     assert_equal 200, status
     edit_user.reload
     assert_equal 'JOHN', edit_user.name
@@ -76,14 +76,14 @@ class DashboardControllerTest < ActionDispatch::IntegrationTest
     assert_equal 200, status
 
     assert_equal 2, User.count
-    post '/rails/db/tables/users/create', {xhr: true, params: { record: { name: 'XXX' }} }
+    post '/rails/db/tables/users/create', xhr: true, params: { record: { name: 'XXX' }}
     assert_equal 200, status
     assert_equal 3, User.count
 
     get '/rails/db/tables/users/edit?pk_id=' + customer.id.to_s, xhr: true
     assert_equal 200, status
 
-    put '/rails/db/tables/users/update?pk_id=' + customer.id.to_s, {xhr: true, params: { record: { name: 'STI' }} }
+    put '/rails/db/tables/users/update?pk_id=' + customer.id.to_s, xhr: true, params: { record: { name: 'STI' }}
     assert_equal 200, status
     customer.reload
     assert_equal 'STI', customer.name

@@ -21,7 +21,7 @@ module RailsDb
 
     initializer 'rails_db.helpers' do
       ActiveSupport.on_load :action_view do
-        ActionView::Base.send :include, RailsDb::RailsDbDataTableHelper
+        include RailsDb::Helpers
       end
     end
   end

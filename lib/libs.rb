@@ -7,6 +7,7 @@ require_relative 'rails_db/mysql_result'
 require_relative 'rails_db/result'
 require_relative 'rails_db/rails_db_error'
 require_relative 'rails_db/history'
+require_relative 'rails_db/helpers'
 
 require_relative 'rails_db/sql_query_data'
 require_relative 'rails_db/sql_explain'
