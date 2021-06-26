@@ -8,6 +8,10 @@ BACKLOG:
   - export to json
   - MS-SQL export/import https://github.com/igorkasyanchuk/rails_db/issues/80
 
+--------------------------------------------------
+2.4.1
+  - Fix zeitwerk deprecation warning https://github.com/igorkasyanchuk/rails_db/pull/123/files
+
 2.4.0
   - added sandbox option https://github.com/igorkasyanchuk/rails_db/pull/122 (virtual360-io)
   - fixing tests and moving to new travis domain
