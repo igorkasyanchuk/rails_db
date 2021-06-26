@@ -7,7 +7,11 @@
       <% @record.class.columns.each do |column| %>
         <% name = column.name %>
         <% next if [@table.primary_key, 'created_at', 'updated_at'].include?(column.name) %>
-        <%= form.input name, label: name %>
+        <% if name.to_s == "country" %>
+          <%= form.input name, label: name, as: :string %>
+        <% else %>
+          <%= form.input name, label: name %>
+        <% end %>
       <% end %>
     </div>
     <%= form.submit 'SAVE', class: 'button small' %>

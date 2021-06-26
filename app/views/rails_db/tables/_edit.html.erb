@@ -11,6 +11,7 @@
         <% options = { label: name } %>
         <% options[:include_blank] = true if column.type.to_s =~ /time|date/ %>
         <% options[:as] = :text if column.type.to_s =~ /tsvector/ %>
+        <% options[:as] = :text if name.to_s == 'country' %>
         <% if column.type.to_s =~ /text/ %>
           <% options[:input_html] = {} %>
           <% options[:input_html][:rows] = 4 %>
