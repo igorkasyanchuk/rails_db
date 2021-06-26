@@ -11,6 +11,7 @@ BACKLOG:
 --------------------------------------------------
 2.4.1
   - Fix zeitwerk deprecation warning https://github.com/igorkasyanchuk/rails_db/pull/123/files
+  - Fix for country field (show as string instead of using simple_form:country_select)
 
 2.4.0
   - added sandbox option https://github.com/igorkasyanchuk/rails_db/pull/122 (virtual360-io)
