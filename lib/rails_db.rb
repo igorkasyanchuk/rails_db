@@ -49,6 +49,9 @@ module RailsDb
   mattr_accessor :verify_access_proc
   @@verify_access_proc = proc { |controller| true }
 
+  mattr_accessor :database_role
+  @@database_role = nil
+
   def self.setup
     yield(self)
   end
@@ -59,6 +62,7 @@ module RailsDb
     self.black_list_tables                  = self.white_list_tables = []
     self.http_basic_authentication_enabled  = false
     self.verify_access_proc                 = proc { |controller| true }
+    self.database_role                      = nil
   end
 
 end

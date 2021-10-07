@@ -2,7 +2,11 @@ module RailsDb
   module Connection
 
     def connection
-      ActiveRecord::Base.connection
+      if RailsDb.database_role.present?
+        ActiveRecord::Base.connection_handler.retrieve_connection(ActiveRecord::Base.name, role: RailsDb.database_role)
+      else
+        ActiveRecord::Base.connection
+      end
     rescue ActiveRecord::ConnectionNotEstablished
       ActiveRecord::Base.establish_connection(Rails.application.config.database_configuration[Rails.env]).connection
     end
