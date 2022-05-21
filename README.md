@@ -259,4 +259,7 @@ As a good addition to this gem (or as separate utility) you can use this gem: ht
 This project uses MIT-LICENSE.
 
 [<img src="https://github.com/igorkasyanchuk/rails_time_travel/blob/main/docs/more_gems.png?raw=true"
-/>](https://www.railsjazz.com/)
+/>](https://www.railsjazz.com/?utm_source=github&utm_medium=bottom&utm_campaign=rails_db)
+
+
+
