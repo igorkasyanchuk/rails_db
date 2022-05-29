@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gemspec
 
-gem 'rails'
+# gem 'rails'
 gem 'terminal-table'
 gem 'simple_form', '>= 5.0.1'
 gem 'ransack', '>= 2.3.2'
