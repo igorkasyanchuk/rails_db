@@ -22,8 +22,7 @@ Gem::Specification.new do |s|
   # NOTE: Be sure no other dependencies list `rails` as a dependency 
   #       (check Gemfile.lock), or else all of Rails will load anyway.
   # NOTE: Must also `require` corresponding Rails component classes in 
-  #       * rails_db/test/dummy/config/application.rb
-  #       * rails_db/bin/rails
+  #       * rails_db/config/rails_classes.rb
   s.add_dependency 'actionmailer'
   s.add_dependency 'actionpack'
   s.add_dependency 'activerecord'
