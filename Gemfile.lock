@@ -170,7 +170,7 @@ DEPENDENCIES
   pry-rails
   rails_db!
   sqlite3 (>= 1.4)
-  will_paginate (>= 3.1.0)
+  will_paginate
 
 BUNDLED WITH
    1.17.2
