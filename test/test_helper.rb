@@ -9,7 +9,7 @@ ActiveRecord::Migrator.migrations_paths << File.expand_path('../../db/migrate', 
 require "rails/test_help"
 
 puts "USING DB: #{RailsDb::Database.adapter.adapter_name}"
-puts "USING Rails: #{Gem.loaded_specs['rails'].version}"
+puts "USING Rails: #{Gem.loaded_specs['activerecord'].version}"
 
 # Filter out Minitest backtrace while allowing backtrace from other libraries
 # to be shown.
