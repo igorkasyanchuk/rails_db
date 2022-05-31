@@ -20,12 +20,12 @@ Gem::Specification.new do |s|
   # s.add_dependency 'rails', '>= 5.0.0'
   # To skip loading all of Rails, add the minimum gems separately.
   # This helps users whose Rails apps are similarly configured.
+  # NOTE: Be sure no other dependencies list `rails` as a dependency 
+  #       (check Gemfile.lock) or else all of Rails will load anyway.
   # 
-  # NOTE: We must require these separately also in 
-  #       * test/dummy/config/application.rb
-  #       * bin/rails
-  # NOTE: Be sure no other gems list `rails` as a dependency in Gemfile.lock,
-  #       or else all of Rails will load anyway.
+  # NOTE: The following Rails component classes must also be required in 
+  #       * rails_db/test/dummy/config/application.rb
+  #       * rails_db/bin/rails
   s.add_dependency 'actionmailer'
   s.add_dependency 'actionpack'
   s.add_dependency 'activerecord'
