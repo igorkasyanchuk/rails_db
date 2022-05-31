@@ -1,6 +1,5 @@
 require File.expand_path('../boot', __FILE__)
 
-# require 'rails/all'
 # To choose what Rails frameworks to load, and skip others:
 # NOTE: Be sure this list reflects the same choices made in the gemspec
 require 'rails' # NOTE: not 'rails/rails' or 'rails/all'

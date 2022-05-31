@@ -16,7 +16,7 @@ end
 
 APP_RAKEFILE = File.expand_path("../test/dummy/Rakefile", __FILE__)
 
-# these are not there...
+# FIXME: these directories/files are not present in the gem directory...
 # load 'rails/tasks/engine.rake'
 # load 'rails/tasks/statistics.rake'
 
