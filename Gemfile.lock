@@ -166,7 +166,7 @@ DEPENDENCIES
   mime-types
   mysql2
   paranoia
-  pg (>= 1.2.3)
+  pg
   pry-rails
   rails_db!
   sqlite3 (>= 1.4)

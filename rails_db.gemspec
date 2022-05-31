@@ -46,7 +46,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'mime-types' #, '< 3.0'
   s.add_development_dependency 'mysql2' #, '<= 0.3.20'
   s.add_development_dependency 'paranoia'
-  s.add_development_dependency 'pg', '>= 1.2.3' # '~> 1.2.3'
+  s.add_development_dependency 'pg' #, '>= 1.2.3', '~> 1.2.3'
   s.add_development_dependency 'pry-rails'
   s.add_development_dependency 'sqlite3', '>= 1.4' # '~> 1.4'
   s.add_development_dependency 'will_paginate', '>= 3.1.0'
