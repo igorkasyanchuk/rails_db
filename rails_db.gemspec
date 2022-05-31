@@ -49,7 +49,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'pg' #, '>= 1.2.3', '~> 1.2.3'
   s.add_development_dependency 'pry-rails'
   s.add_development_dependency 'sqlite3', '>= 1.4' # '~> 1.4'
-  s.add_development_dependency 'will_paginate', '>= 3.1.0'
+  s.add_development_dependency 'will_paginate' #, '>= 3.1.0'
   # s.add_development_dependency 'populator'
   # s.add_development_dependency 'faker'
   # s.add_development_dependency 'pry'
