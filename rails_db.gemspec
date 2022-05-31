@@ -19,11 +19,9 @@ Gem::Specification.new do |s|
 
   # To skip loading all of Rails, adds the minimum gems separately.
   # Helps users with similar Rails config to avoid extra dependencies.
-  # 
   # NOTE: Be sure no other dependencies list `rails` as a dependency 
   #       (check Gemfile.lock), or else all of Rails will load anyway.
-  # 
-  # NOTE: The following Rails component classes must also be required in 
+  # NOTE: Must also `require` corresponding Rails component classes in 
   #       * rails_db/test/dummy/config/application.rb
   #       * rails_db/bin/rails
   s.add_dependency 'actionmailer'
