@@ -17,11 +17,11 @@ Gem::Specification.new do |s|
 
   s.executables   = ['railsdb', 'rails_db', 'runsql']
 
-  # s.add_dependency 'rails', '>= 5.0.0'
-  # To skip loading all of Rails, add the minimum gems separately.
-  # This helps users whose Rails apps are similarly configured.
+  # To skip loading all of Rails, adds the minimum gems separately.
+  # Helps users with similar Rails config to avoid extra dependencies.
+  # 
   # NOTE: Be sure no other dependencies list `rails` as a dependency 
-  #       (check Gemfile.lock) or else all of Rails will load anyway.
+  #       (check Gemfile.lock), or else all of Rails will load anyway.
   # 
   # NOTE: The following Rails component classes must also be required in 
   #       * rails_db/test/dummy/config/application.rb
