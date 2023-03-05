@@ -1,6 +1,10 @@
 require File.expand_path('../boot', __FILE__)
 
-require 'rails/all'
+# Require only the minimum Rails classes
+require_relative '../../../config/rails_classes'
+
+require 'caxlsx'
+require 'caxlsx_rails'
 
 Bundler.require(*Rails.groups)
 
