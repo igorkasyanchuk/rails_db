@@ -1,5 +1,4 @@
 require 'active_model'
-require 'ransack'
 
 module RailsDb
 
