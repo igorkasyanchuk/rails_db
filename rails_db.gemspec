@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency "launchy"
   s.add_development_dependency "sqlite3", '~> 1.4'
-  s.add_development_dependency "mysql2", '<= 0.3.20'
+  s.add_development_dependency "mysql2", '0.5.5'
   s.add_development_dependency "pg"
   s.add_development_dependency "caxlsx_rails"
   s.add_development_dependency 'will_paginate', '>= 3.1.0'

@@ -110,7 +110,7 @@ If will create file config/initializers/rails_db.rb.
 *   **http_basic_authentication_password** - HTTP_BASIC authentication password.
 *   **black_list_tables** - black list for tables (hide tables from sidebar).
 *   **white_list_tables** - black list for tables (show only these tables in sidebar).
-*   **verify_access_proc** - allow access by specific conditions, for example by role for current_user, or 
+*   **verify_access_proc** - allow access by specific conditions, for example by role for current_user, or
 you can use for example Pundit here (default: `proc { |controller| true }`)
 *   **sandbox** - allow only read-only queries (https://github.com/igorkasyanchuk/rails_db/pull/122)
 
@@ -225,11 +225,21 @@ Run SQL commands locally withing configuration of your `config/database.yml`
 
 ## Run Tests
 
+Locally works with Ruby 2.7.2 (dev env, tests) and goal is to upgrade dummy app and Ruby to newer versions.
+
 To run tests locally you need to execute `rake test` withing root folder of project.
 
 After your push to git, all tests will be executed on Travis CI environment.
 
 You can also change locally DB to verify gem accross multiple Databases (mysql, postgres, sqlite). For more details see `test/dummy/config/database.yml` (you need to set DB ENV variable).
+
+Sample:
+
+```sh
+DB=sqlite BUNDLE_GEMFILE=./gemfiles/rails_6_0.gemfile rails test
+DB=postgresql BUNDLE_GEMFILE=./gemfiles/rails_6_0.gemfile rails test
+DB=mysql BUNDLE_GEMFILE=./gemfiles/rails_6_0.gemfile rails test
+```
 
 On CI tests are executed with `BUNDLE_GEMFILE=./gemfiles/rails_6_0.gemfile rails test`.
 
@@ -254,12 +264,21 @@ On CI tests are executed with `BUNDLE_GEMFILE=./gemfiles/rails_6_0.gemfile rails
 
 As a good addition to this gem (or as separate utility) you can use this gem: https://github.com/igorkasyanchuk/execute_sql which allows to execute SQL in rails console or app.
 
+## Dev Environment
+
+Might be helpful, if you have issues with mysql2 gem installation on macOS:
+
+```
+gem install mysql2 -- \
+ --with-mysql-lib=/usr/local/Cellar/mysql/8.0.33/lib \
+ --with-mysql-dir=/usr/local/Cellar/mysql/8.0.33 \
+ --with-mysql-config=/usr/local/Cellar/mysql/8.0.33/bin/mysql_config \
+ --with-mysql-include=/usr/local/Cellar/mysql/8.0.33/include
+ ```
+
 ## License
 
 This project uses MIT-LICENSE.
 
 [<img src="https://github.com/igorkasyanchuk/rails_time_travel/blob/main/docs/more_gems.png?raw=true"
 />](https://www.railsjazz.com/?utm_source=github&utm_medium=bottom&utm_campaign=rails_db)
-
-
-

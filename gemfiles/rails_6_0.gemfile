@@ -24,7 +24,7 @@ end
 gem 'faker'
 
 group :assets do
-  gem 'therubyracer', platforms: :ruby
+  gem 'sprockets-rails'
   gem 'uglifier'
 end
 
