@@ -60,6 +60,7 @@ module RailsDb
         klass = ActiveRecord::Base.descendants.detect { |c| c.table_name == table_name }
       end
 
+      add_ransack_methods(klass) if ransack_version >= Gem::Version.new('4.0.0')
       klass.class_eval(&block) if block_given?
 
       klass
@@ -69,6 +70,19 @@ module RailsDb
       @model ||= create_model(name)
     end
 
+    def add_ransack_methods(klass)
+      klass.define_singleton_method(:ransackable_attributes) do |auth_object = nil|
+        column_names.map(&:to_sym)
+      end
+
+      klass.define_singleton_method(:ransackable_associations) do |auth_object = nil|
+        []
+      end
+    end
+
+    def ransack_version
+      Gem.loaded_specs['ransack'].version
+    end
   end # module
 
 end
