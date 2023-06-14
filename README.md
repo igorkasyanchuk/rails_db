@@ -276,6 +276,9 @@ gem install mysql2 -- \
  --with-mysql-include=/usr/local/Cellar/mysql/8.0.33/include
  ```
 
+[<img src="https://opensource-heroes.com/svg/embed/igorkasyanchuk/rails_db"
+/>](https://opensource-heroes.com/r/igorkasyanchuk/rails_db)
+
 ## License
 
 This project uses MIT-LICENSE.
