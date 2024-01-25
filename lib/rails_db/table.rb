@@ -48,7 +48,7 @@ module RailsDb
 
     def create_model(table_name, &block)
       begin
-        klass = Class.new(ActiveRecord::Base) do
+        klass = Class.new(RailsDb.abstract_model_class) do
           def self.model_name
             ActiveModel::Name.new(self, nil, table_name)
           end
@@ -57,7 +57,7 @@ module RailsDb
         end
         klass.count # verify that it works, if not load other, hack
       rescue
-        klass = ActiveRecord::Base.descendants.detect { |c| c.table_name == table_name }
+        klass = RailsDb.abstract_model_class.descendants.detect { |c| c.table_name == table_name }
       end
 
       add_ransack_methods(klass) if ransack_version >= Gem::Version.new('4.0.0')

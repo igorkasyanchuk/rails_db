@@ -49,6 +49,10 @@ module RailsDb
   mattr_accessor :verify_access_proc
   @@verify_access_proc = proc { |controller| true }
 
+  ## Configure this in multi-database environments
+  mattr_accessor :abstract_model_class
+  @@abstract_model_class = ActiveRecord::Base
+
   def self.setup
     yield(self)
   end
@@ -59,6 +63,7 @@ module RailsDb
     self.black_list_tables                  = self.white_list_tables = []
     self.http_basic_authentication_enabled  = false
     self.verify_access_proc                 = proc { |controller| true }
+    self.abstract_model_class               = ActiveRecord::Base
   end
 
 end
