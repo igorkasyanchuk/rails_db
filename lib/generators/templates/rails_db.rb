@@ -21,7 +21,7 @@ if Object.const_defined?('RailsDb')
     # # Enable http basic authentication
     # config.http_basic_authentication_password = 'password'
 
-    # # Enable http basic authentication
+    # # Enable verify access proc
     # config.verify_access_proc = proc { |controller| true }
 
     # # Sandbox mode (only read-only operations)
