@@ -59,7 +59,7 @@ module RailsDb
 
       def self.delete(table_name, pk_name, pk_id)
         case pk_id
-          when Fixnum, Bignum then
+          when Integer then
             execute("DELETE FROM #{table_name} WHERE #{pk_name} = #{pk_id};")
           else
             execute("DELETE FROM #{table_name} WHERE #{pk_name} = '#{pk_id}';")
