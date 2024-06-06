@@ -5,6 +5,7 @@ require 'simple_form'
 require 'active_record'
 require 'ransack'
 require 'kaminari'
+require 'sprockets/rails'
 
 module RailsDb
   # Custom require relative that work with older rubies also

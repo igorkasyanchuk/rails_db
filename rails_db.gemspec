@@ -23,16 +23,18 @@ Gem::Specification.new do |s|
   s.add_dependency 'activerecord'
   s.add_dependency 'ransack', '>= 2.3.2'
   s.add_dependency 'kaminari'
+  s.add_dependency 'sprockets-rails'
 
   s.add_development_dependency "launchy"
   s.add_development_dependency "sqlite3", '~> 1.4'
-  s.add_development_dependency "mysql2", '0.5.5'
+  s.add_development_dependency "mysql2", '0.5.6'
   s.add_development_dependency "pg"
   s.add_development_dependency "caxlsx_rails"
   s.add_development_dependency 'will_paginate', '>= 3.1.0'
-  s.add_development_dependency 'mime-types', '< 3.0'
+  s.add_development_dependency 'mime-types'
   s.add_development_dependency 'paranoia'
   s.add_development_dependency 'pry-rails'
+  s.add_development_dependency 'puma'
   # s.add_development_dependency 'populator'
   # s.add_development_dependency 'faker'
   # s.add_development_dependency 'pry'

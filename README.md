@@ -212,7 +212,7 @@ Run SQL commands locally withing configuration of your `config/database.yml`
 - cd test/dummy
 - bundle
 - rake db:migrate
-- rails s -b 0.0.0.0
+- DB=sqlite rails s -b 0.0.0.0
 - open http://locahost:3000/
 
 ## Local Build
@@ -225,7 +225,7 @@ Run SQL commands locally withing configuration of your `config/database.yml`
 
 ## Run Tests
 
-Locally works with Ruby 2.7.2 (dev env, tests) and goal is to upgrade dummy app and Ruby to newer versions.
+Locally works with Ruby 3.1.2 (dev env, tests) and goal is to upgrade dummy app and Ruby to newer versions.
 
 To run tests locally you need to execute `rake test` withing root folder of project.
 
@@ -236,9 +236,9 @@ You can also change locally DB to verify gem accross multiple Databases (mysql, 
 Sample:
 
 ```sh
-DB=sqlite BUNDLE_GEMFILE=./gemfiles/rails_6_0.gemfile rails test
-DB=postgresql BUNDLE_GEMFILE=./gemfiles/rails_6_0.gemfile rails test
-DB=mysql BUNDLE_GEMFILE=./gemfiles/rails_6_0.gemfile rails test
+DB=sqlite BUNDLE_GEMFILE=./gemfiles/rails_7_1.gemfile rails test
+DB=postgresql BUNDLE_GEMFILE=./gemfiles/rails_7_1.gemfile rails test
+DB=mysql BUNDLE_GEMFILE=./gemfiles/rails_7_1.gemfile rails test
 ```
 
 On CI tests are executed with `BUNDLE_GEMFILE=./gemfiles/rails_6_0.gemfile rails test`.
@@ -259,6 +259,19 @@ On CI tests are executed with `BUNDLE_GEMFILE=./gemfiles/rails_6_0.gemfile rails
 * Create WIKI pages, improve documentation
 * Add favicon for standalone and dummy apps
 * Add ERD schema
+* create dump (how handle different DB?)
+* visualize schema (ERD? railsroady gem?)
+* delete record in table without PK (cid?, what we can do for other DB?)
+* add quick aggregation functions for columns (SUM, AVG, etc)
+* add ability to change width of columns (and remember selection in cookies) (something like http://www.bacubacu.com/colresizable/)
+* support for i18n
+* export to json
+* MS-SQL export/import https://github.com/igorkasyanchuk/rails_db/issues/80
+* upgrade dummy app
+* move to Github Actions
+* upgrade FE libs to use turbo and stimulus
+* CI with Rails 7+
+* gem rid of sprockets-rails dependency, maybe send static files with rails inline disposition?
 
 ## Other stuff
 

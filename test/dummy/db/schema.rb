@@ -10,28 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_26_083314) do
-
+ActiveRecord::Schema[7.0].define(version: 2021_06_26_083314) do
   create_table "accounts", force: :cascade do |t|
     t.string "name"
     t.integer "users_count"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
   end
 
   create_table "comments", force: :cascade do |t|
     t.text "comment"
     t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
   end
 
   create_table "contacts", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.text "message"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.index ["name", "email"], name: "index_contacts_on_name_and_email"
   end
 
@@ -42,8 +41,8 @@ ActiveRecord::Schema.define(version: 2021_06_26_083314) do
   create_table "payments", force: :cascade do |t|
     t.decimal "amount"
     t.integer "project_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.index ["project_id"], name: "index_payments_on_project_id"
   end
 
@@ -89,9 +88,9 @@ ActiveRecord::Schema.define(version: 2021_06_26_083314) do
     t.integer "amount_433505"
     t.integer "amount_160749"
     t.integer "amount_723751"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.datetime "deleted_at"
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
+    t.datetime "deleted_at", precision: nil
     t.index ["deleted_at"], name: "index_projects_on_deleted_at"
   end
 
@@ -107,8 +106,8 @@ ActiveRecord::Schema.define(version: 2021_06_26_083314) do
     t.integer "age"
     t.decimal "salary"
     t.text "bio"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.integer "account_id"
     t.date "dob"
     t.boolean "active", default: true

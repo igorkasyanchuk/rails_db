@@ -1,14 +1,11 @@
-BACKLOG:
-  - create dump (how handle different DB?)
-  - visualize schema (ERD? railsroady gem?)
-  - delete record in table without PK (cid?, what we can do for other DB?)
-  - add quick aggregation functions for columns (SUM, AVG, etc)
-  - add ability to change width of columns (and remember selection in cookies) (something like http://www.bacubacu.com/colresizable/)
-  - support for i18n
-  - export to json
-  - MS-SQL export/import https://github.com/igorkasyanchuk/rails_db/issues/80
+2.4.3
+  - fixed typo https://github.com/igorkasyanchuk/rails_db/pull/136/files
+  - fix for Rails 7.1 https://github.com/igorkasyanchuk/rails_db/pull/139/files
+  - added dependency of sprockets-rails to fix issue with Rails 7.1 (assets.precompile files)
 
---------------------------------------------------
+2.4.2
+  - ransack fix https://github.com/igorkasyanchuk/rails_db/pull/132
+
 2.4.1
   - Fix zeitwerk deprecation warning https://github.com/igorkasyanchuk/rails_db/pull/123/files
   - Fix for country field (show as string instead of using simple_form:country_select)
