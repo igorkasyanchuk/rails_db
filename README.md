@@ -2,7 +2,6 @@
 
 Please **share** this gem with your friends to get more feedback. I would really appreciate for the gem review if you have a  blog. If you have ideas - please create an issue or contact me by email: `igorkasyanchuk[@]gmail.com`.
 
-[![Build Status](https://www.travis-ci.com/igorkasyanchuk/rails_db.svg?branch=master)](https://www.travis-ci.com/igorkasyanchuk/rails_db)
 [![Gem Version](https://badge.fury.io/rb/rails_db.svg)](https://badge.fury.io/rb/rails_db)
 [![RailsJazz](https://github.com/igorkasyanchuk/rails_time_travel/blob/main/docs/my_other.svg?raw=true)](https://www.railsjazz.com)
 [![https://www.patreon.com/igorkasyanchuk](https://github.com/igorkasyanchuk/rails_time_travel/blob/main/docs/patron.svg?raw=true)](https://www.patreon.com/igorkasyanchuk)
@@ -24,7 +23,6 @@ Video Demos: https://youtu.be/TYsRxXRFp1g, https://youtu.be/dfViQPZw9zE
 
 ## Requirements
 
-Version `>2.0` 100% works with Ruby 2.3+, and Rails 5 and Rails 6 (2.3.1 requires >= Rails 6, for Rails 5 use 2.2.1). As for other versions of RoR use 1.6 version of gem. Also there are automated tests running on Travis CI.
 Supports: PostgreSQL, MySQL, SQLite. Not sure about other adapters. Since gem is using ActiveRecord it will work with others DBs.
 
 For older versions of Rails (Rails 3.2, 4.X) please user `gem "rails_db", "1.6"`.
@@ -68,7 +66,7 @@ For all environments (be careful with production environment):
 
 ```ruby
   # Rails >= 6
-  gem 'rails_db', '>= 2.3.1'
+  gem 'rails_db'
 
   # Rails < 6
   gem 'rails_db', '2.2.1'
@@ -80,7 +78,7 @@ Or only for development:
   group :development do
     # Rails >= 6
     # and there are is a big change it will work with Rails 5.2 too
-    gem 'rails_db', '>= 2.3.1'
+    gem 'rails_db'
 
     # Rails < 6
     gem 'rails_db', '2.2.1'
@@ -229,8 +227,6 @@ Locally works with Ruby 3.1.2 (dev env, tests) and goal is to upgrade dummy app 
 
 To run tests locally you need to execute `rake test` withing root folder of project.
 
-After your push to git, all tests will be executed on Travis CI environment.
-
 You can also change locally DB to verify gem accross multiple Databases (mysql, postgres, sqlite). For more details see `test/dummy/config/database.yml` (you need to set DB ENV variable).
 
 Sample:
@@ -241,7 +237,11 @@ DB=postgresql BUNDLE_GEMFILE=./gemfiles/rails_7_1.gemfile rails test
 DB=mysql BUNDLE_GEMFILE=./gemfiles/rails_7_1.gemfile rails test
 ```
 
-On CI tests are executed with `BUNDLE_GEMFILE=./gemfiles/rails_6_0.gemfile rails test`.
+Or
+
+```sh
+DATABASE_NAME=rails_db_test DB=mysql BUNDLE_GEMFILE=./gemfiles/rails_7_1.gemfile rails test
+```
 
 ## Common Issues and Solutions
 

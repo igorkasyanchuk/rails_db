@@ -48,4 +48,19 @@ class TableTest < ActiveSupport::TestCase
     assert_equal 'igor', klass.first.name
   end
 
+  test "ransack" do
+    User.delete_all
+    user_1 = User.create(name: '111')
+    user_2 = User.create(name: '555')
+    user_3 = User.create(name: '333')
+
+    model = @users_table.as_model
+    query = {"q"=>{"s"=>"name desc"}}.with_indifferent_access
+
+    q = model.ransack(query[:q])
+
+    names = q.result.pluck(:name)
+    assert_equal ["555", "333", "111"], names
+  end
+
 end

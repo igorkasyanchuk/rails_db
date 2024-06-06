@@ -2,6 +2,7 @@
   - fixed typo https://github.com/igorkasyanchuk/rails_db/pull/136/files
   - fix for Rails 7.1 https://github.com/igorkasyanchuk/rails_db/pull/139/files
   - added dependency of sprockets-rails to fix issue with Rails 7.1 (assets.precompile files)
+  - fixed deprecation with Bignum https://github.com/igorkasyanchuk/rails_db/pull/133/files
 
 2.4.2
   - ransack fix https://github.com/igorkasyanchuk/rails_db/pull/132

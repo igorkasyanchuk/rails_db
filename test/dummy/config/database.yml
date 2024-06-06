@@ -7,6 +7,7 @@ mysql: &mysql
   username: root
   password:
   database: rails_db
+  port: 3307
 
 postgresql: &postgresql
   adapter: postgresql
@@ -23,11 +24,10 @@ defaults: &defaults
 
 development:
   <<: *defaults
-  database: db/rails_db_dev.sqlite3
 
 test:
   <<: *defaults
-  database: <%= ENV['TRAVIS'] ? '":memory:"' : 'db/test.sqlite3' %>
+  database: <%= ENV['TRAVIS'] ? '":memory:"' : (ENV['DATABASE_NAME'] || 'db/test.sqlite3') %>
 
 production:
   <<: *defaults

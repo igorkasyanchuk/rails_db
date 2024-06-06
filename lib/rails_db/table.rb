@@ -72,7 +72,11 @@ module RailsDb
 
     def add_ransack_methods(klass)
       klass.define_singleton_method(:ransackable_attributes) do |auth_object = nil|
-        column_names.map(&:to_sym)
+        column_names.map(&:to_sym) + column_names
+      end
+
+      klass.define_singleton_method(:ransortable_attributes) do |auth_object = nil|
+        column_names.map(&:to_sym) + column_names
       end
 
       klass.define_singleton_method(:ransackable_associations) do |auth_object = nil|
