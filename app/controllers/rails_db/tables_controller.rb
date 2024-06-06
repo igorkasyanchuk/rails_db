@@ -1,6 +1,6 @@
 module RailsDb
   class TablesController < RailsDb::ApplicationController
-    LOAD_TABLE_ACTIONS = [:show, :data, :csv, :truncate, :destroy, :edit, :update, :xlsx, :search, :new, :create]
+    LOAD_TABLE_ACTIONS = [:show, :data, :csv, :truncate, :destroy, :edit, :update, :xlsx, :new, :create]
 
     before_action :find_table, only: LOAD_TABLE_ACTIONS
 
