@@ -1,3 +1,6 @@
+2.4.4
+  - add csv dependency https://github.com/igorkasyanchuk/rails_db/pull/140
+
 2.4.3
   - fixed typo https://github.com/igorkasyanchuk/rails_db/pull/136/files
   - fix for Rails 7.1 https://github.com/igorkasyanchuk/rails_db/pull/139/files
