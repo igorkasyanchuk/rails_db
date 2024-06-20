@@ -50,6 +50,14 @@ module RailsDb
   mattr_accessor :verify_access_proc
   @@verify_access_proc = proc { |controller| true }
 
+  ## Switch out the ActiveRecord::Base class by any abstract descendant
+  mattr_accessor :abstract_model_class
+  @@abstract_model_class = ActiveRecord::Base
+
+  ## Configure this in multi-database environments
+  mattr_accessor :available_abstract_model_classes
+  @@available_abstract_model_classes = [ActiveRecord::Base]
+
   def self.setup
     yield(self)
   end
@@ -60,6 +68,8 @@ module RailsDb
     self.black_list_tables                  = self.white_list_tables = []
     self.http_basic_authentication_enabled  = false
     self.verify_access_proc                 = proc { |controller| true }
+    self.abstract_model_class               = ActiveRecord::Base
+    self.available_abstract_model_classes   = [ActiveRecord::Base]
   end
 
 end
