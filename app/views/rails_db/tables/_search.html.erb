@@ -55,7 +55,7 @@
           <th colspan="2">Actions</th>
         <% end %>
         <% @model.column_names.each do |column| %>
-          <th> <%= sort_link(@q, column) %> </th>
+          <th> <%= sort_link(@q, column, column) %> </th>
         <% end %>
       </tr>
     </thead>
