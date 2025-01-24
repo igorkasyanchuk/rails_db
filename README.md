@@ -5,14 +5,10 @@ Please **share** this gem with your friends to get more feedback. I would really
 [![Gem Version](https://badge.fury.io/rb/rails_db.svg)](https://badge.fury.io/rb/rails_db)
 [![RailsJazz](https://github.com/igorkasyanchuk/rails_time_travel/blob/main/docs/my_other.svg?raw=true)](https://www.railsjazz.com)
 [![https://www.patreon.com/igorkasyanchuk](https://github.com/igorkasyanchuk/rails_time_travel/blob/main/docs/patron.svg?raw=true)](https://www.patreon.com/igorkasyanchuk)
-[![Listed on OpenSource-Heroes.com](https://opensource-heroes.com/badge-v1.svg)](https://opensource-heroes.com/r/igorkasyanchuk/rails_db)
 
-[<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/main_view.png?token=AAArXeu9-vtuW8nIvc9RE0nOIhGbwxkbks5WKlTLwA%3D%3D"
-/>](https://rails-db.herokuapp.com/rails/db/)
-[<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/railsdb.png?token=AAArXeu9-vtuW8nIvc9RE0nOIhGbwxkbks5WKlTLwA%3D%3D"
-/>](https://rails-db.herokuapp.com/rails/db/)
-[<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/runsql.png?token=AAArXeu9-vtuW8nIvc9RE0nOIhGbwxkbks5WKlTLwA%3D%3D"
-/>](https://rails-db.herokuapp.com/rails/db/)
+![Rails DB main view](https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/main_view.png)
+![Rails DB overview](https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/railsdb.png)
+![Rails DB run SQL](https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/runsql.png)
 
 
 Quick way to inspect your Rails database **http://localhost:12345/rails/db**, see content of tables, export them to CSV, EXPLAIN SQL and run SQL queries.
@@ -148,26 +144,22 @@ Below you can see samples on how you can embed data-tables directly in your app.
                             header: true %>
 ```
 
-[<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/data_table_code.png?token=AAArXU_ChN3xNN2MajLy2Tv98ij6XK4Pks5WKlT3wA%3D%3D"
-/>](https://rails-db.herokuapp.com/rails/db/)
+![Data table code](https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/data_table_code.png)
 
 ## Samples & Screenshots
 
 ### Schema
 
-[<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/autocomplete.png?token=AAArXU_ChN3xNN2MajLy2Tv98ij6XK4Pks5WKlT3wA%3D%3D"
-/>](https://rails-db.herokuapp.com/rails/db/)
+![Data table code](https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/autocomplete.png)
 
+![Data table code](https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/accounts_schema.png)
 
-[<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/accounts_schema.png?token=AAArXU_ChN3xNN2MajLy2Tv98ij6XK4Pks5WKlT3wA%3D%3D"
-/>](https://rails-db.herokuapp.com/rails/db/)
 
 ### SQL Editor
 
 Rails App SQL editor with syntax highlight and code complete.
 
-[<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/execute_sql.png?token=AAArXf26vwsPwvV2MhgxWUepGb0tT6g4ks5WKlUJwA%3D%3D"
-/>](https://rails-db.herokuapp.com/rails/db/)
+![Data table code](https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/execute_sql.png)
 
 Install & visit **`http://localhost:3000/rails/db`** to see it in action.
 
@@ -177,20 +169,18 @@ Run RailsDB Standalone commands locally withing configuration of your `config/da
 
 RailsDB Standalone and runsql doesn't require to be added to Gemfile or you application.
 
-[<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/railsdb.png?token=AAArXf26vwsPwvV2MhgxWUepGb0tT6g4ks5WKlUJwA%3D%3D"
-/>](https://rails-db.herokuapp.com/rails/db/)
+![Data table code](https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/railsdb.png)
 
 ### RunSQL Util
 
 Run SQL commands locally withing configuration of your `config/database.yml`
 
-[<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/runsql.png?token=AAArXf26vwsPwvV2MhgxWUepGb0tT6g4ks5WKlUJwA%3D%3D"
-/>](https://rails-db.herokuapp.com/rails/db/)
+![Data table code](https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/runsql.png)
+
 
 ### Edit Content in Rails DB
 
-[<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/edit_popup.png?token=AAArXf26vwsPwvV2MhgxWUepGb0tT6g4ks5WKlUJwA%3D%3D"
-/>](https://youtu.be/TYsRxXRFp1g)
+![Data table code](https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/edit_popup.png)
 
 
 ===
@@ -288,9 +278,6 @@ gem install mysql2 -- \
  --with-mysql-config=/usr/local/Cellar/mysql/8.0.33/bin/mysql_config \
  --with-mysql-include=/usr/local/Cellar/mysql/8.0.33/include
  ```
-
-[<img src="https://opensource-heroes.com/svg/embed/igorkasyanchuk/rails_db"
-/>](https://opensource-heroes.com/r/igorkasyanchuk/rails_db)
 
 ## License
 
