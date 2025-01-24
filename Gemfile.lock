@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rails_db (2.4.4)
+    rails_db (2.4.5)
       activerecord
       csv
       kaminari
@@ -147,6 +147,7 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2024.0604)
     mini_mime (1.1.5)
+    mini_portile2 (2.8.8)
     minitest (5.23.1)
     mutex_m (0.2.0)
     mysql2 (0.5.6)
@@ -160,11 +161,12 @@ GEM
     net-smtp (0.5.0)
       net-protocol
     nio4r (2.7.3)
-    nokogiri (1.16.5-x86_64-darwin)
+    nokogiri (1.16.5)
+      mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     paranoia (2.6.3)
       activerecord (>= 5.1, < 7.2)
-    pg (1.2.3)
+    pg (1.5.9)
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -233,7 +235,8 @@ GEM
       actionpack (>= 6.1)
       activesupport (>= 6.1)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.2)
+    sqlite3 (1.7.3)
+      mini_portile2 (~> 2.8.0)
     stringio (3.1.0)
     terminal-table (3.0.1)
       unicode-display_width (>= 1.1.1, < 3)
@@ -252,6 +255,7 @@ GEM
     zeitwerk (2.6.15)
 
 PLATFORMS
+  arm64-darwin-24
   x86_64-darwin-21
 
 DEPENDENCIES
@@ -260,7 +264,7 @@ DEPENDENCIES
   kaminari (>= 0.17.0)
   launchy
   mime-types
-  mysql2 (= 0.5.6)
+  mysql2
   paranoia
   pg
   pry-rails

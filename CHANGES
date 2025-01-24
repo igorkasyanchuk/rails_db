@@ -1,3 +1,6 @@
+2.4.5
+  - changes to sorting https://github.com/igorkasyanchuk/rails_db/pull/141
+
 2.4.4
   - add csv dependency https://github.com/igorkasyanchuk/rails_db/pull/140
 
