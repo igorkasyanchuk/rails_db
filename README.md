@@ -6,6 +6,8 @@ Please **share** this gem with your friends to get more feedback. I would really
 [![RailsJazz](https://github.com/igorkasyanchuk/rails_time_travel/blob/main/docs/my_other.svg?raw=true)](https://www.railsjazz.com)
 [![https://www.patreon.com/igorkasyanchuk](https://github.com/igorkasyanchuk/rails_time_travel/blob/main/docs/patron.svg?raw=true)](https://www.patreon.com/igorkasyanchuk)
 
+[!["Buy Me A Coffee"](https://github.com/igorkasyanchuk/get-smart/blob/main/docs/snapshot-bmc-button-small.png?raw=true)](https://buymeacoffee.com/igorkasyanchuk)
+
 ![Rails DB main view](https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/main_view.png)
 ![Rails DB overview](https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/railsdb.png)
 ![Rails DB run SQL](https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/runsql.png)
@@ -285,3 +287,5 @@ This project uses MIT-LICENSE.
 
 [<img src="https://github.com/igorkasyanchuk/rails_time_travel/blob/main/docs/more_gems.png?raw=true"
 />](https://www.railsjazz.com/?utm_source=github&utm_medium=bottom&utm_campaign=rails_db)
+
+[!["Buy Me A Coffee"](https://github.com/igorkasyanchuk/get-smart/blob/main/docs/snapshot-bmc-button.png?raw=true)](https://buymeacoffee.com/igorkasyanchuk)
