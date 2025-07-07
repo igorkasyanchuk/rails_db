@@ -82,7 +82,8 @@ module RailsDb
     def insert_css_file(file)
       if using_sprockets?
         # For Sprockets, use the asset pipeline
-        asset_name = file.start_with?('rails_db/') ? file.gsub('.css', '') : "rails_db/#{file.gsub('.css', '')}"
+        # Remove .css extension and use the file path as-is for asset pipeline
+        asset_name = file.gsub('.css', '')
         stylesheet_link_tag asset_name, media: "all"
       else
         # For Propshaft/Rails 8 compatibility - inline the CSS
@@ -98,7 +99,8 @@ module RailsDb
     def insert_js_file(file)
       if using_sprockets?
         # For Sprockets, use the asset pipeline
-        asset_name = file.start_with?('rails_db/') ? file.gsub('.js', '') : "rails_db/#{file.gsub('.js', '')}"
+        # Remove .js extension and use the file path as-is for asset pipeline
+        asset_name = file.gsub('.js', '')
         javascript_include_tag asset_name
       else
         # For Propshaft/Rails 8 compatibility - inline the JavaScript
