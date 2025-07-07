@@ -80,7 +80,7 @@ module RailsDb
     end
 
     def insert_css_file(file)
-      if (Rails.application.assets && Rails.application.assets.respond_to?(:find_asset)) || defined?(Sprockets)
+      if using_sprockets?
         # For Sprockets, use the asset pipeline
         asset_name = file.start_with?('rails_db/') ? file.gsub('.css', '') : "rails_db/#{file.gsub('.css', '')}"
         stylesheet_link_tag asset_name, media: "all"
@@ -96,7 +96,7 @@ module RailsDb
     end
 
     def insert_js_file(file)
-      if (Rails.application.assets && Rails.application.assets.respond_to?(:find_asset)) || defined?(Sprockets)
+      if using_sprockets?
         # For Sprockets, use the asset pipeline
         asset_name = file.start_with?('rails_db/') ? file.gsub('.js', '') : "rails_db/#{file.gsub('.js', '')}"
         javascript_include_tag asset_name
@@ -109,6 +109,20 @@ module RailsDb
           ""
         end
       end
+    end
+
+    private
+
+    def using_sprockets?
+      # Check if sprockets-rails is available and being used
+      return false unless defined?(Sprockets)
+      
+      # Check if Rails.application.assets is a Sprockets environment
+      Rails.application.assets.is_a?(Sprockets::Environment) ||
+      Rails.application.assets.is_a?(Sprockets::Index)
+    rescue
+      # If anything fails, assume we're not using Sprockets
+      false
     end
   end
 end

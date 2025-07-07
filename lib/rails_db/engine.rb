@@ -4,19 +4,22 @@ module RailsDb
     config.autoload_paths += Dir["#{config.root}/lib"]
 
     initializer 'rails_db.assets_precompile', :group => :all do |app|
-      app.config.assets.precompile += [
-        'rails_db/application.js', 
-        'rails_db/application.css',
-        'rails_db/logo.png',
-        'rails_db/logo_mini.png',
-        'rails_db/data_table_code.png',
-        'rails_db/data_table.png',
-        'rails_db/railsdb.png',
-        'rails_db/runsql.png',
-        'rails_db/*.png', 
-        'codemirror/*', 
-        'codemirror/**/*'
-      ]
+      # Only configure asset precompilation if Sprockets is available
+      if defined?(Sprockets) && app.config.respond_to?(:assets)
+        app.config.assets.precompile += [
+          'rails_db/application.js', 
+          'rails_db/application.css',
+          'rails_db/logo.png',
+          'rails_db/logo_mini.png',
+          'rails_db/data_table_code.png',
+          'rails_db/data_table.png',
+          'rails_db/railsdb.png',
+          'rails_db/runsql.png',
+          'rails_db/*.png', 
+          'codemirror/*', 
+          'codemirror/**/*'
+        ]
+      end
     end
 
     initializer 'rails_db.helpers' do
