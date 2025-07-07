@@ -3,8 +3,7 @@
 <head>
   <title><%= [yield(:title), 'Rails DB'].reject(&:blank?).join(' - ') %></title>
   <%= stylesheet_link_tag    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" %>
-  <%= stylesheet_link_tag    "rails_db/application", media: "all" %>
-  <%= javascript_include_tag "rails_db/application" %>
+  <%= render 'rails_db/shared/assets' %>
   <%= csrf_meta_tags %>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />

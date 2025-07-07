@@ -78,5 +78,37 @@ module RailsDb
         p
       end
     end
+
+    def insert_css_file(file)
+      if (Rails.application.assets && Rails.application.assets.respond_to?(:find_asset)) || defined?(Sprockets)
+        # For Sprockets, use the asset pipeline
+        asset_name = file.start_with?('rails_db/') ? file.gsub('.css', '') : "rails_db/#{file.gsub('.css', '')}"
+        stylesheet_link_tag asset_name, media: "all"
+      else
+        # For Propshaft/Rails 8 compatibility - inline the CSS
+        css_path = File.expand_path(File.dirname(__FILE__) + "/../../assets/stylesheets/#{file}")
+        if File.exist?(css_path)
+          raw "<style>#{File.read(css_path)}</style>"
+        else
+          ""
+        end
+      end
+    end
+
+    def insert_js_file(file)
+      if (Rails.application.assets && Rails.application.assets.respond_to?(:find_asset)) || defined?(Sprockets)
+        # For Sprockets, use the asset pipeline
+        asset_name = file.start_with?('rails_db/') ? file.gsub('.js', '') : "rails_db/#{file.gsub('.js', '')}"
+        javascript_include_tag asset_name
+      else
+        # For Propshaft/Rails 8 compatibility - inline the JavaScript
+        js_path = File.expand_path(File.dirname(__FILE__) + "/../../assets/javascripts/#{file}")
+        if File.exist?(js_path)
+          raw "<script>#{File.read(js_path)}</script>"
+        else
+          ""
+        end
+      end
+    end
   end
 end

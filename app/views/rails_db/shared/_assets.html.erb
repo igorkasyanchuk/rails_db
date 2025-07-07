@@ -1,0 +1,111 @@
+<!-- CSS Assets -->
+<%= insert_css_file 'rails_db/foundation.min.css' %>
+<%= insert_css_file 'rails_db/foundation_and_overrides.css' %>
+<%= insert_css_file 'codemirror/codemirror.css' %>
+<%= insert_css_file 'codemirror/codemirror/themes/pastel-on-dark.css' %>
+<%= insert_css_file 'codemirror/codemirror/addons/hint/show-hint.css' %>
+<%= insert_css_file 'rails_db/app.css' %>
+<%= insert_css_file 'rails_db/sidebar.css' %>
+<%= insert_css_file 'rails_db/pagination.css' %>
+<%= insert_css_file 'rails_db/table.css' %>
+<%= insert_css_file 'rails_db/forms.css' %>
+<%= insert_css_file 'rails_db/search.css' %>
+
+<!-- JavaScript Assets -->
+<%= insert_js_file 'codemirror/codemirror.js' %>
+<%= insert_js_file 'codemirror/codemirror/modes/sql.js' %>
+<%= insert_js_file 'codemirror/codemirror/addons/hint/show-hint.js' %>
+<%= insert_js_file 'codemirror/codemirror/addons/hint/sql-hint.js' %>
+<%= insert_js_file 'rails_db/jquery.js' %>
+<%= insert_js_file 'rails_db/jquery.cookie.js' %>
+<%= insert_js_file 'rails_db/rails-ujs.js' %>
+<%= insert_js_file 'rails_db/foundation.min.js' %>
+<%= insert_js_file 'rails_db/sticky.js' %>
+<%= insert_js_file 'rails_db/show_hide_columns.js' %>
+<%= insert_js_file 'rails_db/search.js' %>
+
+<script>
+$(function(){
+  $(document).foundation();
+
+  jQuery.expr[":"].icontains = jQuery.expr.createPseudo(function (arg) {
+    return function (elem) {
+      return jQuery(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
+    };
+  });
+
+  $('body').on('change', '.per_page_pagination_select', function() {
+    $(this).parents('form').submit();
+  });
+
+  $('body').on('keyup', '#rails_db_tables_input', function() {
+    value = $(this).val();
+    $("#rails_db_tables a").show();
+    $("#rails_db_tables a:not(:icontains('" + value + "'))").hide();
+  });
+
+  $('body').on('click', '.expand, .collapse', function() {
+    expand_collapse();
+    save_expand_collapse();
+    return false;
+  });
+});
+
+function expand_collapse() {
+  $('#main_content').toggleClass('push-3')
+  $('#main_content').toggleClass('large-9')
+  $('#main_content').toggleClass('large-12')
+  $('#sidebar').toggle();
+  $('.collapse').toggle();
+  $('.expand').toggle();
+};
+
+function save_expand_collapse() {
+  $.removeCookie('sidebar_hidden');
+  $.cookie('sidebar_hidden', !$('.expand').is(':visible'), { expires: 30, path: '/' });
+};
+
+// https://github.com/codemirror/CodeMirror/blob/master/mode/sql/index.html
+function init_sql_editor(mime, tables) {
+  var editor = CodeMirror.fromTextArea($('#sql').get(0), {
+      mime: mime,
+      hint: CodeMirror.hint.sql,
+      matchBrackets: true,
+      smartIndent: true,
+      autofocus: true,
+      "theme": 'pastel-on-dark',
+      "lineNumbers": true,
+      "mode": "text/x-sql",
+      "tabSize": 4,
+      height: 'auto',
+      extraKeys: {
+        "Esc": 'autocomplete',
+        "Ctrl": 'autocomplete',
+        "Ctrl-Space": 'autocomplete',
+        "Ctrl-Enter": function() {
+          $(editor.getInputField()).parents('form').submit();
+        }
+      },
+      hintOptions: {
+        tables: tables
+      }
+    });
+  editor.setSize('100%', '300');
+  editor.focus();
+};
+
+function set_browser_url(url) {
+  if (typeof (history.pushState) != "undefined") {
+    window.history.pushState({"path": url}, '', url);
+  }
+}
+
+$(window).bind('popstate', function(event) {
+  if (typeof (history.pushState) != "undefined") {
+    var state = event.originalEvent.state;
+    if (state) {
+      window.location = state.path;
+    }
+  }
+});
+</script>
