@@ -5,7 +5,13 @@ require 'simple_form'
 require 'active_record'
 require 'ransack'
 require 'kaminari'
-require 'sprockets/rails'
+
+# Only require sprockets/rails if it's available
+begin
+  require 'sprockets/rails'
+rescue LoadError
+  # sprockets-rails is not available, continue without it
+end
 
 module RailsDb
   # Custom require relative that work with older rubies also

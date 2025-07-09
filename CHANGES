@@ -1,3 +1,6 @@
+2.5.0
+  - add support for Rails 8 with Propshaft: https://github.com/igorkasyanchuk/rails_db/pull/145
+
 2.4.5
   - changes to sorting https://github.com/igorkasyanchuk/rails_db/pull/141
 
