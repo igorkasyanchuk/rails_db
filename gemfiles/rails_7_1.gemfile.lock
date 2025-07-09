@@ -1,14 +1,13 @@
 PATH
   remote: ..
   specs:
-    rails_db (2.4.5)
+    rails_db (2.5.0)
       activerecord
       csv
       kaminari
       rails (>= 5.0.0)
       ransack (>= 2.3.2)
       simple_form (>= 5.0.1)
-      sprockets-rails
       terminal-table
 
 GEM
