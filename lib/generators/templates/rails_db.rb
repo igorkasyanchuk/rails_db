@@ -26,5 +26,11 @@ if Object.const_defined?('RailsDb')
 
     # # Sandbox mode (only read-only operations)
     # config.sandbox = false
+
+    # # Configure to use something else than ActiveRecord::Base
+    # config.abstract_model_class = ApplicationRecord
+
+    # # Configure for multi-database environments to switch base models in the GUI
+    # config.available_abstract_model_classes = [ApplicationRecord, Tenant1::Base, Tenant2::Base]
   end
 end

@@ -8,7 +8,7 @@ module RailsDb
 
       def self.execute_with_sandbox_if_needed
         if RailsDb.sandbox
-          ActiveRecord::Base.transaction do
+          RailsDb.abstract_model_class.transaction do
             yield
             raise ActiveRecord::Rollback
           end

@@ -1,3 +1,22 @@
+<% if RailsDb.available_abstract_model_classes.many? %>
+  Do you want to see tables from a specific model base class?
+  <ul>
+    <% RailsDb.available_abstract_model_classes.each do |klass| %>
+      <li>
+        <% if klass == RailsDb.abstract_model_class %>
+          <strong>
+            <%= klass.name %>
+          </strong>
+        <% else %>
+          <%= link_to root_path(abstract_model_class: klass.name) do %>
+            <%= klass.name %>
+          <% end %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
 <h3>Tables</h3>
 
 <input id='rails_db_tables_input' placeholder='... quick filter by table name'>
